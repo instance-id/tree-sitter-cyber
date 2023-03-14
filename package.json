@@ -1,0 +1,29 @@
+{
+  "name": "tree-sitter-cyber",
+  "version": "0.0.1",
+  "description": "cyber grammar for tree-sitter",
+  "main": "bindings/node",
+  "keywords": [
+    "parsing",
+    "incremental"
+  ],
+  "dependencies": {
+    "nan": "^2.17.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.7"
+  },
+  "scripts": {
+    "test": "tree-sitter test"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.cyber",
+      "injection-regex": "cyber",
+      "file-types": [
+        "cyber",
+        "cy"
+      ]
+    }
+  ]
+}
