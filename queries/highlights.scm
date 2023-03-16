@@ -92,3 +92,59 @@
 ; Tag expression
 (tag_expression
   "#" @tag)
+
+"func" @keyword.function
+
+[
+ "("
+ ")"
+ "["
+ "]"
+ "{"
+ "}"
+]  @punctuation.bracket
+
+;; [
+;;   "object"
+;;   "atype"
+;;   "tagtype"
+;;   "true"
+;;   "false"
+;;   "none"
+;;   "var"
+;;   "static"
+;;   "capture"
+;;   "as"
+;; ] @keyword
+
+;; [
+;;   "coinit"
+;;   "coyield"
+;;   "coresume"
+;; ]
+;; @keyword.coroutine
+
+;; [
+;;   "else"
+;;   "if"
+;;   "match"
+;;   "then"
+;; ] @conditional
+
+;; [
+;;   "do"
+;;   "for"
+;;   "while"
+;;   "yield"
+;; ] @repeat
+
+;; ["import" "export"] @include
+
+
+;; [
+;;   "try"
+;;   "catch"
+;;   "recover"
+;; ] @exception
+
+;; "return" @keyword.return

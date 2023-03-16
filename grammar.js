@@ -2,6 +2,19 @@ const NEWLINE = token.immediate(/(\r?\n)+/);
 const INDENT = token.immediate(/[\t ]+/);
 const DEDENT = token.immediate(/[\t ]+$/);
 
+const type_identifiers = [
+  "object",
+  "atype",
+  "tagtype",
+  "true",
+  "false",
+  "none",
+  "var",
+  "static",
+  "capture",
+  "as"
+]
+
 module.exports = grammar({
   name: "cyber",
 
@@ -9,7 +22,8 @@ module.exports = grammar({
      $.comment,
       /\s+/,
     ],
-  word: $ => $.name,
+
+  word: ($) => $.name,
 
   inline: $ => [
     $._expression,
@@ -161,6 +175,7 @@ module.exports = grammar({
       $.number,
       $.string,
       $.function_call,
+      $.interpolated_string,
       prec(1, $.try_expression),
       prec(1, $.catch_expression),
       prec(1, $.panic_expression),
@@ -241,6 +256,18 @@ module.exports = grammar({
       ':',
       $.expression
     ),
+
+    interpolated_string: $ => prec.left(11, seq(
+      '"',
+      repeat(choice(/[^"{]+/, $.interpolation)),
+      '"'
+    )),
+
+    interpolation: $ => prec.left(12, seq(
+      '{',
+      $._expression,
+      '}'
+    )),
 
     // Tag expression
     tag_expression: $ => seq(

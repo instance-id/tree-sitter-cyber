@@ -630,6 +630,10 @@
           "name": "function_call"
         },
         {
+          "type": "SYMBOL",
+          "name": "interpolated_string"
+        },
+        {
           "type": "PREC",
           "value": 1,
           "content": {
@@ -1260,6 +1264,60 @@
           "name": "expression"
         }
       ]
+    },
+    "interpolated_string": {
+      "type": "PREC_LEFT",
+      "value": 11,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "\""
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PATTERN",
+                  "value": "[^\"{]+"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "interpolation"
+                }
+              ]
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "\""
+          }
+        ]
+      }
+    },
+    "interpolation": {
+      "type": "PREC_LEFT",
+      "value": 12,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "{"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_expression"
+          },
+          {
+            "type": "STRING",
+            "value": "}"
+          }
+        ]
+      }
     },
     "tag_expression": {
       "type": "SEQ",
