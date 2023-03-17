@@ -46,7 +46,11 @@
           "named": true
         },
         {
-          "type": "comment",
+          "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "else_statement",
           "named": true
         },
         {
@@ -55,10 +59,6 @@
         },
         {
           "type": "for_loop",
-          "named": true
-        },
-        {
-          "type": "function_definition",
           "named": true
         },
         {
@@ -74,11 +74,11 @@
           "named": true
         },
         {
-          "type": "object_declaration",
+          "type": "print_statement",
           "named": true
         },
         {
-          "type": "var_declaration",
+          "type": "recover_block",
           "named": true
         }
       ]
@@ -149,7 +149,7 @@
     }
   },
   {
-    "type": "else_clause",
+    "type": "declaration",
     "named": true,
     "fields": {},
     "children": {
@@ -157,11 +157,38 @@
       "required": true,
       "types": [
         {
+          "type": "field_declaration",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "object_declaration",
+          "named": true
+        },
+        {
+          "type": "var_declaration",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "else_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "block",
           "named": true
         },
         {
-          "type": "if_statement",
+          "type": "expression",
           "named": true
         }
       ]
@@ -173,7 +200,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "block",
@@ -396,10 +423,6 @@
           "named": true
         },
         {
-          "type": "else_clause",
-          "named": true
-        },
-        {
           "type": "expression",
           "named": true
         }
@@ -603,6 +626,44 @@
     }
   },
   {
+    "type": "print_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "recover_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "fields": {},
@@ -615,7 +676,11 @@
           "named": true
         },
         {
-          "type": "comment",
+          "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "else_statement",
           "named": true
         },
         {
@@ -624,10 +689,6 @@
         },
         {
           "type": "for_loop",
-          "named": true
-        },
-        {
-          "type": "function_definition",
           "named": true
         },
         {
@@ -643,15 +704,34 @@
           "named": true
         },
         {
-          "type": "object_declaration",
+          "type": "print_statement",
+          "named": true
+        },
+        {
+          "type": "recover_block",
           "named": true
         },
         {
           "type": "shebang",
           "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "block",
+          "named": true
         },
         {
-          "type": "var_declaration",
+          "type": "expression",
           "named": true
         }
       ]
@@ -740,6 +820,10 @@
     "named": false
   },
   {
+    "type": "'",
+    "named": false
+  },
+  {
     "type": "(",
     "named": false
   },
@@ -756,11 +840,19 @@
     "named": false
   },
   {
+    "type": "+=",
+    "named": false
+  },
+  {
     "type": ",",
     "named": false
   },
   {
     "type": "-",
+    "named": false
+  },
+  {
+    "type": "-=",
     "named": false
   },
   {
@@ -773,10 +865,6 @@
   },
   {
     "type": ":",
-    "named": false
-  },
-  {
-    "type": ";",
     "named": false
   },
   {
@@ -884,15 +972,15 @@
     "named": false
   },
   {
+    "type": "print",
+    "named": false
+  },
+  {
     "type": "recover",
     "named": false
   },
   {
     "type": "shebang",
-    "named": true
-  },
-  {
-    "type": "string",
     "named": true
   },
   {

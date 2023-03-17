@@ -9,7 +9,8 @@
 
 ; Import statement
 (import_statement
-  "import" @include)
+  "import" @include
+  (identifier) @module)
 
 ; Function definition
 (function_definition
@@ -40,7 +41,7 @@
 
 ; Field declaration
 (field_declaration
-  (type_identifier) @property)
+  (identifier) @property)
 
 ; Parameter list
 (parameter_list
@@ -53,14 +54,6 @@
 ; Block
 (block)
 
-; If statement
-(if_statement
-  "if" @keyword)
-
-; Else Clause
-(else_clause
-  "else" @keyword)
-
 ; Loop statement
 (loop_statement
   "loop" @keyword)
@@ -70,12 +63,35 @@
   "for" @keyword
   "each" @keyword)
 
+; If statement
+(if_statement
+  "if" @keyword)
+
+; Else statement
+(else_statement
+  "else" @keyword)
+
 ; Assignment statement
-(assignment_statement
-  "=" @operator)
+((assignment_statement
+  "=") @operator)
+((assignment_statement
+  "+=") @operator)
+((assignment_statement
+  "-=") @operator)
 
 ; Expression statement
 (expression_statement)
+
+; Interpolated strings
+(interpolated_string
+  "\"" @string.quote
+  "\"" @string.quote)
+
+(interpolation
+  "{" @string.special
+  (expression) @string.special
+  "}" @string.special  )
+
 
 ; Number
 (number) @number
@@ -103,6 +119,7 @@
  "{"
  "}"
 ]  @punctuation.bracket
+
 
 ;; [
 ;;   "object"
