@@ -23,7 +23,8 @@
       "file-types": [
         "cyber",
         "cy"
-      ]
+      ],
+      "first-line-regex": "#!.*\\bcyber$"
     }
   ]
 }
