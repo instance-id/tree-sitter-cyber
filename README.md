@@ -1,4 +1,13 @@
 # tree-sitter-cyber
 
-Please note that this is a WIP, so capability is quite limited thus far (a few highlighting rules are present), but I will be adding additional grammars and functionality.
+Please note that this is a WIP
 
+### Plugins
+
+#### Neovim
+
+* [nvim-cyber](https://github.com/instance-id/nvim-cyber)
+
+---
+
+![alt text](https://i.imgur.com/cg5ow2M.png "instance.id")
