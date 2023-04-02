@@ -11,14 +11,16 @@ shebang := if os() == 'windows' {
 set shell := ["/usr/bin/env", "pwsh" ,"-noprofile", "-nologo", "-c"]
 set windows-shell := ["pwsh.exe","-NoLogo", "-noprofile", "-c"]
 
+script := 'test_script.cy'
+
 # --| Actions -------------------------
 # --|----------------------------------
 
 # --| Build -----------------
-build:
-  just _build-{{os()}}
+build run=script: 
+  just _build-{{os()}} {{run}}
 
-_build-linux:
+_build-linux run=script:
   #!{{shebang}}
   $canContinue = $true
   $path = "$PWD/src/scanner.zig"
@@ -51,11 +53,11 @@ _build-linux:
   if($canContinue){
     echo "Built wasm" 
 
-    try{ tree-sitter parse ./sample_scripts/larger_test.cy; $canContinue = $? }
+    try{ tree-sitter parse ./sample_scripts/{{run}}; $canContinue = $? }
     catch{ echo "Failed to parse sample script"; $canContinue = $false }
 
     if ($canContinue) { echo "Parsed sample script" }
-    else { echo "Failed to parse sample script"; exit 1 }
+    else { echo "Failed to parse sample script"; just update; exit 1 }
 
   } else { echo "Failed to build wasm"; exit 1 }
 

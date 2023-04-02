@@ -3,6 +3,11 @@
 import os 'os'
 args = os.args()
 
+
+foo = 1
+if true:
+  foo = 123
+
 func fib(n int) int:
   coyield
   if n < 2:

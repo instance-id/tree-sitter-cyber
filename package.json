@@ -8,18 +8,27 @@
     "incremental"
   ],
   "dependencies": {
-    "nan": "^2.17.0"
+    "nan": "^2.17.0",
+    "prebuild-install": "^5.3.6"
   },
   "devDependencies": {
+    "prebuild": "^10.0.1",
+    "prettier": "^2.8.7",
     "tree-sitter-cli": "^0.20.7"
   },
   "scripts": {
-    "test": "tree-sitter test"
+    "install": "prebuild-install || node-gyp rebuild",
+    "pre-build": "prebuild --all --strip --verbose",
+    "build": "tree-sitter generate && node-gyp build && cargo build --release",
+    "test": "tree-sitter test && sample_scripts/parse-examples",
+    "test-windows": "tree-sitter test",
+    "parse": "tree-sitter parse ./sample_scripts/test_script.cy",
+    "lint": "prettier --check grammar.js keywords.js rules/*.js",
+    "format": "prettier --write grammar.js keywords.js rules/*.js"
   },
   "tree-sitter": [
     {
       "scope": "source.cyber",
-      "injection-regex": "cyber",
       "file-types": [
         "cyber",
         "cy"

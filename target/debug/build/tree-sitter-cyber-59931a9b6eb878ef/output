@@ -78,7 +78,7 @@ CFLAGS = None
 cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
 CRATE_CC_NO_DEFAULTS = None
 CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2")
-running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src" "-Wall" "-Wextra" "-Wno-unused-parameter" "-Wno-unused-but-set-variable" "-Wno-trigraphs" "-o" "/mnt/x/GitHub/instance-id/nvim/tree-sitter-cyber/target/debug/build/tree-sitter-cyber-59931a9b6eb878ef/out/src/parser.o" "-c" "src/parser.c"
+running: "/home/mosthated/.cargo/bin/sccache" "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src" "-Wall" "-Wextra" "-Wno-unused-parameter" "-Wno-unused-but-set-variable" "-Wno-trigraphs" "-o" "/mnt/x/GitHub/instance-id/nvim/tree-sitter-cyber/target/debug/build/tree-sitter-cyber-59931a9b6eb878ef/out/src/parser.o" "-c" "src/parser.c"
 exit status: 0
 cargo:rerun-if-env-changed=AR_x86_64-unknown-linux-gnu
 AR_x86_64-unknown-linux-gnu = None
@@ -103,3 +103,106 @@ exit status: 0
 cargo:rustc-link-lib=static=parser
 cargo:rustc-link-search=native=/mnt/x/GitHub/instance-id/nvim/tree-sitter-cyber/target/debug/build/tree-sitter-cyber-59931a9b6eb878ef/out
 cargo:rerun-if-changed=src/parser.c
+TARGET = Some("x86_64-unknown-linux-gnu")
+OPT_LEVEL = Some("0")
+HOST = Some("x86_64-unknown-linux-gnu")
+cargo:rerun-if-env-changed=CXX_x86_64-unknown-linux-gnu
+CXX_x86_64-unknown-linux-gnu = None
+cargo:rerun-if-env-changed=CXX_x86_64_unknown_linux_gnu
+CXX_x86_64_unknown_linux_gnu = None
+cargo:rerun-if-env-changed=HOST_CXX
+HOST_CXX = None
+cargo:rerun-if-env-changed=CXX
+CXX = None
+cargo:rerun-if-env-changed=CXXFLAGS_x86_64-unknown-linux-gnu
+CXXFLAGS_x86_64-unknown-linux-gnu = None
+cargo:rerun-if-env-changed=CXXFLAGS_x86_64_unknown_linux_gnu
+CXXFLAGS_x86_64_unknown_linux_gnu = None
+cargo:rerun-if-env-changed=HOST_CXXFLAGS
+HOST_CXXFLAGS = None
+cargo:rerun-if-env-changed=CXXFLAGS
+CXXFLAGS = None
+cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+CRATE_CC_NO_DEFAULTS = None
+DEBUG = Some("true")
+CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2")
+cargo:rerun-if-env-changed=CXX_x86_64-unknown-linux-gnu
+CXX_x86_64-unknown-linux-gnu = None
+cargo:rerun-if-env-changed=CXX_x86_64_unknown_linux_gnu
+CXX_x86_64_unknown_linux_gnu = None
+cargo:rerun-if-env-changed=HOST_CXX
+HOST_CXX = None
+cargo:rerun-if-env-changed=CXX
+CXX = None
+cargo:rerun-if-env-changed=CXXFLAGS_x86_64-unknown-linux-gnu
+CXXFLAGS_x86_64-unknown-linux-gnu = None
+cargo:rerun-if-env-changed=CXXFLAGS_x86_64_unknown_linux_gnu
+CXXFLAGS_x86_64_unknown_linux_gnu = None
+cargo:rerun-if-env-changed=HOST_CXXFLAGS
+HOST_CXXFLAGS = None
+cargo:rerun-if-env-changed=CXXFLAGS
+CXXFLAGS = None
+cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+CRATE_CC_NO_DEFAULTS = None
+CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2")
+cargo:rerun-if-env-changed=CXX_x86_64-unknown-linux-gnu
+CXX_x86_64-unknown-linux-gnu = None
+cargo:rerun-if-env-changed=CXX_x86_64_unknown_linux_gnu
+CXX_x86_64_unknown_linux_gnu = None
+cargo:rerun-if-env-changed=HOST_CXX
+HOST_CXX = None
+cargo:rerun-if-env-changed=CXX
+CXX = None
+cargo:rerun-if-env-changed=CXXFLAGS_x86_64-unknown-linux-gnu
+CXXFLAGS_x86_64-unknown-linux-gnu = None
+cargo:rerun-if-env-changed=CXXFLAGS_x86_64_unknown_linux_gnu
+CXXFLAGS_x86_64_unknown_linux_gnu = None
+cargo:rerun-if-env-changed=HOST_CXXFLAGS
+HOST_CXXFLAGS = None
+cargo:rerun-if-env-changed=CXXFLAGS
+CXXFLAGS = None
+cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+CRATE_CC_NO_DEFAULTS = None
+CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2")
+running: "/home/mosthated/.cargo/bin/sccache" "c++" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-I" "src" "-Wall" "-Wextra" "-Wno-unused-parameter" "-Wno-unused-but-set-variable" "-o" "/mnt/x/GitHub/instance-id/nvim/tree-sitter-cyber/target/debug/build/tree-sitter-cyber-59931a9b6eb878ef/out/src/scanner.o" "-c" "src/scanner.cc"
+cargo:warning=src/scanner.cc: In member function ‘bool {anonymous}::Scanner::scan(TSLexer*, const bool*)’:
+cargo:warning=src/scanner.cc:109:16: warning: unused variable ‘lookahead’ [-Wunused-variable]
+cargo:warning=  109 |       int32_t &lookahead = lexer->lookahead;
+cargo:warning=      |                ^~~~~~~~~
+cargo:warning=src/scanner.cc: At global scope:
+cargo:warning=src/scanner.cc:17:8: warning: ‘void {anonymous}::_debug()’ defined but not used [-Wunused-function]
+cargo:warning=   17 |   void _debug() {
+cargo:warning=      |        ^~~~~~
+exit status: 0
+cargo:rerun-if-env-changed=AR_x86_64-unknown-linux-gnu
+AR_x86_64-unknown-linux-gnu = None
+cargo:rerun-if-env-changed=AR_x86_64_unknown_linux_gnu
+AR_x86_64_unknown_linux_gnu = None
+cargo:rerun-if-env-changed=HOST_AR
+HOST_AR = None
+cargo:rerun-if-env-changed=AR
+AR = None
+cargo:rerun-if-env-changed=ARFLAGS_x86_64-unknown-linux-gnu
+ARFLAGS_x86_64-unknown-linux-gnu = None
+cargo:rerun-if-env-changed=ARFLAGS_x86_64_unknown_linux_gnu
+ARFLAGS_x86_64_unknown_linux_gnu = None
+cargo:rerun-if-env-changed=HOST_ARFLAGS
+HOST_ARFLAGS = None
+cargo:rerun-if-env-changed=ARFLAGS
+ARFLAGS = None
+running: ZERO_AR_DATE="1" "ar" "cq" "/mnt/x/GitHub/instance-id/nvim/tree-sitter-cyber/target/debug/build/tree-sitter-cyber-59931a9b6eb878ef/out/libscanner.a" "/mnt/x/GitHub/instance-id/nvim/tree-sitter-cyber/target/debug/build/tree-sitter-cyber-59931a9b6eb878ef/out/src/scanner.o"
+exit status: 0
+running: "ar" "s" "/mnt/x/GitHub/instance-id/nvim/tree-sitter-cyber/target/debug/build/tree-sitter-cyber-59931a9b6eb878ef/out/libscanner.a"
+exit status: 0
+cargo:rustc-link-lib=static=scanner
+cargo:rustc-link-search=native=/mnt/x/GitHub/instance-id/nvim/tree-sitter-cyber/target/debug/build/tree-sitter-cyber-59931a9b6eb878ef/out
+cargo:rerun-if-env-changed=CXXSTDLIB_x86_64-unknown-linux-gnu
+CXXSTDLIB_x86_64-unknown-linux-gnu = None
+cargo:rerun-if-env-changed=CXXSTDLIB_x86_64_unknown_linux_gnu
+CXXSTDLIB_x86_64_unknown_linux_gnu = None
+cargo:rerun-if-env-changed=HOST_CXXSTDLIB
+HOST_CXXSTDLIB = None
+cargo:rerun-if-env-changed=CXXSTDLIB
+CXXSTDLIB = None
+cargo:rustc-link-lib=stdc++
+cargo:rerun-if-changed=src/scanner.cc

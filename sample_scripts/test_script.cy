@@ -1,6 +1,6 @@
 #!/usr/local/bin/cyber
-
 import os 'os'
+
 args = os.args()
 
 func fib(n int) int:
@@ -11,6 +11,7 @@ func fib(n int) int:
 
 str = 'abc aabbcc acb aabb c'
 cur = 0
+
 for str[cur..].indexChar('c') as i:
   print 'Found char at {cur + i}.'
   cur += i + 1

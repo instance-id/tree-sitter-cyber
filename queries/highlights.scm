@@ -1,5 +1,17 @@
-; Identifiers
-(identifier) @variable
+;identifiers
+; (identifier) @variable
+;  ((identifier) @constant
+;  (#lua-match? @constant "^[A-Z][A-Z_0-9]*$"))
+
+(var_ident) @variable
+(type_ident) @type
+(import_export) @include
+(builtin_type) @type.builtin
+(exception_identifiers) @exception
+(repeat_identifiers) @repeat
+(builtin_function) @function.builtin
+
+; (keyword) @variable
 
 ; Shebang
 (shebang) @comment
@@ -7,25 +19,75 @@
 ; Comment
 (comment) @comment
 
+; Number
+(number) @number
+
+; String
+(string) @string
+
+; Function Declaration
+; (func) @keyword.function
+
+; (statement_indicator) @punctuation.delimiter
+
+; ":" @punctuation.delimiter
+[
+  ","
+  ":"
+] @punctuation.delimiter
+
 ; Import statement
 (import_statement 
   "import" @include
-  (identifier) @module)
+  (string) @module)
+
+(local_declaration 
+  (identifier) @local.definition
+  (#set! parent_highlight_name "local"))
 
 ; Function definition
+
+(function_definition) @function
+
 (function_definition 
-  "func" @function 
-  (identifier) @function.name)
+  "func" @keyword.function
+  (function_declaration) @function)
 
-; Function calls
-(function_call 
-  (identifier) @function 
-  (argument_list) @punctuation.bracket)
+(function_declaration
+  (identifier) @function
+  (parameter_list) @parameters)
 
-(function_call 
-  (identifier) @function)
+(call_identifier) @function.call
+(call_expression)  @function.call
 
-((key_value_pair ":" @punctuation))
+; (call_expression 
+;   name: (field_expression) @function)
+
+(call_expression 
+  (identifier) @function.call
+  "(" @punctuation.bracket
+  ")" @punctuation.bracket)
+
+(call_expression 
+  (identifier) @property
+  (call_identifier) @function.call)
+
+(field_expression 
+  "." @punctuation.delimiter)
+
+(field_expression 
+  object: (identifier) @property
+  (accessor) @property)
+
+(field_expression 
+  object: (identifier) @property
+  (call_identifier) @function.call) 
+
+(field_expression 
+  object: (identifier) @property
+  (identifier) @property) 
+
+(key_value_pair) @property
 
 (for_range_loop 
   "for" @keyword 
@@ -48,28 +110,26 @@
   "object" @keyword.class 
   (identifier) @type)
 
-(object_declaration 
-  "object" @keyword.class 
-  (identifier) @entity.name.class)
-
 (object_initializer 
   (identifier) @type 
   "{" @punctuation 
   "}" @punctuation)
 
 (member_assignment 
-  (identifier) @property ":" @punctuation (expression) @property)
+  ":" @punctuation)
 
-(tagtype_declaration 
-  "tagtype" @keyword (identifier) @type)
-
-; Field declaration
-(field_declaration 
+(member_assignment 
+  (identifier) @property
+  ":" @punctuation
   (identifier) @property)
 
-(field_declaration 
-  (identifier) @property 
-  (type_identifier) @type)
+(assignment 
+  left: (pattern) @property
+  right: (identifier) @property)
+
+(tagtype_declaration 
+  "tagtype" @keyword 
+  (identifier) @type)
 
 ; Parameter list
 (parameter_list 
@@ -100,9 +160,12 @@
 (while_loop 
   "while" @keyword)
 
-; Assignment statement
-(assignment_statement 
-  "=" @operator)
+(coinit_expression 
+  (coinit) @keyword
+  (coinit_declaration) @function)
+
+(coresume_expression 
+  (coresume) @keyword)
 
 (coyield_statement 
   (coyield) @keyword)
@@ -114,14 +177,8 @@
 
 (interpolation 
   "{" @string.special 
-  (expression) @variable 
+  (_) @variable 
   "}" @string.special)
-
-; Number
-(number) @number
-
-; String
-(string) @string
 
 ; Tag expression
 (tag_expression 
@@ -131,41 +188,19 @@
 (return_statement 
   "return" @keyword)
 
-[ 
-  "(" ")" "[" "]" "{" "}"
-] @punctuation.bracket
+[ "(" ")" "[" "]" "{" "}" ] @punctuation.bracket
 
-[
- "-" "-=" "!=" "*" "*=" "/" "//" "/=" "&" "%" 
- "^" "+" "+=" "<" "<<" "<=" "<>" "=" "==" ">"
- ">=" ">>" "|" "and" "in" "is" "not" "or"
-] @operator
+[ "-" "-=" "!=" "*" "*=" "/" "//" "/=" "&" "%" 
+  "^" "+" "+=" "<" "<<" "<=" "<>" "=" "==" ">"
+  ">=" ">>" "|" "and" "in" "is" "not" "or" ".." ] @operator
 
-[ 
-  "object" "atype" "tagtype" "true" "false" 
-  "none" "var" "static" "capture" "as" "each"
-] @keyword
+[ "func" "object" "atype" "tagtype" "true" "false" 
+  "none" "var" "static" "capture" "as" "each" ] @keyword
 
-[
- "else" "if" "match" "then" 
-] @conditional
+[ "else" "if" "match" "then" ] @conditional
 
-[
- "do" "for" "while" "break" "continue" 
-] @repeat
+[ "do" "for" "while" "break" "continue" ] @repeat
 
-[
- "import" "export"
-] @include
+[ "import" "export" ] @include
 
-[
- "try" "catch" "recover" 
-] @exception
-
-[
- ".."
-] @operator.range
-
-[
- "each"
-] @keyword
+[ "try" "catch" "recover" ] @exception
