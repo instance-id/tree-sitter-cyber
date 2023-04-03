@@ -1,7 +1,10 @@
 ;identifiers
 ; (identifier) @variable
 ;  ((identifier) @constant
-;  (#lua-match? @constant "^[A-Z][A-Z_0-9]*$"))
+;   (#lua-match? @type "^[A-Z][A-Z_0-9]*$"))
+
+; ((identifier) @function.method
+;  (#is-not? local))
 
 (var_ident) @variable
 (type_ident) @type
@@ -10,8 +13,6 @@
 (exception_identifiers) @exception
 (repeat_identifiers) @repeat
 (builtin_function) @function.builtin
-
-; (keyword) @variable
 
 ; Shebang
 (shebang) @comment
@@ -25,29 +26,24 @@
 ; String
 (string) @string
 
-; Function Declaration
-; (func) @keyword.function
+(identifier) @variable
 
-; (statement_indicator) @punctuation.delimiter
-
-; ":" @punctuation.delimiter
-[
-  ","
-  ":"
-] @punctuation.delimiter
-
+; --| Statements ------------
+; --|------------------------
 ; Import statement
 (import_statement 
   "import" @include
+  (identifier) @variable
   (string) @module)
 
 (local_declaration 
-  (identifier) @local.definition
+  (identifier) @variable
   (#set! parent_highlight_name "local"))
 
-; Function definition
-
-(function_definition) @function
+; Var declaration
+(var_declaration
+  "var" @keyword 
+  (identifier) @variable)
 
 (function_definition 
   "func" @keyword.function
@@ -57,61 +53,85 @@
   (identifier) @function
   (parameter_list) @parameters)
 
-(call_identifier) @function.call
-(call_expression)  @function.call
+; Object declaration
+(object_declaration
+  "type"  @keyword
+  (type_ident) @type.definition
+  "object" @keyword)
 
-; (call_expression 
-;   name: (field_expression) @function)
+(expression_statement
+  (call_expression) @function.call)  
 
-(call_expression 
-  (identifier) @function.call
-  "(" @punctuation.bracket
-  ")" @punctuation.bracket)
+; --| Conditional -----------
+(if_statement 
+  "if" @conditional)
 
-(call_expression 
-  (identifier) @property
-  (call_identifier) @function.call)
+; --| Iteration -------------
+; Loop statement
+(loop_statement 
+  "loop" @repeat)
+
+; While loop
+(while_loop 
+  "while" @repeat)
+
+(for_range_loop 
+  "for" @repeat 
+  (identifier) @variable)
+
+(for_iterable_loop 
+  "for" @repeat 
+  (identifier) @variable)
+
+(for_optional_loop 
+  "for" @repeat 
+  (identifier) @variable)
+
+(object_initializer 
+  (type_ident) @type 
+  "{" @punctuation 
+  "}" @punctuation)
+
+(tagtype_declaration 
+  "tagtype" @keyword 
+  (identifier) @type)
+
+; Return statement
+(return_statement 
+  "return" @keyword.return)
+
+; Block
+(block 
+  (#set! parent_highlight_name "block"))
+
+; --| Expression ------------
+; --|------------------------
+
+(assignment 
+  left: (_) @variable)
+
+; Parameter list
+(parameter_list 
+  (parameter) @variable 
+  (#set! parent_highlight_name "parameters"))
+
+(parameter 
+  (identifier) @variable)
 
 (field_expression 
   "." @punctuation.delimiter)
 
-(field_expression 
-  object: (identifier) @property
-  (accessor) @property)
+(call_expression
+  (identifier) @function.call)
 
-(field_expression 
-  object: (identifier) @property
-  (call_identifier) @function.call) 
-
-(field_expression 
-  object: (identifier) @property
-  (identifier) @property) 
+(call_expression
+  (field_expression
+    object: (identifier) @variable
+    (identifier) @function.call))
 
 (key_value_pair) @property
 
-(for_range_loop 
-  "for" @keyword 
-  (identifier) @variable)
-
-(for_iterable_loop 
-  "for" @keyword 
-  (identifier) @variable)
-
-(for_optional_loop 
-  "for" @keyword 
-  (identifier) @variable)
-
 (map_literal 
-  "{" @punctuation 
-  "}" @punctuation)
-
-; Object declaration
-(object_declaration
-  "object" @keyword.class 
-  (identifier) @type)
-
-(object_initializer 
-  (identifier) @type 
   "{" @punctuation 
   "}" @punctuation)
 
@@ -123,52 +143,17 @@
   ":" @punctuation
   (identifier) @property)
 
-(assignment 
-  left: (pattern) @property
-  right: (identifier) @property)
-
-(tagtype_declaration 
-  "tagtype" @keyword 
-  (identifier) @type)
-
-; Parameter list
-(parameter_list 
-  (parameter) @variable 
-  (#set! parent_highlight_name "parameters"))
-
-(parameter 
-  (identifier) @variable)
-
-; Var declaration
-(var_declaration
-  "var" @keyword 
-  (identifier) @variable)
-
-; Block
-(block 
-  (#set! parent_highlight_name "block"))
-
-; If statement
-(if_statement 
-  "if" @keyword)
-
-; Loop statement
-(loop_statement 
-  "loop" @keyword)
-
-; While loop
-(while_loop 
-  "while" @keyword)
-
 (coinit_expression 
-  (coinit) @keyword
-  (coinit_declaration) @function)
+  (coinit) @keyword.coroutine)
+
+(coinit_declaration
+  (identifier) @function)
 
 (coresume_expression 
-  (coresume) @keyword)
+  (coresume) @keyword.coroutine)
 
 (coyield_statement 
-  (coyield) @keyword)
+  (coyield) @keyword.coroutine)
 
 ; Interpolated strings
 (interpolated_string 
@@ -184,9 +169,9 @@
 (tag_expression 
   "#" @tag)
 
-; Return statement
-(return_statement 
-  "return" @keyword)
+; --| Keywords --------------
+; --|------------------------
+[ "," ":" ] @punctuation.delimiter
 
 [ "(" ")" "[" "]" "{" "}" ] @punctuation.bracket
 
@@ -194,8 +179,11 @@
   "^" "+" "+=" "<" "<<" "<=" "<>" "=" "==" ">"
   ">=" ">>" "|" "and" "in" "is" "not" "or" ".." ] @operator
 
-[ "func" "object" "atype" "tagtype" "true" "false" 
-  "none" "var" "static" "capture" "as" "each" ] @keyword
+[ "type" "var" "static" "capture" "as" "each" ] @keyword
+
+[ "print" ] @function.builtin
+
+[ "tagtype" "atype" "none" "any" ] @type.builtin
 
 [ "else" "if" "match" "then" ] @conditional
 
@@ -204,3 +192,4 @@
 [ "import" "export" ] @include
 
 [ "try" "catch" "recover" ] @exception
+

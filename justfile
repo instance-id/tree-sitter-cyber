@@ -16,6 +16,30 @@ script := 'test_script.cy'
 # --| Actions -------------------------
 # --|----------------------------------
 
+# --| Test ------------------
+test run=script: 
+  just _test-{{os()}} {{run}}
+
+_test-linux run=script:
+  #!{{shebang}}
+  
+  try{ tree-sitter test; $canContinue = $? }
+  catch{ echo "Failed to test parser"; $canContinue = $false }
+
+  if ($canContinue) { echo "Test Successful" }
+  else { echo "Failed Testing"; just update; exit 1 }
+
+  try{ tree-sitter parse ./sample_scripts/{{run}}; $canContinue = $? }
+  catch{ echo "Failed to parse sample script"; $canContinue = $false }
+
+  if ($canContinue) { echo "Parsed sample script" }
+  else { echo "Failed to Parse Sample Script"; just update; exit 1 }
+
+  if($canContinue){ just update } 
+
+_test-windows run=script:
+  # Do Windows Things
+
 # --| Build -----------------
 build run=script: 
   just _build-{{os()}} {{run}}
@@ -33,7 +57,7 @@ _build-linux run=script:
   # catch{ echo "Failed to build scanner"; $canContinue = $false }
 
   echo "Can continue: $canContinue"
-  try{ tree-sitter generate; $canContinue = $? }
+  try{ $env:CYBER_TREE_SITTER_DEBUG=true; tree-sitter generate; $canContinue = $? }
   catch{ echo "Failed to generate parser"; $canContinue = $false }
   
   if($canContinue){
@@ -72,6 +96,7 @@ update:
 
 _update-linux:
   cp ./queries/highlights.scm ../nvim-cyber/queries/cyber/highlights.scm
+  cp ./queries/locals.scm ../nvim-cyber/queries/cyber/locals.scm
 
 _update-windows:
   # Do Windows Things

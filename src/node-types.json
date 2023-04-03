@@ -24,10 +24,6 @@
             "named": true
           },
           {
-            "type": "call_identifier",
-            "named": true
-          },
-          {
             "type": "catch_expression",
             "named": true
           },
@@ -156,10 +152,6 @@
             "named": true
           },
           {
-            "type": "call_identifier",
-            "named": true
-          },
-          {
             "type": "catch_expression",
             "named": true
           },
@@ -249,10 +241,6 @@
           },
           {
             "type": "call_expression",
-            "named": true
-          },
-          {
-            "type": "call_identifier",
             "named": true
           },
           {
@@ -389,10 +377,6 @@
           },
           {
             "type": "call_expression",
-            "named": true
-          },
-          {
-            "type": "call_identifier",
             "named": true
           },
           {
@@ -572,10 +556,6 @@
             "named": true
           },
           {
-            "type": "call_identifier",
-            "named": true
-          },
-          {
             "type": "catch_expression",
             "named": true
           },
@@ -672,10 +652,6 @@
             "named": true
           },
           {
-            "type": "call_identifier",
-            "named": true
-          },
-          {
             "type": "catch_expression",
             "named": true
           },
@@ -769,112 +745,6 @@
           "named": true
         },
         {
-          "type": "call_identifier",
-          "named": true
-        },
-        {
-          "type": "catch_expression",
-          "named": true
-        },
-        {
-          "type": "coinit_expression",
-          "named": true
-        },
-        {
-          "type": "comparison_operator",
-          "named": true
-        },
-        {
-          "type": "coresume_expression",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "interpolated_string",
-          "named": true
-        },
-        {
-          "type": "map_literal",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "object_initializer",
-          "named": true
-        },
-        {
-          "type": "panic_expression",
-          "named": true
-        },
-        {
-          "type": "slice",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "tag_expression",
-          "named": true
-        },
-        {
-          "type": "try_expression",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "call_identifier",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "binary_operator",
-          "named": true
-        },
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "boolean_operator",
-          "named": true
-        },
-        {
-          "type": "call_expression",
-          "named": true
-        },
-        {
-          "type": "call_identifier",
-          "named": true
-        },
-        {
           "type": "catch_expression",
           "named": true
         },
@@ -959,10 +829,6 @@
         },
         {
           "type": "call_expression",
-          "named": true
-        },
-        {
-          "type": "call_identifier",
           "named": true
         },
         {
@@ -1069,10 +935,6 @@
           "named": true
         },
         {
-          "type": "call_identifier",
-          "named": true
-        },
-        {
           "type": "catch_expression",
           "named": true
         },
@@ -1165,6 +1027,88 @@
     "type": "comparison_operator",
     "named": true,
     "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "boolean_operator",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "catch_expression",
+            "named": true
+          },
+          {
+            "type": "coinit_expression",
+            "named": true
+          },
+          {
+            "type": "comparison_operator",
+            "named": true
+          },
+          {
+            "type": "coresume_expression",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "interpolated_string",
+            "named": true
+          },
+          {
+            "type": "map_literal",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "panic_expression",
+            "named": true
+          },
+          {
+            "type": "slice",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "tag_expression",
+            "named": true
+          },
+          {
+            "type": "try_expression",
+            "named": true
+          }
+        ]
+      },
       "operators": {
         "multiple": true,
         "required": true,
@@ -1210,93 +1154,89 @@
             "named": false
           }
         ]
+      },
+      "right": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "boolean_operator",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "catch_expression",
+            "named": true
+          },
+          {
+            "type": "coinit_expression",
+            "named": true
+          },
+          {
+            "type": "comparison_operator",
+            "named": true
+          },
+          {
+            "type": "coresume_expression",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "interpolated_string",
+            "named": true
+          },
+          {
+            "type": "map_literal",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "panic_expression",
+            "named": true
+          },
+          {
+            "type": "slice",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "tag_expression",
+            "named": true
+          },
+          {
+            "type": "try_expression",
+            "named": true
+          }
+        ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "binary_operator",
-          "named": true
-        },
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "boolean_operator",
-          "named": true
-        },
-        {
-          "type": "call_expression",
-          "named": true
-        },
-        {
-          "type": "call_identifier",
-          "named": true
-        },
-        {
-          "type": "catch_expression",
-          "named": true
-        },
-        {
-          "type": "coinit_expression",
-          "named": true
-        },
-        {
-          "type": "comparison_operator",
-          "named": true
-        },
-        {
-          "type": "coresume_expression",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "interpolated_string",
-          "named": true
-        },
-        {
-          "type": "map_literal",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "object_initializer",
-          "named": true
-        },
-        {
-          "type": "panic_expression",
-          "named": true
-        },
-        {
-          "type": "slice",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "tag_expression",
-          "named": true
-        },
-        {
-          "type": "try_expression",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -1336,10 +1276,6 @@
           },
           {
             "type": "call_expression",
-            "named": true
-          },
-          {
-            "type": "call_identifier",
             "named": true
           },
           {
@@ -1457,10 +1393,6 @@
           "named": true
         },
         {
-          "type": "call_identifier",
-          "named": true
-        },
-        {
           "type": "catch_expression",
           "named": true
         },
@@ -1545,10 +1477,6 @@
           },
           {
             "type": "call_expression",
-            "named": true
-          },
-          {
-            "type": "call_identifier",
             "named": true
           },
           {
@@ -1640,10 +1568,6 @@
             "named": true
           },
           {
-            "type": "call_identifier",
-            "named": true
-          },
-          {
             "type": "catch_expression",
             "named": true
           },
@@ -1728,10 +1652,6 @@
         },
         {
           "type": "call_expression",
-          "named": true
-        },
-        {
-          "type": "call_identifier",
           "named": true
         },
         {
@@ -1833,10 +1753,6 @@
           },
           {
             "type": "call_expression",
-            "named": true
-          },
-          {
-            "type": "call_identifier",
             "named": true
           },
           {
@@ -1962,10 +1878,6 @@
             "named": true
           },
           {
-            "type": "call_identifier",
-            "named": true
-          },
-          {
             "type": "catch_expression",
             "named": true
           },
@@ -2078,10 +1990,6 @@
             "named": true
           },
           {
-            "type": "call_identifier",
-            "named": true
-          },
-          {
             "type": "catch_expression",
             "named": true
           },
@@ -2164,10 +2072,6 @@
             "named": true
           },
           {
-            "type": "call_identifier",
-            "named": true
-          },
-          {
             "type": "catch_expression",
             "named": true
           },
@@ -2247,10 +2151,6 @@
           },
           {
             "type": "call_expression",
-            "named": true
-          },
-          {
-            "type": "call_identifier",
             "named": true
           },
           {
@@ -2471,10 +2371,6 @@
             "named": true
           },
           {
-            "type": "call_identifier",
-            "named": true
-          },
-          {
             "type": "catch_expression",
             "named": true
           },
@@ -2558,10 +2454,6 @@
           },
           {
             "type": "call_expression",
-            "named": true
-          },
-          {
-            "type": "call_identifier",
             "named": true
           },
           {
@@ -2682,10 +2574,6 @@
         },
         {
           "type": "call_expression",
-          "named": true
-        },
-        {
-          "type": "call_identifier",
           "named": true
         },
         {
@@ -2846,10 +2734,6 @@
           "named": true
         },
         {
-          "type": "call_identifier",
-          "named": true
-        },
-        {
           "type": "catch_expression",
           "named": true
         },
@@ -2937,10 +2821,6 @@
             "named": true
           },
           {
-            "type": "call_identifier",
-            "named": true
-          },
-          {
             "type": "catch_expression",
             "named": true
           },
@@ -3023,10 +2903,6 @@
             "named": true
           },
           {
-            "type": "call_identifier",
-            "named": true
-          },
-          {
             "type": "catch_expression",
             "named": true
           },
@@ -3091,21 +2967,6 @@
     }
   },
   {
-    "type": "keyword_identifier",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "local_declaration",
     "named": true,
     "fields": {
@@ -3148,10 +3009,6 @@
         },
         {
           "type": "call_expression",
-          "named": true
-        },
-        {
-          "type": "call_identifier",
           "named": true
         },
         {
@@ -3291,10 +3148,6 @@
             "named": true
           },
           {
-            "type": "call_identifier",
-            "named": true
-          },
-          {
             "type": "catch_expression",
             "named": true
           },
@@ -3393,10 +3246,6 @@
             "named": true
           },
           {
-            "type": "call_identifier",
-            "named": true
-          },
-          {
             "type": "catch_expression",
             "named": true
           },
@@ -3483,7 +3332,7 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "type_ident",
             "named": true
           }
         ]
@@ -3499,7 +3348,7 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "type_ident",
             "named": true
           }
         ]
@@ -3538,10 +3387,6 @@
         },
         {
           "type": "call_expression",
-          "named": true
-        },
-        {
-          "type": "call_identifier",
           "named": true
         },
         {
@@ -3657,6 +3502,10 @@
       "required": true,
       "types": [
         {
+          "type": "call_expression",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -3666,10 +3515,6 @@
         },
         {
           "type": "index_expression",
-          "named": true
-        },
-        {
-          "type": "keyword_identifier",
           "named": true
         },
         {
@@ -3705,10 +3550,6 @@
         },
         {
           "type": "call_expression",
-          "named": true
-        },
-        {
-          "type": "call_identifier",
           "named": true
         },
         {
@@ -3883,10 +3724,6 @@
           "named": true
         },
         {
-          "type": "call_identifier",
-          "named": true
-        },
-        {
           "type": "catch_expression",
           "named": true
         },
@@ -3985,10 +3822,6 @@
           },
           {
             "type": "call_expression",
-            "named": true
-          },
-          {
-            "type": "call_identifier",
             "named": true
           },
           {
@@ -4177,10 +4010,6 @@
           "named": true
         },
         {
-          "type": "call_identifier",
-          "named": true
-        },
-        {
           "type": "catch_expression",
           "named": true
         },
@@ -4310,10 +4139,6 @@
           "named": true
         },
         {
-          "type": "call_identifier",
-          "named": true
-        },
-        {
           "type": "catch_expression",
           "named": true
         },
@@ -4403,10 +4228,6 @@
         },
         {
           "type": "call_expression",
-          "named": true
-        },
-        {
-          "type": "call_identifier",
           "named": true
         },
         {
@@ -4513,10 +4334,6 @@
           },
           {
             "type": "call_expression",
-            "named": true
-          },
-          {
-            "type": "call_identifier",
             "named": true
           },
           {
@@ -4901,6 +4718,10 @@
   },
   {
     "type": "try",
+    "named": false
+  },
+  {
+    "type": "type",
     "named": false
   },
   {

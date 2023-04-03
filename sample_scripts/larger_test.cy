@@ -3,7 +3,6 @@
 import os 'os'
 args = os.args()
 
-
 foo = 1
 if true:
   foo = 123
@@ -14,6 +13,7 @@ func fib(n int) int:
     return n
   return fib(n - 1) + fib(n - 2)
 
+fib(1)
 count = 0    -- Counts number of recursive calls to fib.
 fiber = coinit fib(28)
 
@@ -29,11 +29,11 @@ for str[cur..].indexChar('c') as i:
   print 'Found char at {cur + i}.'
   cur += i + 1
 
-object Node:
+type Node object:
   data any
   next Node
   func new(data):
-    return Node{ data: data, next: none }
+    return Node { data: data, next: none }
   func insert(self, node):
     if self.next == none: self.next = node
     else:
@@ -43,6 +43,7 @@ object Node:
 list = Node.new(1)
 list.insert(Node.new(2))
 list.insert(Node.new(3))
+
 
 while list != none:
   print list.data

@@ -1,19 +1,36 @@
 const { key_val_arg, commaSep1, sep1, command, keyword } = require("./rules/utils");
 
 const PREC = {
-  INDENT: 1, DEDENT: 1, slice: -3, lambda: -2, typed_parameter: -1, conditional: -1, parenthesized_expression: 1, or: 10, and: 11, not: 12, compare: 13,
-  bitwise_or: 14, bitwise_and: 15, xor: 16, shift: 17, plus: 18, times: 19, unary: 20, power: 21, call: 22, recover_block: 23, coyield: 24, block: 25,
+  INDENT: 1, DEDENT: 1, slice: -3, lambda: -2, typed_parameter: -1, conditional: -1, parenthesized_expression: 1,
+  or: 10, 
+  and: 11, 
+  not: 12, 
+  compare: 13,
+  bitwise_or: 14, 
+  bitwise_and: 15, 
+  xor: 16, 
+  shift: 17, 
+  plus: 18, 
+  times: 19, 
+  unary: 20, power: 21, call: 22, recover_block: 23, coyield: 24, block: 25,
 };
 
-const WHITESPACE = /[ \t]/;
+const KPREC = {
+  type: 0,
+  var: 1,
+  func: 2,
+  builtin: 3,
+  repeat: 4,
+  ident: 5,
+}
 
 module.exports = grammar({
   name: "cyber",
 
   extras: ($) => [/\s/, /[\t ]/, $.comment],
-  word: ($) => $.name,
+  word: ($) => $.keyword,
 
-  inline: ($) => [$._statement, $._indent, $._dedent, $._newline],
+  inline: ($) => [$._statement, $._indent, $._dedent, $._newline, $.keyword_identifier],
   externals: ($) => [
     $._scope_start,
     $._func_scope_start,
@@ -24,11 +41,18 @@ module.exports = grammar({
     $._NEWLINE, 
     $._line
   ],
-  conflicts: ($) => [[$._expression, $.pattern], [$.block, $.inline_block]],
+  conflicts: ($) => [
+    [$._expression, $.pattern], 
+    [$.block, $.inline_block],
+    [$.accessor, $.field_expression, $.try_expression],
+    [$.accessor, $.field_expression, $.catch_expression],
+    [$.accessor, $.field_expression, $.panic_expression]
+  ],
 
   rules: {
     source_file: ($) => seq(optional($.shebang), repeat($._statement)),
 
+    // @ts-ignore
     keyword: ($) => /[a-zA-Z_](\w|#)*/,
     type: ($) => $.identifier,
     _whitespace: ($) => /(\s|\\\r?\n)+/,
@@ -49,12 +73,12 @@ module.exports = grammar({
         $.exception_identifiers,
         $.repeat_identifiers,
         $.builtin_function,
-        /[a-zA-Z_][a-zA-Z0-9_]*/
+        prec(KPREC.ident, /[a-z_][a-zA-Z0-9_-]*/)
     )),
-    var_ident: $ => choice(/[a-z]/, /[a-z][a-z0-9_]*[a-z0-9]/),
-    type_ident: $ => choice(/[A-Z]/, /[A-Z][A-Za-z0-9]*[A-Za-z0-9]/),
 
-    builtin_type: ($) => prec(3, choice(
+    var_ident: $ => prec(KPREC.var, choice(/[a-z]/, /[a-z][a-z0-9_]*[a-z0-9]/)),
+    type_ident: $ => prec(KPREC.type, choice(/[A-Z][a-z0-9_]*[a-z0-9]/)),
+    builtin_type: ($) => prec(KPREC.builtin, choice(
       "int", "float", "string", "bool", "none", "any", "void", "static", "capture", 
       "object", "atype", "tagtype", "true", "false", "none", "static", "capture", "as"
     )),
@@ -149,7 +173,9 @@ module.exports = grammar({
     parameter: ($) => seq(field("name", $.identifier), optional($.builtin_type)),
 
     object_declaration: ($) => prec.left(12, seq(
-      "object", field("type", $.identifier),
+      "type",
+      field("type", $.type_ident),
+      "object",
       optional(field("body", $._block_group)),
     )),
 
@@ -171,10 +197,12 @@ module.exports = grammar({
     // --| Statements -----------------
     // --|-----------------------------
     // Expression statement
-    expression_statement: ($) => prec.left(11, seq(
+    expression_statement: ($) => prec.left(PREC.call, seq(
       field("expression", $._expression))
     ),
 
+    // --| If/Else --------------------
+    // --|-----------------------------
     if_statement: ($) => prec.left(4, seq(
       "if", $._if_statement,
       optional(field("else", $._else_statement))
@@ -198,6 +226,8 @@ module.exports = grammar({
         field("body", $._block_group)
     )),
 
+    // --| Match Statements -----------
+    // --|-----------------------------
     match_statement: ($) => seq(
       "match",
       field("subject", $._expression),
@@ -260,16 +290,6 @@ module.exports = grammar({
       field("body", $._block_group)
     ),
 
-    slice: ($) => prec(PREC.slice, seq(
-      field("object", $._expression),
-      "[",
-      choice(
-        seq(field("start", $.identifier), ".."),
-        seq("..", field("end", $.identifier))
-      ),
-      "]"
-    )),
-
     // --| Other Statements ------
     // --|------------------------
     coyield_statement: ($) => prec(PREC.coyield, seq(field("coyield", $.coyield), $._newline)),
@@ -320,34 +340,24 @@ module.exports = grammar({
         $.binary_operator,
         $.boolean_operator,
         $.comparison_operator,
-        $.call_expression,
-        $.call_identifier,
         $.object_initializer,
         $.slice,
         $.interpolated_string,
         $.field_expression,
-        prec(1, $.try_expression),
-        prec(1, $.catch_expression),
-        prec(1, $.panic_expression),
-        prec(1, $.coinit_expression),
-        prec(2, $.coresume_expression),
+        prec(11, $.try_expression),
+        prec(11, $.catch_expression),
+        prec(11, $.panic_expression),
+        prec(11, $.coinit_expression),
+        prec(11, $.coresume_expression),
         prec(11, $.map_literal),
-        prec(10, $.tag_expression)
+        prec(12, $.tag_expression),
+        prec(PREC.call +5, $.call_expression),
       ),
 
-    _simple_expression: ($) => choice(
-      $.identifier,
-      $.number,
-      $.string,
-      $.boolean,
-      $.binary_operator,
-      $.boolean_operator,
-      $.comparison_operator,
-      $.call_expression,
-      $.call_identifier,
-    ),
-
-    boolean_operator: ($) => choice(prec.left(PREC.and, seq(
+    // --| Operators ------------------
+    // --|-----------------------------
+    boolean_operator: ($) => choice(
+     prec.left(PREC.and, seq(
       field("left", $._expression),
       field("operator", "and"),
       field("right", $._expression)
@@ -383,13 +393,16 @@ module.exports = grammar({
             ))));
     },
 
-    comparison_operator: ($) => prec.left(PREC.compare,
-      seq($._expression, repeat1(seq(
-        field("operators", choice("<", "<=", "==", "!=", ">=", ">", "<>", "in",
-          seq("not", "in"), "is", seq("is", "not"))), $._expression
-      )))
-    ),
+    comparison_operator: ($) => prec.left(PREC.compare, seq(
+      field("left",$._expression),
+      repeat1(seq( field("operators", choice(
+        "<", "<=", "==", "!=", ">=", ">", "<>", "in",
+        seq("not", "in"), "is", seq("is", "not"))), 
+      field("right", $._expression),
+    )))),
 
+    // --| Assignment -----------------
+    // --|-----------------------------
     assignment: ($) =>
       seq(
         field("left", $._left_hand_side),
@@ -397,7 +410,13 @@ module.exports = grammar({
         field("right", $._right_hand_side)
       ),
 
-    _left_hand_side: ($) => choice($.pattern /*, $.pattern_list */),
+    _left_hand_side: ($) => choice($.pattern),
+
+    _right_hand_side: ($) => choice(
+      $._expression,
+      $.expression_list,
+      $.assignment
+    ),
 
     pattern: ($) =>
       choice(
@@ -406,45 +425,47 @@ module.exports = grammar({
         $.index_expression,
         $.range_expressions,
         $.tag_expression,
+        $.call_expression,
         $.field_expression,
       ),
 
-    pattern_list: ($) => prec.left(5, seq($.pattern, commaSep1($.pattern))),
-
-    _right_hand_side: ($) => choice(
-      $._expression,
-      $.expression_list,
-      $.assignment
+    pattern_list: ($) => prec.left(5, seq(
+      $.pattern, commaSep1($.pattern))
     ),
 
-    accessor: ($) => prec.right(repeat1( seq(
+    expression_list: ($) => prec.left(11, seq(
+      $._expression, repeat1(seq(",", $._expression)))
+    ),
+
+    // --| Field/Accessor -------------
+    // --|-----------------------------
+    accessor: ($) => prec(PREC.call, repeat1(seq(
       field("value", $._expression), ".",
     ))),   
 
-    // --| Field/Accessor -------------
-    field_expression: ($) => prec.left(PREC.call,
+    field_expression: ($) => prec(PREC.call,
       seq(
         field("object", $._expression), ".",
         choice(
-          prec(PREC.call + 1, $.accessor),
-          prec(PREC.call + 1, $.call_identifier),
-          prec(PREC.call + 2, $._expression),
-          // prec(PREC.call, $.identifier),
+          prec(PREC.call - 1, $.accessor),
+          prec(PREC.call, $._expression),
         )
       )),
 
     // --| Functions ------------------
+    // --|-----------------------------
     call_identifier: ($) => prec.left(PREC.call - 2, seq(
       field("name", $.identifier), "(", optional(commaSep1($._expression)), ")"
     )),
 
-    call_expression: ($) => prec(PREC.call, seq(
+    call_expression: ($) => prec.left(PREC.call +5 , seq(
       $._expression, "(", optional(commaSep1($._expression)), ")"
     )),
 
     // --| Object ---------------------
+    // --|-----------------------------
     object_initializer: ($) => prec.left(PREC.call - 1, seq(
-      field("object", $.identifier), "{", optional(sep1($.member_assignment, ",")), "}"
+      field("object", $.type_ident), "{", optional(sep1($.member_assignment, ",")), "}"
     )),
 
     member_assignment: ($) => prec.left(PREC.call,
@@ -452,9 +473,11 @@ module.exports = grammar({
     ),
 
     argument_list: ($) => commaSep1($._expression),
+    parenthesized_expression: ($) => prec.left(10, seq("(", $._expression, ")")),
 
-    // --| Exception Handling ---------
-    try_expression: ($) => prec.left(1, seq("try", $._expression)),
+    // --| Exception ------------------
+    // --|-----------------------------
+    try_expression: ($) => prec.left(PREC.call - 10, seq("try", $._expression)),
 
     catch_expression: ($) => prec.left(1, seq(
       "catch",
@@ -463,6 +486,29 @@ module.exports = grammar({
       optional(seq("as", $.identifier, "then", $._expression))
     )),
 
+    panic_expression: ($) => prec.left(11, seq("panic", $._expression)),
+
+    // --| Tags -----------------------
+    // --|-----------------------------
+    tag_expression: ($) => seq("#", field("tag", $.identifier)),
+
+    // --| Concurrency ----------------
+    // --|-----------------------------
+    coinit_expression: ($) => seq(
+      field("coinit", $.coinit),
+      $.coinit_declaration   
+    ),
+
+    coinit_declaration: ($) => seq(
+      field("coinit_function", $.identifier),
+      optional(seq(".", repeat(seq($.identifier,".")))),
+      seq("(", optional(commaSep1($._expression)), ")"),
+    ),
+
+    coresume_expression: ($) => seq(field("coresume", $.coresume), field("operand", $._expression)),
+
+    // --| Array/Map ------------------
+    // --|-----------------------------
     range_identifier: ($) => "..",
     range_expressions: ($) => choice($.range_expression),
 
@@ -472,34 +518,19 @@ module.exports = grammar({
       field("right", $.identifier)
     )),
 
-    panic_expression: ($) => prec.left(11, seq("panic", $._expression)),
-    
     index_expression: ($) => prec.left(1, seq($._expression, "[", $._expression, "]")),
-
-    parenthesized_expression: ($) => prec.left(10, seq("(", $._expression, ")")),
 
     key_value_pair: ($) => seq(field("key", $._expression), ":", field("value", $._expression)),
 
-    tag_expression: ($) => seq("#", field("tag", $.identifier)),
-
-    expression_list: ($) => prec.left(11, seq(
-      $._expression, repeat1(seq(",", $._expression)))
-    ),
-
-    coinit_expression: ($) => prec(PREC.call, seq(
-      field("coinit", $.coinit),
-      $.coinit_declaration   
+    slice: ($) => prec(PREC.slice, seq(
+      field("object", $._expression),
+      "[",
+      choice(
+        seq(field("start", $.identifier), ".."),
+        seq("..", field("end", $.identifier))
+      ),
+      "]"
     )),
-
-    coinit_declaration: ($) => prec(PREC.call, seq(
-      field("coinit_function", $.identifier),
-      optional(seq(".", repeat(seq($.identifier,".")))),
-      seq("(", optional(commaSep1($._expression)), ")"),
-    )),
-
-    coresume_expression: ($) => prec(PREC.call - 1,
-      seq(field("coresume", $.coresume), field("operand", $._expression))
-    ),
 
     map_literal: ($) => seq( 
       "{", optional(seq($.key_value_pair, repeat(seq(",", $.key_value_pair)))), "}"
@@ -508,15 +539,9 @@ module.exports = grammar({
     interpolated_string: ($) => prec.left(11, seq('"', repeat(choice(/[^"{]+/, $.interpolation)), '"')),
     interpolation: ($) => prec.left(12, seq("{", $._expression, "}")),
 
+    // --| Keywords/Indicators --------
+    // --|-----------------------------
     _statement_indicator: ($) => token.immediate(":"),
-    // statement_indicator: ($) => seq(
-      // $.block_indicator,
-      // repeat($._whitespace),
-      // choice(
-      //   $._inline_statement,
-      //   $._newline
-      // )
-    // ),
 
     true: ($) => "true",
     false: ($) => "false",
