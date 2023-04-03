@@ -6,13 +6,14 @@
 ; ((identifier) @function.method
 ;  (#is-not? local))
 
-(var_ident) @variable
-(type_ident) @type
+(var_identifier) @variable
+(type_identifier) @type
 (import_export) @include
 (builtin_type) @type.builtin
 (exception_identifiers) @exception
 (repeat_identifiers) @repeat
 (builtin_function) @function.builtin
+(self) @parameter
 
 ; Shebang
 (shebang) @comment
@@ -49,14 +50,21 @@
   "func" @keyword.function
   (function_declaration) @function)
 
+(function_definition 
+  "func" @keyword.function
+  (method_declaration) @function.method)
+
 (function_declaration
   (identifier) @function
   (parameter_list) @parameters)
 
+; (method_declaration 
+;   (self) @variable)
+
 ; Object declaration
 (object_declaration
   "type"  @keyword
-  (type_ident) @type.definition
+  (type_identifier) @type.definition
   "object" @keyword)
 
 (expression_statement
@@ -88,7 +96,7 @@
   (identifier) @variable)
 
 (object_initializer 
-  (type_ident) @type 
+  (type_identifier) @type 
   "{" @punctuation 
   "}" @punctuation)
 
@@ -112,11 +120,11 @@
 
 ; Parameter list
 (parameter_list 
-  (parameter) @variable 
+  (parameter) @parameter 
   (#set! parent_highlight_name "parameters"))
 
 (parameter 
-  (identifier) @variable)
+  (identifier) @parameter)
 
 (field_expression 
   "." @punctuation.delimiter)

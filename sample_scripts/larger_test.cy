@@ -45,6 +45,21 @@ list.insert(Node.new(2))
 list.insert(Node.new(3))
 
 
+type Node object:
+    value
+    next
+
+    -- A static function.
+    func create():
+        return Node{ value: 123, next: none }
+
+    -- A method.
+    func dump(self):
+        print self.value
+
+n = Node.create()
+n.dump()
+
 while list != none:
   print list.data
   list = list.next

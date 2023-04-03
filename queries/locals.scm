@@ -1,5 +1,5 @@
 
-(var_ident) @definition.var
+(var_identifier) @definition.var
 
 (import_statement
   (identifier) @definition.var)
@@ -23,11 +23,11 @@
     (identifier) @definition.parameter))
 
 (object_declaration
-  ((type_ident) @variable
+  ((type_identifier) @variable
   (#set! "definition.type.scope" "parent"))) @definition.type
 
 (object_initializer
-  (type_ident) @reference.type)
+  (type_identifier) @reference.type)
 
 (function_definition (block) @scope)
 (object_declaration (block) @scope)

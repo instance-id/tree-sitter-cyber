@@ -2289,6 +2289,10 @@
         {
           "type": "function_declaration",
           "named": true
+        },
+        {
+          "type": "method_declaration",
+          "named": true
         }
       ]
     }
@@ -2322,11 +2326,11 @@
           "named": true
         },
         {
-          "type": "type_ident",
+          "type": "type_identifier",
           "named": true
         },
         {
-          "type": "var_ident",
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -3310,6 +3314,51 @@
     }
   },
   {
+    "type": "method_declaration",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "parameters": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "method_parameter_list",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "method_parameter_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "parameter",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "object_declaration",
     "named": true,
     "fields": {
@@ -3332,7 +3381,7 @@
         "required": true,
         "types": [
           {
-            "type": "type_ident",
+            "type": "type_identifier",
             "named": true
           }
         ]
@@ -3348,7 +3397,7 @@
         "required": true,
         "types": [
           {
-            "type": "type_ident",
+            "type": "type_identifier",
             "named": true
           }
         ]
@@ -4202,7 +4251,7 @@
     }
   },
   {
-    "type": "type_ident",
+    "type": "type_identifier",
     "named": true,
     "fields": {}
   },
@@ -4294,7 +4343,7 @@
     }
   },
   {
-    "type": "var_ident",
+    "type": "var_identifier",
     "named": true,
     "fields": {}
   },
@@ -4691,6 +4740,10 @@
   {
     "type": "return",
     "named": false
+  },
+  {
+    "type": "self",
+    "named": true
   },
   {
     "type": "shebang",

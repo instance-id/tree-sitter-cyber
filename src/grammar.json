@@ -96,11 +96,11 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "var_ident"
+            "name": "var_identifier"
           },
           {
             "type": "SYMBOL",
-            "name": "type_ident"
+            "name": "type_identifier"
           },
           {
             "type": "SYMBOL",
@@ -133,7 +133,7 @@
         ]
       }
     },
-    "var_ident": {
+    "var_identifier": {
       "type": "PREC",
       "value": 1,
       "content": {
@@ -150,7 +150,7 @@
         ]
       }
     },
-    "type_ident": {
+    "type_identifier": {
       "type": "PREC",
       "value": 0,
       "content": {
@@ -701,8 +701,17 @@
             "value": "func"
           },
           {
-            "type": "SYMBOL",
-            "name": "function_declaration"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "function_declaration"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "method_declaration"
+              }
+            ]
           },
           {
             "type": "CHOICE",
@@ -756,12 +765,99 @@
         ]
       }
     },
+    "method_declaration": {
+      "type": "PREC_LEFT",
+      "value": 12,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "name",
+            "content": {
+              "type": "SYMBOL",
+              "name": "identifier"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "parameters",
+            "content": {
+              "type": "SYMBOL",
+              "name": "method_parameter_list"
+            }
+          }
+        ]
+      }
+    },
     "parameter_list": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
           "value": "("
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "parameter"
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": ","
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "parameter"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "method_parameter_list": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "SYMBOL",
+          "name": "self"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ","
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "CHOICE",
@@ -842,7 +938,7 @@
             "name": "type",
             "content": {
               "type": "SYMBOL",
-              "name": "type_ident"
+              "name": "type_identifier"
             }
           },
           {
@@ -2662,7 +2758,7 @@
             "name": "object",
             "content": {
               "type": "SYMBOL",
-              "name": "type_ident"
+              "name": "type_identifier"
             }
           },
           {
@@ -3310,6 +3406,10 @@
     "none": {
       "type": "STRING",
       "value": "none"
+    },
+    "self": {
+      "type": "STRING",
+      "value": "self"
     },
     "ident": {
       "type": "PATTERN",

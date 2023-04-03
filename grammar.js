@@ -66,8 +66,8 @@ module.exports = grammar({
     name: ($) => token(/[a-zA-Z_][a-zA-Z0-9_-]*/), // -- This order matters
     identifier: ($) => prec(2,                    // -- Swapping will error
      choice(
-        $.var_ident,
-        $.type_ident, 
+        $.var_identifier,
+        $.type_identifier, 
         $.builtin_type, 
         $.import_export,
         $.exception_identifiers,
@@ -76,8 +76,8 @@ module.exports = grammar({
         prec(KPREC.ident, /[a-z_][a-zA-Z0-9_-]*/)
     )),
 
-    var_ident: $ => prec(KPREC.var, choice(/[a-z]/, /[a-z][a-z0-9_]*[a-z0-9]/)),
-    type_ident: $ => prec(KPREC.type, choice(/[A-Z][a-z0-9_]*[a-z0-9]/)),
+    var_identifier: $ => prec(KPREC.var, choice(/[a-z]/, /[a-z][a-z0-9_]*[a-z0-9]/)),
+    type_identifier: $ => prec(KPREC.type, choice(/[A-Z][a-z0-9_]*[a-z0-9]/)),
     builtin_type: ($) => prec(KPREC.builtin, choice(
       "int", "float", "string", "bool", "none", "any", "void", "static", "capture", 
       "object", "atype", "tagtype", "true", "false", "none", "static", "capture", "as"
@@ -159,7 +159,7 @@ module.exports = grammar({
     // Static function declaration
     function_definition: ($) => prec(11, seq(
       "func",
-      $.function_declaration,
+      choice($.function_declaration, $.method_declaration),
       optional(field("return_type", $.identifier)),
       field("body", $._block_group)
     )),
@@ -169,12 +169,25 @@ module.exports = grammar({
       field("parameters", $.parameter_list),
     )),
 
+    method_declaration: ($) => prec.left(12, seq(
+      field("name", $.identifier),
+      field("parameters", $.method_parameter_list),
+    )),
+
     parameter_list: ($) => seq("(", optional(commaSep1($.parameter)), ")"),
+
+    method_parameter_list: ($) => seq(
+      "(",
+      $.self, optional(","), 
+      optional(commaSep1($.parameter)), 
+      ")"
+    ),
+
     parameter: ($) => seq(field("name", $.identifier), optional($.builtin_type)),
 
     object_declaration: ($) => prec.left(12, seq(
       "type",
-      field("type", $.type_ident),
+      field("type", $.type_identifier),
       "object",
       optional(field("body", $._block_group)),
     )),
@@ -465,7 +478,7 @@ module.exports = grammar({
     // --| Object ---------------------
     // --|-----------------------------
     object_initializer: ($) => prec.left(PREC.call - 1, seq(
-      field("object", $.type_ident), "{", optional(sep1($.member_assignment, ",")), "}"
+      field("object", $.type_identifier), "{", optional(sep1($.member_assignment, ",")), "}"
     )),
 
     member_assignment: ($) => prec.left(PREC.call,
@@ -546,6 +559,7 @@ module.exports = grammar({
     true: ($) => "true",
     false: ($) => "false",
     none: ($) => "none",
+    self: ($) => "self",
     ident: ($) => /[a-zA-Z\x80-\xff](_?[a-zA-Z0-9\x80-\xff])*/,
 
     boolean: ($) => choice("true", "false", "none"),
