@@ -384,7 +384,6 @@ module.exports = grammar({
         $.identifier,
         $.number,
         $.string,
-        // $.encoded_string,
         $.boolean,
         $.binary_operator,
         $.boolean_operator,
@@ -611,7 +610,6 @@ module.exports = grammar({
     index_expression: ($) => prec.left(1, seq(
       $._expression, 
       choice(
-        // "[", repeat(g$._expression), "]",
         $.slice,
         $.array_literal
     ))),
@@ -638,13 +636,11 @@ module.exports = grammar({
 
     array_literal: ($) => seq(
       "[",
-        // optional($._newline),
         optional(
           choice(
             prec.left(commaSep1($._expression)),
             repeat1(prec.left(seq($._expression, $._newline))),
         )),
-        // optional($._newline),
       "]"
     ),
 
