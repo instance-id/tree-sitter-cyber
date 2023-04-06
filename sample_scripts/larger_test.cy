@@ -25,6 +25,7 @@ print '{res} {count}'
 
 str = 'abc aabbcc acb aabb c'
 cur = 0
+
 for str[cur..].indexChar('c') as i:
   print 'Found char at {cur + i}.'
   cur += i + 1
@@ -44,20 +45,19 @@ list = Node.new(1)
 list.insert(Node.new(2))
 list.insert(Node.new(3))
 
-
-type Node object:
+type Node2 object:
     value
     next
 
     -- A static function.
     func create():
-        return Node{ value: 123, next: none }
+        return Node2{ value: 123, next: none }
 
     -- A method.
     func dump(self):
         print self.value
 
-n = Node.create()
+n = Node2.create()
 n.dump()
 
 while list != none:

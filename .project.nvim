@@ -1,4 +1,6 @@
 
+
+vim.g.local_history_enabled = 1
 vim.opt.tabstop=2
 vim.opt.shiftwidth=2
 

@@ -20,6 +20,36 @@ function keyword(k, name) {
   return alias(k["_" + name], name);
 }
 
+function selector(word, aliasAsWord = true) {
+  let pattern = ''
+  for (const letter of word) {
+    pattern += `[${letter}${letter.toLocaleUpperCase()}]`
+  }
+  let result = new RegExp(pattern)
+  if (aliasAsWord) result = alias(result, word)
+  return result
+}
+
+
+// --| Create Custom Regex -----
+function createCaseInsensitiveRegex(word) {
+  return new RegExp(
+    word
+      .split("")
+      .map(letter => `[${letter.toLowerCase()}${letter.toUpperCase()}]`)
+      .join(""),
+  );
+}
+
+function kv(key, value) {
+  return alias(
+    value === null
+      ? createCaseInsensitiveRegex(key)
+      : seq(createCaseInsensitiveRegex(key), "=", field("value", value)),
+    key.toLowerCase(),
+  );
+}
+
 module.exports = {
   keyword,
   key_val_arg,

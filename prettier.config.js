@@ -7,5 +7,5 @@ module.exports = {
   indent_style = space, 
   bracket_same_line = true,
   arrow_parens = always,
-  single-attribute-per-line = false
+  single_attribute_per_line = false
 };

@@ -58,14 +58,20 @@
   (identifier) @function
   (parameter_list) @parameters)
 
-; (method_declaration 
-;   (self) @variable)
-
 ; Object declaration
+; (object_declaration
+;   "type"  @keyword
+;   type_name: (identifier) @type.definition
+;   type_of: (identifier) @type)
+
 (object_declaration
   "type"  @keyword
-  (type_identifier) @type.definition
-  "object" @keyword)
+  type_name: (type_identifier) @type.definition
+  type_of: (type_identifier) @type)+
+
+(object_definition
+ (block
+  (local_declaration) @member_declaration))
 
 (expression_statement
   (call_expression) @function.call)  
@@ -96,7 +102,7 @@
   (identifier) @variable)
 
 (object_initializer 
-  (type_identifier) @type 
+  (identifier) @type 
   "{" @punctuation 
   "}" @punctuation)
 
@@ -126,16 +132,66 @@
 (parameter 
   (identifier) @parameter)
 
-(field_expression 
-  "." @punctuation.delimiter)
+; (field_expression 
+;   "." @punctuation.delimiter)
+
+; --| CFunc call ------------
+(cfunc_call
+  (args_parameter
+    (array_literal
+      (identifier
+        (var_identifier) @type))))
+
+(cfunc_call) @function.call
+(symbol_parameter) @parameter
+
+(args_parameter
+  (array_literal
+    (tag_expression)* @tag             
+   )) @parameter
+
+(ret_parameter) @parameter
+
+; --| CStruct call ------------ 
+(cstruct_call) @function.call
+
+(cstruct_call
+  (fields_parameter
+    (array_literal
+      (identifier
+        (var_identifier) @type))))
+
+(cstruct_call
+  (object_parameter
+    (identifier
+      (var_identifier) @type)))
+
+(object_parameter
+  object_mapping: (identifier) @parameter)
+
+
+(fields_parameter
+  (array_literal
+    (tag_expression)* @tag             
+   )) @parameter
+
+
+; --| Function call ---------
+; (call_expression
+;   (identifier) @function.call)
 
 (call_expression
-  (identifier) @function.call)
+  name: (identifier)  @function.call)
 
-(call_expression
-  (field_expression
-    object: (identifier) @variable
-    (identifier) @function.call))
+; (call_expression
+;   object: (identifier)  @function.call)
+;
+; (call_expression
+;   (accessor
+;     (identifier) @function.call))
+;
+  ; accessor: (accessor) @variable
+    ; (identifier) @function.call)
 
 (key_value_pair) @property
 
@@ -147,9 +203,16 @@
   ":" @punctuation)
 
 (member_assignment 
-  (identifier) @property
-  ":" @punctuation
-  (identifier) @property)
+ member: (identifier) @property)
+
+; --| findRune --------------
+(find_rune) @function.call
+
+(find_rune
+  (codepoint) @number 
+  (string) @string.escape)
+
+; --| Coroutine -------------
 
 (coinit_expression 
   (coinit) @keyword.coroutine)
@@ -164,18 +227,19 @@
   (coyield) @keyword.coroutine)
 
 ; Interpolated strings
-(interpolated_string 
-  "\"" @string.quote 
-  (interpolation)+ "\"" @string.quote)
-
-(interpolation 
-  "{" @string.special 
-  (_) @variable 
-  "}" @string.special)
+; (interpolated_string 
+;   "\"" @string.quote 
+;   (interpolation)+ "\"" @string.quote)
+;
+; (interpolation 
+;   "{" @string.special 
+;   (_) @variable 
+;   "}" @string.special)
 
 ; Tag expression
 (tag_expression 
-  "#" @tag)
+  "#" @tag
+  tag: (identifier) @type)
 
 ; --| Keywords --------------
 ; --|------------------------
@@ -191,7 +255,7 @@
 
 [ "print" ] @function.builtin
 
-[ "tagtype" "atype" "none" "any" ] @type.builtin
+[ "tagtype" "atype" "none" "any" "number" "pointer" ] @type.builtin
 
 [ "else" "if" "match" "then" ] @conditional
 

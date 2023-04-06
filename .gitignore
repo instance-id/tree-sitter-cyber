@@ -163,10 +163,7 @@ tags
 [._]*.un~
 
 # End of https://www.toptal.com/developers/gitignore/api/vim,node
-._removed/
-
-.lh/
-
-.lhnvim/
-
-.local-history/
+**/._removed/*
+**.lh/*
+**/.lhnvim/*
+**/.local-history/*

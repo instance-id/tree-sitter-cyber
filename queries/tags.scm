@@ -1,5 +1,6 @@
-(import_statement
-  (identifier) @definition.var)
+(function_definition
+  (function_declaration
+   name: (identifier) @name)) @definition.function
 
 
 (var_identifier) @definition.var
@@ -13,13 +14,13 @@
 
 (function_definition
   (function_declaration
-   name: (identifier) @name) @definition.function) @scope
+    (identifier) @definition.function))
 
 (function_definition
   (function_declaration
     (parameter_list
       (parameter
-        (identifier) @definition.parameter)))) @scope
+        (identifier) @definition.parameter ))))
 
 (parameter_list
   (parameter
@@ -43,3 +44,16 @@
 
 (if_statement (block) @scope)
 (block) @scope
+
+; (class_definition
+;   name: (identifier) @name) @definition.class
+;
+; (function_definition
+;   name: (identifier) @name) @definition.function
+;
+; (call
+;   function: [
+;       (identifier) @name
+;       (attribute
+;         attribute: (identifier) @name)
+;   ]) @reference.call

@@ -29,13 +29,13 @@ _test-linux run=script:
   if ($canContinue) { echo "Test Successful" }
   else { echo "Failed Testing"; just update; exit 1 }
 
-  try{ tree-sitter parse ./sample_scripts/{{run}}; $canContinue = $? }
-  catch{ echo "Failed to parse sample script"; $canContinue = $false }
+  try { tree-sitter parse ./sample_scripts/{{run}}; $canContinue = $? }
+  catch { echo "Failed to parse sample script"; $canContinue = $false }
 
   if ($canContinue) { echo "Parsed sample script" }
   else { echo "Failed to Parse Sample Script"; just update; exit 1 }
 
-  if($canContinue){ just update } 
+  if ($canContinue){ just update } 
 
 _test-windows run=script:
   # Do Windows Things
@@ -65,14 +65,16 @@ _build-linux run=script:
 
     try{ tree-sitter test; $canContinue = $? }
     catch{ echo "Failed to test parser"; $canContinue = $false }
-  } else { echo "Failed to generate parser"; exit 1 }
+  }
+  else { echo "Failed to generate parser"; exit 1 }
   
   if($canContinue){
     echo "Tested parser" 
 
-    try{ tree-sitter build-wasm; $canContinue = $? }
-    catch{ echo "Failed to build wasm"; $canContinue = $false }
-  } else { echo "Failed to test parser"; exit 1 }
+    try { tree-sitter build-wasm; $canContinue = $? }
+    catch { echo "Failed to build wasm"; $canContinue = $false } 
+  } 
+  else { echo "Failed to test parser"; exit 1 }
   
   if($canContinue){
     echo "Built wasm" 
@@ -83,7 +85,8 @@ _build-linux run=script:
     if ($canContinue) { echo "Parsed sample script" }
     else { echo "Failed to parse sample script"; just update; exit 1 }
 
-  } else { echo "Failed to build wasm"; exit 1 }
+  }
+  else { echo "Failed to build wasm"; exit 1 }
 
   if($canContinue){ just update } 
  
@@ -97,6 +100,7 @@ update:
 _update-linux:
   cp ./queries/highlights.scm ../nvim-cyber/queries/cyber/highlights.scm
   cp ./queries/locals.scm ../nvim-cyber/queries/cyber/locals.scm
+  cp ./queries/tags.scm ../nvim-cyber/queries/cyber/tags.scm
 
 _update-windows:
   # Do Windows Things

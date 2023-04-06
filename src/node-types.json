@@ -8,6 +8,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -28,6 +32,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -40,7 +48,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -48,7 +64,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -85,6 +101,125 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "args_parameter",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "array_literal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "array_literal",
+          "named": true
+        },
+        {
+          "type": "binary_operator",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "boolean_operator",
+          "named": true
+        },
+        {
+          "type": "call_expression",
+          "named": true
+        },
+        {
+          "type": "catch_expression",
+          "named": true
+        },
+        {
+          "type": "cfunc_call",
+          "named": true
+        },
+        {
+          "type": "coinit_expression",
+          "named": true
+        },
+        {
+          "type": "comparison_operator",
+          "named": true
+        },
+        {
+          "type": "coresume_expression",
+          "named": true
+        },
+        {
+          "type": "cstruct_call",
+          "named": true
+        },
+        {
+          "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "find_rune",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "index_expression",
+          "named": true
+        },
+        {
+          "type": "map_literal",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "object_initializer",
+          "named": true
+        },
+        {
+          "type": "panic_expression",
+          "named": true
+        },
+        {
+          "type": "slice",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "tag_expression",
+          "named": true
+        },
+        {
+          "type": "try_expression",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -132,6 +267,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "assignment",
             "named": true
           },
@@ -156,6 +295,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -168,6 +311,10 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "expression_list",
             "named": true
           },
@@ -176,11 +323,15 @@
             "named": true
           },
           {
+            "type": "find_rune",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -228,6 +379,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -248,6 +403,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -260,7 +419,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -268,7 +435,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -364,6 +531,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -384,6 +555,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -396,7 +571,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -404,7 +587,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -496,7 +679,7 @@
           "named": true
         },
         {
-          "type": "object_declaration",
+          "type": "object_definition",
           "named": true
         },
         {
@@ -540,6 +723,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -560,6 +747,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -572,7 +763,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -580,7 +779,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -636,6 +835,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -656,6 +859,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -668,7 +875,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -676,7 +891,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -723,11 +938,114 @@
   {
     "type": "call_expression",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_literal",
+            "named": true
+          },
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "boolean_operator",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "catch_expression",
+            "named": true
+          },
+          {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
+            "type": "coinit_expression",
+            "named": true
+          },
+          {
+            "type": "comparison_operator",
+            "named": true
+          },
+          {
+            "type": "coresume_expression",
+            "named": true
+          },
+          {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expression",
+            "named": true
+          },
+          {
+            "type": "map_literal",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "panic_expression",
+            "named": true
+          },
+          {
+            "type": "slice",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "tag_expression",
+            "named": true
+          },
+          {
+            "type": "try_expression",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
+        {
+          "type": "array_literal",
+          "named": true
+        },
         {
           "type": "binary_operator",
           "named": true
@@ -749,6 +1067,10 @@
           "named": true
         },
         {
+          "type": "cfunc_call",
+          "named": true
+        },
+        {
           "type": "coinit_expression",
           "named": true
         },
@@ -761,7 +1083,15 @@
           "named": true
         },
         {
+          "type": "cstruct_call",
+          "named": true
+        },
+        {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "find_rune",
           "named": true
         },
         {
@@ -769,7 +1099,7 @@
           "named": true
         },
         {
-          "type": "interpolated_string",
+          "type": "index_expression",
           "named": true
         },
         {
@@ -816,6 +1146,10 @@
       "required": true,
       "types": [
         {
+          "type": "array_literal",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
@@ -836,6 +1170,10 @@
           "named": true
         },
         {
+          "type": "cfunc_call",
+          "named": true
+        },
+        {
           "type": "coinit_expression",
           "named": true
         },
@@ -848,7 +1186,15 @@
           "named": true
         },
         {
+          "type": "cstruct_call",
+          "named": true
+        },
+        {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "find_rune",
           "named": true
         },
         {
@@ -856,7 +1202,7 @@
           "named": true
         },
         {
-          "type": "interpolated_string",
+          "type": "index_expression",
           "named": true
         },
         {
@@ -895,6 +1241,34 @@
     }
   },
   {
+    "type": "cfunc_call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "args_parameter",
+          "named": true
+        },
+        {
+          "type": "ret_parameter",
+          "named": true
+        },
+        {
+          "type": "symbol_parameter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "codepoint",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "coinit",
     "named": true,
     "fields": {}
@@ -919,6 +1293,10 @@
       "required": false,
       "types": [
         {
+          "type": "array_literal",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
@@ -939,6 +1317,10 @@
           "named": true
         },
         {
+          "type": "cfunc_call",
+          "named": true
+        },
+        {
           "type": "coinit_expression",
           "named": true
         },
@@ -951,7 +1333,15 @@
           "named": true
         },
         {
+          "type": "cstruct_call",
+          "named": true
+        },
+        {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "find_rune",
           "named": true
         },
         {
@@ -959,7 +1349,7 @@
           "named": true
         },
         {
-          "type": "interpolated_string",
+          "type": "index_expression",
           "named": true
         },
         {
@@ -1032,6 +1422,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -1052,6 +1446,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -1064,7 +1462,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -1072,7 +1478,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -1160,6 +1566,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -1180,6 +1590,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -1192,7 +1606,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -1200,7 +1622,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -1263,6 +1685,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -1283,6 +1709,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -1295,7 +1725,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -1303,7 +1741,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -1364,6 +1802,25 @@
     }
   },
   {
+    "type": "cstruct_call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "fields_parameter",
+          "named": true
+        },
+        {
+          "type": "object_parameter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "exception_identifiers",
     "named": true,
     "fields": {}
@@ -1376,6 +1833,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "array_literal",
+          "named": true
+        },
         {
           "type": "binary_operator",
           "named": true
@@ -1397,6 +1858,10 @@
           "named": true
         },
         {
+          "type": "cfunc_call",
+          "named": true
+        },
+        {
           "type": "coinit_expression",
           "named": true
         },
@@ -1409,7 +1874,15 @@
           "named": true
         },
         {
+          "type": "cstruct_call",
+          "named": true
+        },
+        {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "find_rune",
           "named": true
         },
         {
@@ -1417,7 +1890,7 @@
           "named": true
         },
         {
-          "type": "interpolated_string",
+          "type": "index_expression",
           "named": true
         },
         {
@@ -1464,6 +1937,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -1484,6 +1961,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -1496,7 +1977,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -1504,7 +1993,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -1552,6 +2041,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -1572,6 +2065,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -1584,7 +2081,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -1592,7 +2097,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -1639,6 +2144,10 @@
           "named": true
         },
         {
+          "type": "array_literal",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
@@ -1659,6 +2168,10 @@
           "named": true
         },
         {
+          "type": "cfunc_call",
+          "named": true
+        },
+        {
           "type": "coinit_expression",
           "named": true
         },
@@ -1671,7 +2184,15 @@
           "named": true
         },
         {
+          "type": "cstruct_call",
+          "named": true
+        },
+        {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "find_rune",
           "named": true
         },
         {
@@ -1679,7 +2200,7 @@
           "named": true
         },
         {
-          "type": "interpolated_string",
+          "type": "index_expression",
           "named": true
         },
         {
@@ -1718,6 +2239,41 @@
     }
   },
   {
+    "type": "fields_parameter",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "find_rune",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "codepoint",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "for_iterable_loop",
     "named": true,
     "fields": {
@@ -1740,6 +2296,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -1760,6 +2320,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -1772,7 +2336,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -1780,7 +2352,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -1862,6 +2434,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -1882,6 +2458,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -1894,7 +2474,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -1902,7 +2490,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -1974,6 +2562,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -1994,6 +2586,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -2006,7 +2602,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -2014,7 +2618,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -2056,6 +2660,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -2076,6 +2684,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -2088,7 +2700,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -2096,7 +2716,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -2138,6 +2758,10 @@
         "required": false,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -2158,6 +2782,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -2170,7 +2798,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -2178,7 +2814,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -2259,7 +2895,7 @@
     "fields": {
       "body": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "block",
@@ -2283,15 +2919,59 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "coyield_statement",
+          "named": true
+        },
+        {
+          "type": "expression_statement",
+          "named": true
+        },
         {
           "type": "function_declaration",
           "named": true
         },
         {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "import_statement",
+          "named": true
+        },
+        {
+          "type": "local_declaration",
+          "named": true
+        },
+        {
           "type": "method_declaration",
+          "named": true
+        },
+        {
+          "type": "object_definition",
+          "named": true
+        },
+        {
+          "type": "print_statement",
+          "named": true
+        },
+        {
+          "type": "return_statement",
+          "named": true
+        },
+        {
+          "type": "tagtype_declaration",
+          "named": true
+        },
+        {
+          "type": "var_declaration",
           "named": true
         }
       ]
@@ -2359,6 +3039,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -2379,6 +3063,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -2391,7 +3079,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -2399,7 +3095,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -2441,6 +3137,10 @@
         "required": false,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -2465,6 +3165,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -2477,6 +3181,10 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "else",
             "named": false
           },
@@ -2485,15 +3193,19 @@
             "named": true
           },
           {
+            "type": "find_rune",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
           {
-            "type": "inline_block",
+            "type": "index_expression",
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "inline_block",
             "named": true
           },
           {
@@ -2565,6 +3277,10 @@
       "required": true,
       "types": [
         {
+          "type": "array_literal",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
@@ -2585,6 +3301,10 @@
           "named": true
         },
         {
+          "type": "cfunc_call",
+          "named": true
+        },
+        {
           "type": "coinit_expression",
           "named": true
         },
@@ -2597,7 +3317,15 @@
           "named": true
         },
         {
+          "type": "cstruct_call",
+          "named": true
+        },
+        {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "find_rune",
           "named": true
         },
         {
@@ -2605,7 +3333,7 @@
           "named": true
         },
         {
-          "type": "interpolated_string",
+          "type": "index_expression",
           "named": true
         },
         {
@@ -2676,7 +3404,7 @@
           "named": true
         },
         {
-          "type": "object_declaration",
+          "type": "object_definition",
           "named": true
         },
         {
@@ -2699,108 +3427,6 @@
     }
   },
   {
-    "type": "interpolated_string",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "interpolation",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "interpolation",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "binary_operator",
-          "named": true
-        },
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "boolean_operator",
-          "named": true
-        },
-        {
-          "type": "call_expression",
-          "named": true
-        },
-        {
-          "type": "catch_expression",
-          "named": true
-        },
-        {
-          "type": "coinit_expression",
-          "named": true
-        },
-        {
-          "type": "comparison_operator",
-          "named": true
-        },
-        {
-          "type": "coresume_expression",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "interpolated_string",
-          "named": true
-        },
-        {
-          "type": "map_literal",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "object_initializer",
-          "named": true
-        },
-        {
-          "type": "panic_expression",
-          "named": true
-        },
-        {
-          "type": "slice",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "tag_expression",
-          "named": true
-        },
-        {
-          "type": "try_expression",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "key_value_pair",
     "named": true,
     "fields": {
@@ -2808,6 +3434,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "array_literal",
+            "named": true
+          },
           {
             "type": "binary_operator",
             "named": true
@@ -2829,6 +3459,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -2841,7 +3475,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -2849,7 +3491,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -2891,6 +3533,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -2911,6 +3557,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -2923,7 +3573,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -2931,7 +3589,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -3000,6 +3658,10 @@
       "required": false,
       "types": [
         {
+          "type": "array_literal",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
@@ -3020,6 +3682,10 @@
           "named": true
         },
         {
+          "type": "cfunc_call",
+          "named": true
+        },
+        {
           "type": "coinit_expression",
           "named": true
         },
@@ -3032,7 +3698,15 @@
           "named": true
         },
         {
+          "type": "cstruct_call",
+          "named": true
+        },
+        {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "find_rune",
           "named": true
         },
         {
@@ -3040,7 +3714,7 @@
           "named": true
         },
         {
-          "type": "interpolated_string",
+          "type": "index_expression",
           "named": true
         },
         {
@@ -3136,6 +3810,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -3156,6 +3834,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -3168,7 +3850,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -3176,7 +3866,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -3234,6 +3924,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -3254,6 +3948,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -3266,7 +3964,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -3274,7 +3980,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -3362,6 +4068,32 @@
     "type": "object_declaration",
     "named": true,
     "fields": {
+      "type_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      },
+      "type_of": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "object_definition",
+    "named": true,
+    "fields": {
       "body": {
         "multiple": false,
         "required": false,
@@ -3375,29 +4107,29 @@
             "named": true
           }
         ]
-      },
-      "type": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "type_identifier",
-            "named": true
-          }
-        ]
       }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "object_declaration",
+          "named": true
+        }
+      ]
     }
   },
   {
     "type": "object_initializer",
     "named": true,
     "fields": {
-      "object": {
+      "type_name": {
         "multiple": false,
         "required": true,
         "types": [
           {
-            "type": "type_identifier",
+            "type": "identifier",
             "named": true
           }
         ]
@@ -3415,6 +4147,22 @@
     }
   },
   {
+    "type": "object_parameter",
+    "named": true,
+    "fields": {
+      "object_mapping": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "panic_expression",
     "named": true,
     "fields": {},
@@ -3422,6 +4170,10 @@
       "multiple": false,
       "required": true,
       "types": [
+        {
+          "type": "array_literal",
+          "named": true
+        },
         {
           "type": "binary_operator",
           "named": true
@@ -3443,6 +4195,10 @@
           "named": true
         },
         {
+          "type": "cfunc_call",
+          "named": true
+        },
+        {
           "type": "coinit_expression",
           "named": true
         },
@@ -3455,7 +4211,15 @@
           "named": true
         },
         {
+          "type": "cstruct_call",
+          "named": true
+        },
+        {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "find_rune",
           "named": true
         },
         {
@@ -3463,7 +4227,7 @@
           "named": true
         },
         {
-          "type": "interpolated_string",
+          "type": "index_expression",
           "named": true
         },
         {
@@ -3521,7 +4285,7 @@
       "required": false,
       "types": [
         {
-          "type": "builtin_type",
+          "type": "type_identifier",
           "named": true
         }
       ]
@@ -3586,6 +4350,10 @@
       "required": true,
       "types": [
         {
+          "type": "array_literal",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
@@ -3606,6 +4374,10 @@
           "named": true
         },
         {
+          "type": "cfunc_call",
+          "named": true
+        },
+        {
           "type": "coinit_expression",
           "named": true
         },
@@ -3618,7 +4390,15 @@
           "named": true
         },
         {
+          "type": "cstruct_call",
+          "named": true
+        },
+        {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "find_rune",
           "named": true
         },
         {
@@ -3626,7 +4406,7 @@
           "named": true
         },
         {
-          "type": "interpolated_string",
+          "type": "index_expression",
           "named": true
         },
         {
@@ -3749,6 +4529,26 @@
     "fields": {}
   },
   {
+    "type": "ret_parameter",
+    "named": true,
+    "fields": {
+      "type_mapping": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "tag_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "return_statement",
     "named": true,
     "fields": {},
@@ -3756,6 +4556,10 @@
       "multiple": false,
       "required": false,
       "types": [
+        {
+          "type": "array_literal",
+          "named": true
+        },
         {
           "type": "binary_operator",
           "named": true
@@ -3777,6 +4581,10 @@
           "named": true
         },
         {
+          "type": "cfunc_call",
+          "named": true
+        },
+        {
           "type": "coinit_expression",
           "named": true
         },
@@ -3789,6 +4597,10 @@
           "named": true
         },
         {
+          "type": "cstruct_call",
+          "named": true
+        },
+        {
           "type": "expression_list",
           "named": true
         },
@@ -3797,11 +4609,15 @@
           "named": true
         },
         {
+          "type": "find_rune",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
         {
-          "type": "interpolated_string",
+          "type": "index_expression",
           "named": true
         },
         {
@@ -3848,15 +4664,9 @@
         "required": false,
         "types": [
           {
-            "type": "identifier",
+            "type": "array_literal",
             "named": true
-          }
-        ]
-      },
-      "object": {
-        "multiple": false,
-        "required": true,
-        "types": [
+          },
           {
             "type": "binary_operator",
             "named": true
@@ -3878,6 +4688,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -3890,7 +4704,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -3898,7 +4720,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -3940,7 +4762,95 @@
         "required": false,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "boolean_operator",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "catch_expression",
+            "named": true
+          },
+          {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
+            "type": "coinit_expression",
+            "named": true
+          },
+          {
+            "type": "comparison_operator",
+            "named": true
+          },
+          {
+            "type": "coresume_expression",
+            "named": true
+          },
+          {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expression",
+            "named": true
+          },
+          {
+            "type": "map_literal",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "panic_expression",
+            "named": true
+          },
+          {
+            "type": "slice",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "tag_expression",
+            "named": true
+          },
+          {
+            "type": "try_expression",
             "named": true
           }
         ]
@@ -4000,7 +4910,7 @@
           "named": true
         },
         {
-          "type": "object_declaration",
+          "type": "object_definition",
           "named": true
         },
         {
@@ -4043,6 +4953,25 @@
       "required": false,
       "types": [
         {
+          "type": "string_interpolation",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string_interpolation",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array_literal",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
@@ -4063,6 +4992,10 @@
           "named": true
         },
         {
+          "type": "cfunc_call",
+          "named": true
+        },
+        {
           "type": "coinit_expression",
           "named": true
         },
@@ -4075,7 +5008,15 @@
           "named": true
         },
         {
+          "type": "cstruct_call",
+          "named": true
+        },
+        {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "find_rune",
           "named": true
         },
         {
@@ -4083,7 +5024,7 @@
           "named": true
         },
         {
-          "type": "interpolated_string",
+          "type": "index_expression",
           "named": true
         },
         {
@@ -4119,6 +5060,22 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "symbol_parameter",
+    "named": true,
+    "fields": {
+      "symbol": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -4172,6 +5129,10 @@
       "required": true,
       "types": [
         {
+          "type": "array_literal",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
@@ -4192,6 +5153,10 @@
           "named": true
         },
         {
+          "type": "cfunc_call",
+          "named": true
+        },
+        {
           "type": "coinit_expression",
           "named": true
         },
@@ -4204,7 +5169,15 @@
           "named": true
         },
         {
+          "type": "cstruct_call",
+          "named": true
+        },
+        {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "find_rune",
           "named": true
         },
         {
@@ -4212,7 +5185,7 @@
           "named": true
         },
         {
-          "type": "interpolated_string",
+          "type": "index_expression",
           "named": true
         },
         {
@@ -4264,6 +5237,10 @@
       "required": true,
       "types": [
         {
+          "type": "array_literal",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
@@ -4284,6 +5261,10 @@
           "named": true
         },
         {
+          "type": "cfunc_call",
+          "named": true
+        },
+        {
           "type": "coinit_expression",
           "named": true
         },
@@ -4296,7 +5277,15 @@
           "named": true
         },
         {
+          "type": "cstruct_call",
+          "named": true
+        },
+        {
           "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "find_rune",
           "named": true
         },
         {
@@ -4304,7 +5293,7 @@
           "named": true
         },
         {
-          "type": "interpolated_string",
+          "type": "index_expression",
           "named": true
         },
         {
@@ -4370,6 +5359,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_literal",
+            "named": true
+          },
+          {
             "type": "binary_operator",
             "named": true
           },
@@ -4390,6 +5383,10 @@
             "named": true
           },
           {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
             "type": "coinit_expression",
             "named": true
           },
@@ -4402,7 +5399,15 @@
             "named": true
           },
           {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "find_rune",
             "named": true
           },
           {
@@ -4410,7 +5415,7 @@
             "named": true
           },
           {
-            "type": "interpolated_string",
+            "type": "index_expression",
             "named": true
           },
           {
@@ -4574,6 +5579,14 @@
     "named": false
   },
   {
+    "type": "CFunc",
+    "named": false
+  },
+  {
+    "type": "CStruct",
+    "named": false
+  },
+  {
     "type": "[",
     "named": false
   },
@@ -4591,6 +5604,10 @@
   },
   {
     "type": "any",
+    "named": false
+  },
+  {
+    "type": "args",
     "named": false
   },
   {
@@ -4666,6 +5683,14 @@
     "named": false
   },
   {
+    "type": "fields",
+    "named": false
+  },
+  {
+    "type": "findRune",
+    "named": false
+  },
+  {
     "type": "float",
     "named": false
   },
@@ -4718,6 +5743,10 @@
     "named": true
   },
   {
+    "type": "number",
+    "named": false
+  },
+  {
     "type": "object",
     "named": false
   },
@@ -4730,11 +5759,19 @@
     "named": false
   },
   {
+    "type": "pointer",
+    "named": false
+  },
+  {
     "type": "print",
     "named": false
   },
   {
     "type": "recover",
+    "named": false
+  },
+  {
+    "type": "ret",
     "named": false
   },
   {
@@ -4755,6 +5792,10 @@
   },
   {
     "type": "string",
+    "named": false
+  },
+  {
+    "type": "sym",
     "named": false
   },
   {
