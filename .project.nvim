@@ -1,4 +1,26 @@
 
+local is_ok, telescope = pcall(require, "telescope.defaults")
+if is_ok then
+  local ignore = telescope.file_ignore_patterns
+  -- table.insert(telescope.file_ignore_patterns, "**/*.so")
+  -- table.insert(telescope.file_ignore_patterns,"**/.lhnvim/*")
+  -- table.insert(telescope.file_ignore_patterns, "**/target/*")
+
+  telescope.file_ignore_patterns = {
+    "**/*.so",
+    "**/.lhnvim/*",
+    "**/target/*",
+    unpack(ignore)
+  }
+  vim.notify("Telescope loaded", vim.log.levels.INFO, { title = "Project.nvim" })
+  for _, v in ipairs(telescope.file_ignore_patterns) do
+    print("Ignored file: ", v)
+  end
+
+  print("Table of ignored files: ", telescope.file_ignore_patterns)
+end
+
+
 
 vim.g.local_history_enabled = 1
 vim.opt.tabstop=2

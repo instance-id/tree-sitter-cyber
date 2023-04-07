@@ -37,10 +37,10 @@
   ; (identifier) @reference.type) @definition.type
 
 (object_initializer
-  (identifier) @reference.type)
+  (type_identifier) @reference.type)
 
 (function_definition (block) @scope)
-(object_definition (block) @scope)
+(object_definition (object_block) @scope)
 
 (if_statement (block) @scope)
 (block) @scope

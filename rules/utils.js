@@ -4,12 +4,19 @@ function key_val_arg(arg, ...args) {
   } else return field("name", arg);
 }
 
-function commaSep1(rule) {
-  return sep1(rule, ",");
+function commaSep1($, rule, newline = false) {
+  return sep1($, rule, ",", newline);
 }
 
-function sep1(rule, separator) {
-  return seq(rule, repeat(seq(separator, rule)));
+function sep1($, rule, separator, newline = false) {
+  if (newline){ return seq(
+    rule, repeat1(seq(
+      separator, 
+      optional($._newline),
+      rule
+    )),
+  ); }
+  else { return seq(rule, repeat1(seq(separator, rule))); }
 }
 
 function command($, cmd, ...args) {

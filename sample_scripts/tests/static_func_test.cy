@@ -61,3 +61,4 @@ var foo8dep: func ():
     return func():
         return local
 try t.eq(foo8(), 123)
+

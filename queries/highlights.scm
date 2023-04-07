@@ -46,12 +46,19 @@
   "var" @keyword 
   (identifier) @variable)
 
+(anonymous_definition
+  (anonymous_function
+    (func) @function))
+
+(anonymous_function
+  (func) @function)
+
 (function_definition 
-  "func" @keyword.function
+  (func) @keyword.function
   (function_declaration) @function)
 
 (function_definition 
-  "func" @keyword.function
+  (func) @keyword.function
   (method_declaration) @function.method)
 
 (function_declaration
@@ -70,11 +77,11 @@
   type_of: (type_identifier) @type)+
 
 (object_definition
- (block
+ (object_block
   (local_declaration) @member_declaration))
 
-(expression_statement
-  (call_expression) @function.call)  
+; (expression_statement
+;   (call_expression) @function.call)  
 
 ; --| Conditional -----------
 (if_statement 
@@ -102,7 +109,7 @@
   (identifier) @variable)
 
 (object_initializer 
-  (identifier) @type 
+  (type_identifier) @type 
   "{" @punctuation 
   "}" @punctuation)
 
@@ -134,6 +141,7 @@
 
 ; (field_expression 
 ;   "." @punctuation.delimiter)
+
 
 ; --| CFunc call ------------
 (cfunc_call

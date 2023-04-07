@@ -50,3 +50,4 @@ try t.eq(v2.y, 4)
 v = a.Vec2.new(3, 4)
 try t.eq(v.x, 3)
 try t.eq(v.y, 4)
+

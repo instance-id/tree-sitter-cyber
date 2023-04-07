@@ -124,3 +124,4 @@ try t.eq(n3.b, 6)
 sym = Node
 try t.eq(typesym(sym), #type)
 try t.eq(string(sym), 'Object Symbol (Node)')
+

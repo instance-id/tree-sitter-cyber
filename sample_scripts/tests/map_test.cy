@@ -3,7 +3,7 @@
 import t 'test'
 
 -- Omits last comma for multiline initializer.
-a = {
+a = { 
   foo: 123,
   bar: 234,
 }
