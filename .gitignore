@@ -167,3 +167,7 @@ tags
 **.lh/*
 **/.lhnvim/*
 **/.local-history/*
+
+.idea/
+
+target/debug/*
