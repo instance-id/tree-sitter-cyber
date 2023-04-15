@@ -171,3 +171,5 @@ tags
 .idea/
 
 target/debug/*
+
+target/debug/
