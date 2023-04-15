@@ -22,13 +22,25 @@
 (comment) @comment
 
 ; Number
-(number) @number
+(numeric_literal) @number
 
 ; String
 (string) @string
+(multiline_string) @string
 
 (identifier) @variable
+(boolean) @constant.builtin
+(boolean_operator) @keyword
+(and_operator) @keyword
+(or_operator) @keyword
+(not_operator) @keyword
+(bang_operator) @keyword
 
+
+(capture_identifier) @keyword
+(lambda_operator) @punctuation.bracket
+(static_identifier) @keyword
+(else_identifier) @conditional
 ; --| Statements ------------
 ; --|------------------------
 ; Import statement
@@ -55,15 +67,22 @@
 
 (function_definition 
   (func) @keyword.function
-  (function_declaration) @function)
+  (function_declaration
+    name: (identifier) @function
+    ; "(" @punctuation.bracket
+    ; ")" @punctuation.bracket
+    ) @function)
 
 (function_definition 
   (func) @keyword.function
-  (method_declaration) @function.method)
+  (method_declaration
+    (method_parameter_list) @parameters)) @function.method
+    ; open_paren: (_) @punctuation.bracket
+    ; close_paren: (_) @punctuation.bracket) @function)
 
 (function_declaration
-  (identifier) @function
-  (parameter_list) @parameters)
+  (identifier) @function)
+  ; (parameter_list) @parameters)
 
 ; Object declaration
 ; (object_declaration
@@ -71,14 +90,14 @@
 ;   type_name: (identifier) @type.definition
 ;   type_of: (identifier) @type)
 
-(object_declaration
-  "type"  @keyword
-  type_name: (type_identifier) @type.definition
-  type_of: (type_identifier) @type)+
+; (object_declaration
+;   ; "type"  @keyword
+;   type_name: (type_identifier) @type.definition
+;   type_of: (type_identifier) @type)+
 
-(object_definition
- (object_block
-  (local_declaration) @member_declaration))
+; (object_definition
+;  (object_block
+;   (local_declaration) @member_declaration))
 
 ; (expression_statement
 ;   (call_expression) @function.call)  
@@ -109,9 +128,9 @@
   (identifier) @variable)
 
 (object_initializer 
-  (type_identifier) @type 
-  "{" @punctuation 
-  "}" @punctuation)
+  (type_identifier) @type) 
+  ; (open_brace) @punctuation 
+  ; (close_brace) @punctuation)
 
 (tagtype_declaration 
   "tagtype" @keyword 
@@ -128,97 +147,94 @@
 ; --| Expression ------------
 ; --|------------------------
 
-(assignment 
+(augmented_assignment 
   left: (_) @variable)
 
 ; Parameter list
-(parameter_list 
-  (parameter) @parameter 
-  (#set! parent_highlight_name "parameters"))
+; (parameter_list 
+;   (parameter) @parameter 
+;   (#set! parent_highlight_name "parameters"))
 
 (parameter 
   (identifier) @parameter)
 
-; (field_expression 
-;   "." @punctuation.delimiter)
+; --| Object/Member ---------
+; (object_parameter
+;   object_mapping: (identifier) @parameter)
 
+
+; (fields_parameter
+;   (array_literal
+;     (tag_expression)* @tag             
+;    )) @parameter
+
+(member_assignment 
+  ":" @punctuation)
+
+(member_assignment 
+  member: (identifier) @property)
+
+; --| Function call ---------
+(call_expression
+  name: (identifier)  @function.call)
+
+; --| Exception -------------
+(error_expression
+  (error) @exception)
 
 ; --| CFunc call ------------
-(cfunc_call
-  (args_parameter
-    (array_literal
-      (identifier
-        (var_identifier) @type))))
+; (cfunc_call
+;   (args_parameter
+;     ; (array_literal
+;       (identifier
+;         (var_identifier) @type)))
 
 (cfunc_call) @function.call
 (symbol_parameter) @parameter
 
-(args_parameter
-  (array_literal
-    (tag_expression)* @tag             
-   )) @parameter
+; (args_parameter
+;   (array_literal
+;     (tag_expression)* @tag             
+;    )) @parameter
 
 (ret_parameter) @parameter
 
 ; --| CStruct call ------------ 
 (cstruct_call) @function.call
 
-(cstruct_call
-  (fields_parameter
-    (array_literal
-      (identifier
-        (var_identifier) @type))))
+; (cstruct_call
+;   (fields_parameter
+;     (array_literal
+;       (identifier
+;         (var_identifier) @type))))
 
 (cstruct_call
   (object_parameter
     (identifier
       (var_identifier) @type)))
 
-(object_parameter
-  object_mapping: (identifier) @parameter)
-
-
-(fields_parameter
-  (array_literal
-    (tag_expression)* @tag             
-   )) @parameter
-
-
-; --| Function call ---------
-; (call_expression
-;   (identifier) @function.call)
-
-(call_expression
-  name: (identifier)  @function.call)
-
-; (call_expression
-;   object: (identifier)  @function.call)
-;
-; (call_expression
-;   (accessor
-;     (identifier) @function.call))
-;
-  ; accessor: (accessor) @variable
-    ; (identifier) @function.call)
-
+; --| Map/KV ---------------
 (key_value_pair) @property
 
-(map_literal 
-  "{" @punctuation 
-  "}" @punctuation)
-
-(member_assignment 
-  ":" @punctuation)
-
-(member_assignment 
- member: (identifier) @property)
+; (map_literal 
+; (open_brace) @punctuation 
+; (close_brace) @punctuation
 
 ; --| findRune --------------
+(encoded_string
+  (numeric_literal) @number)
+
+; (codepoint 
+;   (numeric_literal) @number)
+
 (find_rune) @function.call
 
 (find_rune
-  (codepoint) @number 
-  (string) @string.escape)
+  [
+   (numeric_literal) @number 
+   (string) @string.escape
+   (encoded_string) @string.escape
+  ])
 
 ; --| Coroutine -------------
 
@@ -253,19 +269,21 @@
 ; --|------------------------
 [ "," ":" ] @punctuation.delimiter
 
-[ "(" ")" "[" "]" "{" "}" ] @punctuation.bracket
+; [ "(" ")" "[" "]" "{" "}" ] @punctuation.bracket
+; (open_paren) @punctuation.bracket
+; (close_paren) @punctuation.bracket
 
 [ "-" "-=" "!=" "*" "*=" "/" "//" "/=" "&" "%" 
   "^" "+" "+=" "<" "<<" "<=" "<>" "=" "==" ">"
-  ">=" ">>" "|" "and" "in" "is" "not" "or" ".." ] @operator
+  ">=" ">>" "|" "in" "is" "not" ".." ] @keyword
 
-[ "type" "var" "static" "capture" "as" "each" ] @keyword
+[ "type" "var" "as" "each" ] @keyword
 
 [ "print" ] @function.builtin
 
 [ "tagtype" "atype" "none" "any" "number" "pointer" ] @type.builtin
 
-[ "else" "if" "match" "then" ] @conditional
+[ "if" "match" "then" ] @conditional
 
 [ "do" "for" "while" "break" "continue" ] @repeat
 

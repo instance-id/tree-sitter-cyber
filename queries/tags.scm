@@ -8,7 +8,7 @@
 (import_statement
   (identifier) @definition.var)
 
-(assignment
+(augmented_assignment
   left: (pattern) @definition.var)
 
 
@@ -16,15 +16,15 @@
   (function_declaration
     (identifier) @definition.function))
 
-(function_definition
-  (function_declaration
-    (parameter_list
-      (parameter
-        (identifier) @definition.parameter ))))
-
-(parameter_list
-  (parameter
-    (identifier) @definition.parameter))
+; (function_definition
+;   (function_declaration
+;     (parameter_list
+;       (parameter
+;         (identifier) @definition.parameter ))))
+;
+; (parameter_list
+;   (parameter
+;     (identifier) @definition.parameter))
 
 ; (object_definition
 ;   ((object_declaration)+
@@ -40,7 +40,7 @@
   (type_identifier) @reference.type)
 
 (function_definition (block) @scope)
-(object_definition (object_block) @scope)
+; (object_definition (object_block) @scope)
 
 (if_statement (block) @scope)
 (block) @scope
