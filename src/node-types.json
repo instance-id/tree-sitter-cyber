@@ -80,10 +80,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -290,10 +286,6 @@
           "named": true
         },
         {
-          "type": "find_rune",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
@@ -479,10 +471,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -722,10 +710,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -953,10 +937,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -1118,10 +1098,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -1322,10 +1298,6 @@
           "named": true
         },
         {
-          "type": "find_rune",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
@@ -1470,10 +1442,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -1704,10 +1672,6 @@
         },
         {
           "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "find_rune",
           "named": true
         },
         {
@@ -1947,10 +1911,6 @@
           "named": true
         },
         {
-          "type": "find_rune",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
@@ -2177,10 +2137,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -2369,10 +2325,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -2533,10 +2485,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -2750,10 +2698,6 @@
         },
         {
           "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "find_rune",
           "named": true
         },
         {
@@ -2973,10 +2917,6 @@
           "named": true
         },
         {
-          "type": "find_rune",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
@@ -3162,10 +3102,6 @@
           "named": true
         },
         {
-          "type": "find_rune",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
@@ -3332,10 +3268,6 @@
           "named": true
         },
         {
-          "type": "find_rune",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
@@ -3480,10 +3412,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -3633,10 +3561,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -3718,40 +3642,6 @@
           }
         ]
       }
-    }
-  },
-  {
-    "type": "find_rune",
-    "named": true,
-    "fields": {
-      "close_paren": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": ")",
-            "named": false
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "encoded_string",
-          "named": true
-        },
-        {
-          "type": "numeric_literal",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -3846,10 +3736,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -4035,10 +3921,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -4181,10 +4063,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -4324,10 +4202,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -4546,10 +4420,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -4707,10 +4577,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -4987,10 +4853,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -5133,10 +4995,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -5276,10 +5134,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -5455,10 +5309,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -5606,10 +5456,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -5814,10 +5660,6 @@
           "named": true
         },
         {
-          "type": "find_rune",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
@@ -5966,10 +5808,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -6195,10 +6033,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -6338,10 +6172,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -6493,10 +6323,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -6636,10 +6462,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -6797,10 +6619,6 @@
         },
         {
           "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "find_rune",
           "named": true
         },
         {
@@ -7065,10 +6883,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -7208,10 +7022,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -7358,10 +7168,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -7565,10 +7371,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -7724,10 +7526,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -7970,10 +7768,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -8200,11 +7994,15 @@
         "required": false,
         "types": [
           {
+            "type": "builtin_type",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
           {
-            "type": "identifier",
+            "type": "type_identifier",
             "named": true
           }
         ]
@@ -8305,10 +8103,6 @@
         },
         {
           "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "find_rune",
           "named": true
         },
         {
@@ -8479,10 +8273,6 @@
           "named": true
         },
         {
-          "type": "find_rune",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
@@ -8631,10 +8421,6 @@
         },
         {
           "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "find_rune",
           "named": true
         },
         {
@@ -8817,10 +8603,6 @@
         },
         {
           "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "find_rune",
           "named": true
         },
         {
@@ -9075,10 +8857,6 @@
           "named": true
         },
         {
-          "type": "find_rune",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
@@ -9226,10 +9004,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -9369,10 +9143,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -9531,10 +9301,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -9764,10 +9530,6 @@
           "named": true
         },
         {
-          "type": "find_rune",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
@@ -9952,10 +9714,6 @@
         },
         {
           "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "find_rune",
           "named": true
         },
         {
@@ -10164,10 +9922,6 @@
           "named": true
         },
         {
-          "type": "find_rune",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
@@ -10339,10 +10093,6 @@
         },
         {
           "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "find_rune",
           "named": true
         },
         {
@@ -10541,10 +10291,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -10688,10 +10434,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -10844,10 +10586,6 @@
         },
         {
           "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "find_rune",
           "named": true
         },
         {
@@ -11045,10 +10783,6 @@
             "named": true
           },
           {
-            "type": "find_rune",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -11196,10 +10930,6 @@
           "named": true
         },
         {
-          "type": "find_rune",
-          "named": true
-        },
-        {
           "type": "for_iterable_loop",
           "named": true
         },
@@ -11316,6 +11046,10 @@
           "named": true
         },
         {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
           "type": "typed_statement",
           "named": true
         },
@@ -11427,10 +11161,6 @@
           },
           {
             "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "find_rune",
             "named": true
           },
           {
@@ -11688,12 +11418,20 @@
     "named": false
   },
   {
+    "type": "boolean",
+    "named": false
+  },
+  {
     "type": "break",
     "named": false
   },
   {
     "type": "builtin_function",
     "named": true
+  },
+  {
+    "type": "byte",
+    "named": false
   },
   {
     "type": "capture_identifier",
@@ -11706,6 +11444,14 @@
   {
     "type": "cfunc",
     "named": true
+  },
+  {
+    "type": "char",
+    "named": false
+  },
+  {
+    "type": "charPtr",
+    "named": false
   },
   {
     "type": "coinit",
@@ -11729,6 +11475,10 @@
   },
   {
     "type": "do",
+    "named": false
+  },
+  {
+    "type": "double",
     "named": false
   },
   {
@@ -11788,12 +11538,32 @@
     "named": false
   },
   {
+    "type": "int16",
+    "named": false
+  },
+  {
+    "type": "int32",
+    "named": false
+  },
+  {
+    "type": "int64",
+    "named": false
+  },
+  {
+    "type": "int8",
+    "named": false
+  },
+  {
     "type": "is",
     "named": false
   },
   {
     "type": "lambda_operator",
     "named": true
+  },
+  {
+    "type": "long",
+    "named": false
   },
   {
     "type": "loop",
@@ -11864,12 +11634,20 @@
     "named": true
   },
   {
+    "type": "short",
+    "named": false
+  },
+  {
     "type": "some",
     "named": false
   },
   {
     "type": "static_identifier",
     "named": true
+  },
+  {
+    "type": "string",
+    "named": false
   },
   {
     "type": "sym",
@@ -11900,11 +11678,31 @@
     "named": false
   },
   {
+    "type": "uchar",
+    "named": false
+  },
+  {
+    "type": "uint",
+    "named": false
+  },
+  {
+    "type": "ulong",
+    "named": false
+  },
+  {
+    "type": "ushort",
+    "named": false
+  },
+  {
     "type": "var",
     "named": false
   },
   {
     "type": "void",
+    "named": false
+  },
+  {
+    "type": "voidPtr",
     "named": false
   },
   {

@@ -162,6 +162,12 @@ close_brace: (_) @punctuation.bracket
 
 ; --| CFunc call ------------
 (cfunc_call) @function.call
+(cfunc_call
+  (symbol_parameter) @parameter
+  (args_parameter) @parameter
+  (ret_parameter) @parameter) @function.call
+
+
 (symbol_parameter) @parameter
 
 (ret_parameter) @parameter
@@ -181,14 +187,14 @@ close_brace: (_) @punctuation.bracket
 (encoded_string
   (numeric_literal) @number)
 
-(find_rune) @function.call
+; (find_rune) @function.call
 
-(find_rune
-  [
-   (numeric_literal) @number 
-   (string) @string.escape
-   (encoded_string) @string.escape
-  ])
+; (find_rune
+;   [
+;    (numeric_literal) @number 
+;    (string) @string.escape
+;    (encoded_string) @string.escape
+;   ])
 
 ; --| Coroutine -------------
 

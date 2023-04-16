@@ -526,6 +526,74 @@
             "value": "pointer"
           },
           {
+            "type": "STRING",
+            "value": "string"
+          },
+          {
+            "type": "STRING",
+            "value": "boolean"
+          },
+          {
+            "type": "STRING",
+            "value": "char"
+          },
+          {
+            "type": "STRING",
+            "value": "byte"
+          },
+          {
+            "type": "STRING",
+            "value": "short"
+          },
+          {
+            "type": "STRING",
+            "value": "long"
+          },
+          {
+            "type": "STRING",
+            "value": "uchar"
+          },
+          {
+            "type": "STRING",
+            "value": "ushort"
+          },
+          {
+            "type": "STRING",
+            "value": "ulong"
+          },
+          {
+            "type": "STRING",
+            "value": "uint"
+          },
+          {
+            "type": "STRING",
+            "value": "int8"
+          },
+          {
+            "type": "STRING",
+            "value": "int16"
+          },
+          {
+            "type": "STRING",
+            "value": "int32"
+          },
+          {
+            "type": "STRING",
+            "value": "int64"
+          },
+          {
+            "type": "STRING",
+            "value": "charPtr"
+          },
+          {
+            "type": "STRING",
+            "value": "voidPtr"
+          },
+          {
+            "type": "STRING",
+            "value": "double"
+          },
+          {
             "type": "SYMBOL",
             "name": "cfunc"
           },
@@ -1096,6 +1164,18 @@
           {
             "type": "SYMBOL",
             "name": "identifier"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "type_identifier"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
           },
           {
             "type": "SEQ",
@@ -1830,7 +1910,15 @@
                       "name": "type",
                       "content": {
                         "type": "SYMBOL",
-                        "name": "identifier"
+                        "name": "builtin_type"
+                      }
+                    },
+                    {
+                      "type": "FIELD",
+                      "name": "type",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "type_identifier"
                       }
                     },
                     {
@@ -3011,14 +3099,6 @@
             "content": {
               "type": "SYMBOL",
               "name": "cstruct_call"
-            }
-          },
-          {
-            "type": "PREC",
-            "value": 43,
-            "content": {
-              "type": "SYMBOL",
-              "name": "find_rune"
             }
           },
           {

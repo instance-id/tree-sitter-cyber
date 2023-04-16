@@ -208,7 +208,9 @@ module.exports = grammar({
     builtin_type: ($) => prec(KPREC.builtin, choice(
       "int", "float", "bool", "none", "any", "void", "object", 
       "atype", "tagtype", "true", "false", "number", "pointer", 
-      $.cfunc, $.error, 
+      "string", "boolean", "char", "byte", "short", "long", "uchar",
+      "ushort", "ulong", "uint", "int8", "int16", "int32", "int64",
+      "charPtr", "voidPtr", "double", $.cfunc, $.error, 
     )),
 
     import_export: (_$) => choice("import", "export"),
@@ -331,7 +333,8 @@ module.exports = grammar({
 
     // Static variable declaration
     var_declaration: ($) => prec.left(PREC.varDef, seq(
-      "var", $.identifier,
+      "var", $.identifier, 
+      optional($.type_identifier),
       seq(":", 
         choice(
           $._expression,
@@ -419,7 +422,8 @@ module.exports = grammar({
       prec(PREC.object+1, field("member", $.identifier)), 
       prec(PREC.object, optional(
         choice(
-          field("type", $.identifier),
+          field("type", $.builtin_type),
+          field("type", $.type_identifier),
           field("type", $.field_expression) 
       ))),
       $._newline
@@ -639,7 +643,7 @@ module.exports = grammar({
         prec(PREC.anonymous,   $.anonymous_definition),
         prec(PREC.cfunc,       $.cfunc_call),
         prec(PREC.cstruct,     $.cstruct_call),
-        prec(PREC.find_rune,   $.find_rune),
+        // prec(PREC.find_rune,   $.find_rune),
         prec(PREC.field,       $.field_expression),
         prec(PREC.call,        $.call_expression),
         prec(PREC.type_cast,   $.type_cast),
