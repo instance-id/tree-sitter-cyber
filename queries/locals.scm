@@ -1,11 +1,15 @@
+(identifier) @reference
+((identifier) @reference
+  (#set! "reference.scope" "parent"))
+
+
+((type_identifier) @reference
+                   (set! reference.kind "type"))
+
 (import_statement
   (identifier) @definition.var)
-
 
 (var_identifier) @definition.var
-
-(import_statement
-  (identifier) @definition.var)
 
 (local_declaration) @definition.var
 
@@ -15,40 +19,36 @@
 (augmented_assignment
   left: (pattern) @definition.var)
 
-
 (function_definition
   (function_declaration
    name: (identifier) @name) @definition.function) @scope
 
-; (function_definition
-;   (function_declaration
-;     (parameter_list
-;       (parameter
-;         (identifier) @definition.parameter)))) @scope
+(typed_statement
+  ((type_identifier) @definition.type
+   (#set! "definition.type.scope" "global")))
 
-; (parameter_list
-;   (parameter
-;     (identifier) @definition.parameter))
-
-; (object_definition
-;   ((object_declaration)+
-;     ((identifier) @definition.type
-;   (#set! "definition.type.scope" "parent"))
-;   (identifier) @reference.type)) @definition.type
-
-  ; ((identifier) @variable
-  ;             (#set! "definition.type.scope" "parent"))
-  ; (identifier) @reference.type) @definition.type
-
-; (object_initializer
-;   (identifier
-;     (type_identifier) @type))
+(typed_statement
+  ((type_identifier) @definition.type
+   (#set! "definition.type.scope" "global"))
+  (object_definition 
+    (object_block
+      (object_member
+        ((identifier) @definition.var
+                      (#set! "definition.var.scope" "parent")))) @scope))
 
 (object_initializer
-  (type_identifier) @reference.type)
+  (member_assignment
+    (identifier) @reference.var))
+
+(object_initializer
+  ((type_identifier) @reference
+                (#set! "reference.scope" "parent")))
+  
+(field_expression
+  (identifier) @reference.var)
 
 (function_definition (block) @scope)
-; (object_definition (object_block) @scope)
+(object_block) @scope
 
 (if_statement (block) @scope)
 (block) @scope

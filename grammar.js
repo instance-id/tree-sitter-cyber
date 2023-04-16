@@ -39,6 +39,7 @@ const PREC = {
   param        : 38,
   augmented    : 38,
   paramList    : 39,
+  for          : 39,
   if           : 39,
   anonymous    : 40,
   capture      : 40,
@@ -204,9 +205,10 @@ module.exports = grammar({
 
     var_identifier: (_$) => prec(KPREC.var, choice(/[a-z]/, /[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]/)),
     type_identifier: (_$) => prec(KPREC.type, choice(/[a-zA-Z]/,/[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]/)),
-    builtin_type: (_$) => prec(KPREC.builtin, choice(
+    builtin_type: ($) => prec(KPREC.builtin, choice(
       "int", "float", "bool", "none", "any", "void", "object", 
-      "atype", "tagtype", "true", "false", "number", "pointer"
+      "atype", "tagtype", "true", "false", "number", "pointer", 
+      $.cfunc, $.error, 
     )),
 
     import_export: (_$) => choice("import", "export"),
@@ -222,7 +224,7 @@ module.exports = grammar({
         /x[0-9a-fA-F]{2}/,
         /["'`$\\abfnrtv]/,
         /[0-7]{1,3}/,
-      )))),
+    )))),
 
     encoded_string: ($) => prec(PREC.eStr, seq($.numeric_literal, $.string)),
 
@@ -290,13 +292,11 @@ module.exports = grammar({
     _complex_statement: ($) =>
     choice(
       $.if_statement,
-      // $.if_statement_inline,
       $.match_statement,
       $.loop_statement,
       $.while_loop,
       $.for_range_loop,
       $.for_iterable_loop,
-      $.for_optional_loop,
       $.try_statement,
       $.recover_block
     ),
@@ -339,14 +339,13 @@ module.exports = grammar({
         )))
     ),
 
-    anonymous_function: ($) => prec.left(seq($.func, parenthesized($, list_of($, $.parameter)))),
+    anonymous_function: ($) => prec.left(seq($.func, parenthesized($, optional(list_of($, $.parameter))))),
     anonymous_definition: ($) => prec.left(PREC.function, seq(
       prec.left($.anonymous_function),
       optional($._block_group)
     )),
 
     // Static function declaration
-
     function_definition: ($) => prec(PREC.fnDef, seq(
       alias("func", $.func),
       choice($.function_declaration, $.method_declaration),
@@ -396,12 +395,11 @@ module.exports = grammar({
           ))
     ))),
 
-    // optional(repeat1(prec(PREC.object, $.object_declaration))),
     // --| Object Definitions ---------
     // --|-----------------------------
     typed_statement: ($) => prec.left(PREC.object, seq(
       $.type,
-      $.type_identifier,
+      field("object_name", $.type_identifier),
       choice(
         alias($.field_expression, $.type_alias),
         $.identifier
@@ -460,9 +458,6 @@ module.exports = grammar({
     if_statement: ($) => prec.left(PREC.if, seq(
       "if", 
       prec.left(PREC.if, $._if_statement),
-      // choice(
-      //   prec.left(PREC.if - 1, field("body", $._if_statement_inline))
-      // ),
       repeat(field("else", $._else_statement))
     )),
 
@@ -533,9 +528,8 @@ module.exports = grammar({
 
     // --| For-Loops -------------
     // --|------------------------
-    for_range_loop: ($) => prec.left(1, seq("for", $._for_range_loop)),
-    for_iterable_loop: ($) => prec.left(1, seq("for", $._for_iterable_loop)),
-    for_optional_loop: ($) => prec.left(1, seq("for", $._for_optional_loop)),
+    for_range_loop:    ($) => prec.left(PREC.for,   seq("for", $._for_range_loop)),
+    for_iterable_loop: ($) => prec.left(PREC.for+1, seq("for", $._for_iterable_loop)),
 
     _for_range_loop: ($) => seq(
       field("start", $._expression),
@@ -553,13 +547,6 @@ module.exports = grammar({
       "each",
       field("variable", $.identifier),
       optional(seq(",", field("second_variable", $.identifier))),
-      field("body", $._block_group)
-    ),
-
-    _for_optional_loop: ($) => seq(
-      field("iterator_expression", $._expression),
-      $.as_identifier,
-      field("variable", $.identifier),
       field("body", $._block_group)
     ),
 
@@ -588,8 +575,15 @@ module.exports = grammar({
     // --| Other Statements ------
     // --|------------------------
     coyield_statement: ($) => prec(PREC.coyield, seq(field("coyield", $.coyield), $._newline)),
+    
     print_statement: ($) => prec.left(2, seq("print", $._expression)),
-    return_statement: ($) => prec.left( seq("return", optional(list_of($, $._expression)), optional($._newline))),
+
+    return_statement: ($) => prec.left(
+      seq(
+        "return", 
+        optional(list_of($, $._expression)), 
+        optional($._newline)
+    )),
 
     // --| Blocks ----------------
     // --|------------------------
@@ -650,13 +644,11 @@ module.exports = grammar({
         prec(PREC.call,        $.call_expression),
         prec(PREC.type_cast,   $.type_cast),
         prec(PREC.closure,     $.closure_expression),
-        // prec(PREC.lambda,      $.lambda_expression),
         prec(PREC.capture,     $.capture_expression), 
         prec(PREC.static,      $.static_expression), 
         prec(PREC.error,       $.error_expression),
         prec(PREC.throw,       $.throw_expression),
         prec(PREC.try,         $.try_expression),
-        // prec(PREC.else,        $.else_expression),
         prec(PREC.try_else,    $.try_else_expression),
         prec(PREC.catch,       $.catch_expression),
         prec(PREC.panic,       $.panic_expression),
@@ -754,7 +746,8 @@ module.exports = grammar({
         ))),
       prec.left(
         seq(
-          field("operators", choice("<", "<=", "==", "!=", ">=", ">", "<>", "in", seq($.not_operator, "in"), "is", seq("is", $.not_operator))), 
+          field("operators", choice("<", "<=", "==", "!=", ">=", ">", "<>", "in", 
+            seq($.not_operator, "in"), "is", seq("is", $.not_operator))), 
         )),
       prec.left(50, field("right", 
         choice(
@@ -784,7 +777,7 @@ module.exports = grammar({
     pattern: ($) =>
       choice(
         $.identifier,
-        // $.index_expression,
+        $.index_expression,
         $.range_expressions,
         $.tag_expression,
         $.call_expression,
@@ -816,19 +809,16 @@ module.exports = grammar({
     field_expression: ($) => prec(PREC.field,
       seq(
         field("object", $._expression), ".",
-        choice(
+        field("property", choice(
           prec(PREC.field - 1, $.accessor),
           prec(PREC.field, $._expression),
-        )
+        ))
     )),
 
     // --| Functions ------------------
     // --|-----------------------------
     call_expression: ($) => prec.left(PREC.call,
       choice(
-        // prec(PREC.binary, seq(
-        //   (parenthesized($, field("arithmetic", $.arithmetic_expression))),
-        // )),
         prec(PREC.call, seq(
           field("name", $.identifier), 
           parenthesized($, seq(optional(prec.left(list_of($, $.parameter))),
@@ -839,7 +829,7 @@ module.exports = grammar({
     // --| Object ---------------------
     // --|-----------------------------
     object_initializer: ($) => prec.left(PREC.object, seq(
-      field("type_name", $.type_identifier),
+      field("object_name", $.type_identifier),
       $._open_brace, 
           choice(
             optional($.member_assignment),
@@ -862,6 +852,7 @@ module.exports = grammar({
     parenthesized_expression: ($) => prec.left(PREC.parenExpr, seq(
       "(",
       choice(
+        $.identifier,
         $.numeric_literal,
         $.binary_operator,
         $._expression,
@@ -948,11 +939,11 @@ module.exports = grammar({
     // --|-----------------------------
     // --| CFunc ----------------------
     cfunc_call: ($) => prec.left(PREC.cfunc, seq(
-      "CFunc", $._open_brace, $.symbol_parameter, $.args_parameter, $.ret_parameter, $._close_brace)
+      $.cfunc, $._open_brace, $.symbol_parameter, $.args_parameter, $.ret_parameter, $._close_brace)
     ),
 
     symbol_parameter: ($) => prec.left(PREC.cfunc, seq( "sym", ":" , field("symbol", $.string), ",",)),
-    args_parameter: ($) => prec.left(PREC.cfunc, seq( "args", ":" , field("arguments", $.array_literal), ",",)),
+    args_parameter: ($) => prec.left(PREC.cfunc, seq( "args", ":" , field("arguments", $.array_contents), ",",)),
     ret_parameter: ($) => prec.left(PREC.cfunc, seq( "ret", ":" , field("type_mapping", choice($.identifier, $.tag_expression)),)),
 
     // --| CStruct --------------------
@@ -960,7 +951,7 @@ module.exports = grammar({
       "CStruct", $._open_brace, $.fields_parameter, $.object_parameter, $._close_brace)
     ),
 
-    fields_parameter: ($) => prec.left(PREC.cstruct, seq( "fields", ":" , field("arguments", $.array_literal), ",",)),
+    fields_parameter: ($) => prec.left(PREC.cstruct, seq( "fields", ":" , field("arguments", $.array_contents), ",",)),
     object_parameter: ($) => prec.left(PREC.cstruct, seq( "type", ":" , field("object_mapping", $.identifier))),
 
     // --| findRune -------------------
@@ -1010,7 +1001,7 @@ module.exports = grammar({
       choice(
         prec.left(PREC.slice, seq( 
           $._open_bracket, 
-          choice($.array_literal, $.slice), 
+          choice($.array_contents, $.slice), 
           $._close_bracket)
         ),
       ),
@@ -1036,12 +1027,13 @@ module.exports = grammar({
     ),
 
     enclosed_expression: ($) => choice(
+      prec.left($.object_initializer),
       seq($._open_paren,   $._expression,             $._close_paren),
-      seq($._open_bracket, optional($.array_literal), $._close_bracket),
+      field("array_literal", seq($._open_bracket, optional($.array_contents), $._close_bracket)),
       seq($._open_brace,   optional($.map_literal),   $._close_brace),
     ),
 
-    array_literal: ($) => prec.left(1 ,seq(
+    array_contents: ($) => prec.left(1 ,seq(
         prec.left(2, list_of($, $._expression, ',', true)),
     )),
 
@@ -1056,6 +1048,7 @@ module.exports = grammar({
     type:  (_$) => token("type"),
     func:  (_$) => token("func"),
     error: (_$) => token("error"),
+    cfunc: (_$) => token("CFunc"),  
     try_identifier: (_$) => "try",
     else_identifier: (_$) => "else",
     panic_identifier: (_$) => "panic",  
@@ -1069,12 +1062,12 @@ module.exports = grammar({
     coinit:   (_$) => "coinit",
     coresume: (_$) => "coresume",
     coyield:  (_$) => "coyield",
-    _open_paren:  (_$) => "(",
-    _close_paren: (_$) => ")",
-    _open_brace:  (_$) => "{",       
-    _close_brace: (_$) => "}",
-    _open_bracket:  (_$) => "[",
-    _close_bracket: (_$) => "]",
+    _open_paren:    (_$) => alias("open_paren", "("),
+    _close_paren:   (_$) => field("close_paren", ")"),
+    _open_brace:    (_$) => field("open_brace", "{"),       
+    _close_brace:   (_$) => field("close_brace", "}"),
+    _open_bracket:  (_$) => field("open_bracket", "["),
+    _close_bracket: (_$) => field("close_bracket", "]"),
 
     keyword_identifier: ($) => prec(-3, alias(choice(
       // Async ---------

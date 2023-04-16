@@ -31,10 +31,10 @@ _test-linux run debug:
 # --| Test All ------------------
 # --|----------------------------
 
-test-all:
+test-all newline='false':
   #!{{shebang}}
   . {{build_steps}}
-  RunTestAll
+  RunTestAll {{newline}}
 
 _test-windows run:
   # Do Windows Things

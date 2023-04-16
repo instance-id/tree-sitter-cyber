@@ -6,6 +6,10 @@
 ; ((identifier) @function.method
 ;  (#is-not? local))
 
+
+; ((identifier) @type
+;    (#lua-match? @type "^[A-Z][a-zA-Z_0-9]*$"))  
+
 (var_identifier) @variable
 (type_identifier) @type
 (import_export) @include
@@ -35,7 +39,8 @@
 (or_operator) @keyword
 (not_operator) @keyword
 (bang_operator) @keyword
-
+open_brace: (_) @punctuation.bracket
+close_brace: (_) @punctuation.bracket
 
 (capture_identifier) @keyword
 (lambda_operator) @punctuation.bracket
@@ -48,6 +53,11 @@
   "import" @include
   (identifier) @variable
   (string) @module)
+
+(local_declaration
+  (identifier) @variable
+  ((identifier) @type
+   (#lua-match? @variable "^[A-Z][a-zA-Z_0-9]*$")))
 
 (local_declaration 
   (identifier) @variable
@@ -63,44 +73,22 @@
     (func) @function))
 
 (anonymous_function
-  (func) @function)
+  (func) @function
+  "(" @punctuation.bracket
+  ")" @punctuation.bracket)
 
 (function_definition 
   (func) @keyword.function
   (function_declaration
-    name: (identifier) @function
-    ; "(" @punctuation.bracket
-    ; ")" @punctuation.bracket
-    ) @function)
+    name: (identifier) @function) @function)
 
 (function_definition 
   (func) @keyword.function
   (method_declaration
     (method_parameter_list) @parameters)) @function.method
-    ; open_paren: (_) @punctuation.bracket
-    ; close_paren: (_) @punctuation.bracket) @function)
 
 (function_declaration
   (identifier) @function)
-  ; (parameter_list) @parameters)
-
-; Object declaration
-; (object_declaration
-;   "type"  @keyword
-;   type_name: (identifier) @type.definition
-;   type_of: (identifier) @type)
-
-; (object_declaration
-;   ; "type"  @keyword
-;   type_name: (type_identifier) @type.definition
-;   type_of: (type_identifier) @type)+
-
-; (object_definition
-;  (object_block
-;   (local_declaration) @member_declaration))
-
-; (expression_statement
-;   (call_expression) @function.call)  
 
 ; --| Conditional -----------
 (if_statement 
@@ -123,14 +111,10 @@
   "for" @repeat 
   (identifier) @variable)
 
-(for_optional_loop 
-  "for" @repeat 
-  (identifier) @variable)
-
 (object_initializer 
-  (type_identifier) @type) 
-  ; (open_brace) @punctuation 
-  ; (close_brace) @punctuation)
+  (type_identifier) @type
+  "{" @punctuation
+  "}" @punctuation)
 
 (tagtype_declaration 
   "tagtype" @keyword 
@@ -150,23 +134,17 @@
 (augmented_assignment 
   left: (_) @variable)
 
-; Parameter list
-; (parameter_list 
-;   (parameter) @parameter 
-;   (#set! parent_highlight_name "parameters"))
-
 (parameter 
   (identifier) @parameter)
+
+(field_expression
+  ((identifier) @variable
+   (#is? @variable "var"))
+  property: (identifier) @property)
 
 ; --| Object/Member ---------
 ; (object_parameter
 ;   object_mapping: (identifier) @parameter)
-
-
-; (fields_parameter
-;   (array_literal
-;     (tag_expression)* @tag             
-;    )) @parameter
 
 (member_assignment 
   ":" @punctuation)
@@ -183,30 +161,13 @@
   (error) @exception)
 
 ; --| CFunc call ------------
-; (cfunc_call
-;   (args_parameter
-;     ; (array_literal
-;       (identifier
-;         (var_identifier) @type)))
-
 (cfunc_call) @function.call
 (symbol_parameter) @parameter
-
-; (args_parameter
-;   (array_literal
-;     (tag_expression)* @tag             
-;    )) @parameter
 
 (ret_parameter) @parameter
 
 ; --| CStruct call ------------ 
 (cstruct_call) @function.call
-
-; (cstruct_call
-;   (fields_parameter
-;     (array_literal
-;       (identifier
-;         (var_identifier) @type))))
 
 (cstruct_call
   (object_parameter
@@ -216,16 +177,9 @@
 ; --| Map/KV ---------------
 (key_value_pair) @property
 
-; (map_literal 
-; (open_brace) @punctuation 
-; (close_brace) @punctuation
-
 ; --| findRune --------------
 (encoded_string
   (numeric_literal) @number)
-
-; (codepoint 
-;   (numeric_literal) @number)
 
 (find_rune) @function.call
 
@@ -250,28 +204,34 @@
 (coyield_statement 
   (coyield) @keyword.coroutine)
 
-; Interpolated strings
-; (interpolated_string 
-;   "\"" @string.quote 
-;   (interpolation)+ "\"" @string.quote)
-;
-; (interpolation 
-;   "{" @string.special 
-;   (_) @variable 
-;   "}" @string.special)
+
+(enclosed_expression
+  [
+   "(" 
+   "{"
+   "["
+  ] @punctuation.bracket
+  [
+   ")" 
+   "}" 
+   "]"
+   ] @punctuation.bracket)
+
+(index_expression
+  [
+   "[" @punctuation
+   "]" @punctuation
+   ])
 
 ; Tag expression
 (tag_expression 
   "#" @tag
   tag: (identifier) @type)
 
+ 
 ; --| Keywords --------------
 ; --|------------------------
 [ "," ":" ] @punctuation.delimiter
-
-; [ "(" ")" "[" "]" "{" "}" ] @punctuation.bracket
-; (open_paren) @punctuation.bracket
-; (close_paren) @punctuation.bracket
 
 [ "-" "-=" "!=" "*" "*=" "/" "//" "/=" "&" "%" 
   "^" "+" "+=" "<" "<<" "<=" "<>" "=" "==" ">"

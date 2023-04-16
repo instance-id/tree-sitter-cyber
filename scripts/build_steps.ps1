@@ -77,7 +77,10 @@ function RunTest(){
 # --| Test All -------------------
 # --|-----------------------------
 function RunTestAll(){
- 
+  param(
+    [string]$addEndNewline = 'false'
+  )
+
   $canContinue = $true
   write-hostcolor "Testing parser" -ForegroundColor $yellowCode
   
@@ -93,6 +96,8 @@ function RunTestAll(){
 
   $testFiles = Get-ChildItem $testFolder -Filter "*.cy" | Select-Object -ExpandProperty FullName
   $testFiles | ForEach-Object {
+    if ($addEndNewline -match 'true') { Add-Content $_ "`n" }
+
     try { $output = $(tree-sitter parse $_;); $canContinue = $? }
     catch { write-hostcolor "Failed to parse ${_}" -foregroundcolor red; echo $_; $canContinue = $false }
 

@@ -11,8 +11,6 @@ func fib(n int) int:
 
 str = 'abc aabbcc acb aabb c'
 cur = 0
-
-for str[cur..].indexChar('c') as i:
-  print 'Found char at {cur + i}.'
-  cur += i + 1
-
+while str[cur..].findRune(0u'c') some i:
+    print 'Found char at {cur + i}.'
+    cur += i + 1
