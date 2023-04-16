@@ -3,6 +3,9 @@
 
 param()
 
+# --| Adjust to your local location
+$testFolder = "/mnt/x/GitHub/fubark/cyber/test"
+
 # --| Imports --------------------
 # --|-----------------------------
 $current = $PSScriptRoot
@@ -26,12 +29,14 @@ function RunTest(){
   $canContinue = $true
   Write-HostColor "Testing parser" -ForegroundColor $yellowCode
    
+  # --| Enable Parser Debugging ------- 
   if ($debug) {
     $env:CYBER_TREE_SITTER_DEBUG=true 
     Write-HostColor "Debugging Enabled" -ForegroundColor $yellowCode
   }
   else { $env:CYBER_TREE_SITTER_DEBUG=false } 
 
+  # --| Run Tests On File Syntax ------
   try{ tree-sitter test; $canContinue = $? }
   catch{ write-hostcolor "Failed to test parser" -foregroundcolor red; echo $_;  $canContinue = $false }
   
@@ -40,27 +45,27 @@ function RunTest(){
   
   write-hostcolor "Testing $testScript" -ForegroundColor $yellowCode
  
+  # --| Test Parse Specific File ------
   try { 
     if ($debug) { 
       $debugOut = $(& /bin/bash -c "CYBER_TREE_SITTER_DEBUG=true tree-sitter parse $testScript 2>&1")
 
-        $debugLines = $debugOut | Select-String -Pattern "DEBUG" -AllMatches -CaseSensitive | Select-Object
-        $errrorLines = $debugOut | Select-String -Pattern "ERROR" -AllMatches -CaseSensitive | Select-Object
+      $debugLines = $debugOut | Select-String -Pattern "DEBUG" -AllMatches -CaseSensitive | Select-Object
+      $errrorLines = $debugOut | Select-String -Pattern "ERROR" -AllMatches -CaseSensitive | Select-Object
 
-        if($debugLines.Count -gt 0){
-          $debugLines | ForEach-Object { 
-            if($_ -match ".*result_symbol.*|.*STRING.*"){
-              write-hostcolor $_ -foregroundcolor $greencode 
-            } 
-            else { write-hostcolor $_ -foregroundcolor $textcode  }
-          }
+      if($debugLines.Count -gt 0){
+        $debugLines | ForEach-Object { 
+          if($_ -match ".*result_symbol.*|.*STRING.*"){
+            write-hostcolor $_ -foregroundcolor $greencode 
+          } 
+          else { write-hostcolor $_ -foregroundcolor $textcode  }
         }
+      }
 
       if($errrorLines.Count -gt 0){
         $errrorlines | foreach-object { write-hostcolor $_ -foregroundcolor red }
         $canContinue = $false
       }
-
     }
     else {
       tree-sitter parse $testScript; $canContinue = $? 
@@ -91,8 +96,6 @@ function RunTestAll(){
   else { write-hostcolor "Failed Testing" -foregroundcolor red; just update; exit 1 }
 
   write-hostcolor "Parsing Test Scripts" -ForegroundColor $yellowCode
-
-  $testFolder = "/mnt/x/GitHub/fubark/cyber/test"
 
   $testFiles = Get-ChildItem $testFolder -Filter "*.cy" | Select-Object -ExpandProperty FullName
   $testFiles | ForEach-Object {
@@ -198,7 +201,6 @@ function RunBuildAll(){
   if($canContinue){
     write-hostcolor "Built wasm" -foregroundcolor $greenCode 
 
-    $testFolder = "./sample_scripts/tests/"
     $testFiles = Get-ChildItem $testFolder -Filter "*.cy" -Recurse | Select-Object -ExpandProperty FullName
     $testFiles | ForEach-Object {
       try { tree-sitter parse $_; $canContinue = $? }

@@ -4318,7 +4318,19 @@
             "named": false
           },
           {
+            "type": "field_expression",
+            "named": true
+          },
+          {
             "type": "parameter",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "typed_parameter",
             "named": true
           }
         ]
@@ -4743,10 +4755,6 @@
       "types": [
         {
           "type": "builtin_function",
-          "named": true
-        },
-        {
-          "type": "builtin_type",
           "named": true
         },
         {
@@ -7994,10 +8002,6 @@
         "required": false,
         "types": [
           {
-            "type": "builtin_type",
-            "named": true
-          },
-          {
             "type": "field_expression",
             "named": true
           },
@@ -10662,7 +10666,47 @@
   {
     "type": "type_identifier",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "builtin_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "typed_parameter",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "typed_statement",
@@ -11611,6 +11655,10 @@
   },
   {
     "type": "print",
+    "named": false
+  },
+  {
+    "type": "rawstring",
     "named": false
   },
   {

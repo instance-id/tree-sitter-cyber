@@ -145,6 +145,7 @@ module.exports = grammar({
 
       // @ts-ignore
     keyword: (_$) => /[a-zA-Z_](\w|#)*/,
+    _whitespace: (_$) => /[ \t]+/,
 
     _newline: ($) => prec(1, $._NEWLINE),
     _indent: ($) => prec(PREC.INDENT,$._INDENT),
@@ -197,20 +198,24 @@ module.exports = grammar({
         $.var_identifier,
         $.type_identifier, 
         $.import_export,
-        $.builtin_type,
+        // $.builtin_type,
         $.exception_identifiers,
         $.repeat_identifiers,
         prec(KPREC.ident, /[a-z_][a-zA-Z0-9_-]*/)
       )),
 
     var_identifier: (_$) => prec(KPREC.var, choice(/[a-z]/, /[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]/)),
-    type_identifier: (_$) => prec(KPREC.type, choice(/[a-zA-Z]/,/[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]/)),
+    type_identifier: ($) => prec(KPREC.type, choice(
+      $.builtin_type,
+      /[a-zA-Z]/,/[a-zA-Z][a-zA-Z0-9_]*[a-zA-Z0-9]/)
+    ),
     builtin_type: ($) => prec(KPREC.builtin, choice(
       "int", "float", "bool", "none", "any", "void", "object", 
       "atype", "tagtype", "true", "false", "number", "pointer", 
-      "string", "boolean", "char", "byte", "short", "long", "uchar",
-      "ushort", "ulong", "uint", "int8", "int16", "int32", "int64",
-      "charPtr", "voidPtr", "double", $.cfunc, $.error, 
+      "string", "rawstring", "boolean", "char", "byte", "short",
+      "long", "uchar", "ushort", "ulong", "uint", "int8", "int16",
+      "int32", "int64", "charPtr", "voidPtr", "double",
+      $.cfunc, $.error, 
     )),
 
     import_export: (_$) => choice("import", "export"),
@@ -362,8 +367,19 @@ module.exports = grammar({
 
     function_declaration: ($) => prec.left(PREC.fnDef, seq(
       field("name", $.identifier),
-      field("parameters", parenthesized($, list_of($, $.parameter))),
-      
+      choice(
+        prec.left(field("parameters", parenthesized($, (list_of($, $.typed_parameter))))),
+        field("parameters", parenthesized($, list_of($, seq(
+          $.parameter, 
+          optional(
+            seq(
+              // $._whitespace, 
+              choice(
+                $.type_identifier,
+                $.field_expression
+              )))
+        ))))
+      ),
     )),
 
     method_declaration: ($) => prec.left(PREC.fnDef - 1, seq(
@@ -386,13 +402,18 @@ module.exports = grammar({
         ),
       )),
 
+    typed_parameter: ($) => prec.left(PREC.param, seq(  
+      field("name", $.identifier),
+      choice(field("type", $.type_identifier), field("type", $.field_expression))
+    )),
+
     parameter: ($) => prec.left(PREC.param, seq(
       prec.left(50,
         choice(
           prec.left(PREC.param, $._expression),
           prec.left(PREC.param - 1, 
             seq(
-                field("name", $.identifier),
+              field("name", $.identifier),
               optional($.type_identifier)
             )
           ))
@@ -422,7 +443,7 @@ module.exports = grammar({
       prec(PREC.object+1, field("member", $.identifier)), 
       prec(PREC.object, optional(
         choice(
-          field("type", $.builtin_type),
+          // field("type", $.builtin_type),
           field("type", $.type_identifier),
           field("type", $.field_expression) 
       ))),

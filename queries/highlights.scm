@@ -3,10 +3,6 @@
 ;  ((identifier) @constant
 ;   (#lua-match? @type "^[A-Z][A-Z_0-9]*$"))
 
-; ((identifier) @function.method
-;  (#is-not? local))
-
-
 ; ((identifier) @type
 ;    (#lua-match? @type "^[A-Z][a-zA-Z_0-9]*$"))  
 
@@ -90,6 +86,24 @@ close_brace: (_) @punctuation.bracket
 (function_declaration
   (identifier) @function)
 
+(typed_statement
+  (type_identifier) @type
+  (identifier) @type) 
+
+(typed_statement
+  ((type_identifier) @reference.type
+   (#is? @reference.type "type"))
+  (object_definition 
+    (object_block
+      (object_member
+        ((identifier) @reference.var
+         (#is? @reference.var "variable"))))
+    @scope))
+
+(object_member
+  ((identifier) @reference.var
+   (#is? @reference.var "variable")))
+
 ; --| Conditional -----------
 (if_statement 
   "if" @conditional)
@@ -112,7 +126,8 @@ close_brace: (_) @punctuation.bracket
   (identifier) @variable)
 
 (object_initializer 
-  (type_identifier) @type
+  ((type_identifier) @type
+   (#is? @type "global"))
   "{" @punctuation
   "}" @punctuation)
 
@@ -143,8 +158,6 @@ close_brace: (_) @punctuation.bracket
   property: (identifier) @property)
 
 ; --| Object/Member ---------
-; (object_parameter
-;   object_mapping: (identifier) @parameter)
 
 (member_assignment 
   ":" @punctuation)
@@ -154,7 +167,7 @@ close_brace: (_) @punctuation.bracket
 
 ; --| Function call ---------
 (call_expression
-  name: (identifier)  @function.call)
+  (identifier)  @function.call)
 
 ; --| Exception -------------
 (error_expression
@@ -187,17 +200,7 @@ close_brace: (_) @punctuation.bracket
 (encoded_string
   (numeric_literal) @number)
 
-; (find_rune) @function.call
-
-; (find_rune
-;   [
-;    (numeric_literal) @number 
-;    (string) @string.escape
-;    (encoded_string) @string.escape
-;   ])
-
 ; --| Coroutine -------------
-
 (coinit_expression 
   (coinit) @keyword.coroutine)
 
@@ -210,7 +213,7 @@ close_brace: (_) @punctuation.bracket
 (coyield_statement 
   (coyield) @keyword.coroutine)
 
-
+; --| Array/Map/Literals ----
 (enclosed_expression
   [
    "(" 
@@ -233,7 +236,6 @@ close_brace: (_) @punctuation.bracket
 (tag_expression 
   "#" @tag
   tag: (identifier) @type)
-
  
 ; --| Keywords --------------
 ; --|------------------------
