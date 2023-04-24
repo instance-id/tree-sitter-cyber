@@ -100,7 +100,7 @@ function identifier($, rule, alphaOnly = false) {
 module.exports = grammar({
   name: "cyber",
 
-  extras: ($) => [/\s/, /[\t ]/, $.comment],
+  extras: ($) => [/\s/, /[\t ]/, $.shebang, $.comment],
   word: ($) => $.keyword,
 
   inline: ($) => [$._statement, $._indent, $._dedent, $._newline, $.keyword_identifier],
@@ -139,7 +139,7 @@ module.exports = grammar({
 
   rules: {
     source_file: ($) => seq(
-      optional($.shebang), 
+      optional($.shebang),
       repeat($._statement),
     ),
 
@@ -169,26 +169,27 @@ module.exports = grammar({
       const hexDigits = seq(repeat1(hex), repeat(seq(separator, repeat1(hex))));
       const decimalDigits = seq(repeat1(decimal), repeat(seq(separator, repeat1(decimal))));
 
-      return token(
+      return prec(PREC.numeric, token(
         choice(
           prec.left(3, octal),
           prec.left(2, seq(
             optional(/[~]/), 
             optional(/[+-]/), 
             choice(
-              seq( /[0-9][0-9_]*(\.[0-9_]+)?([eE][+-]?[0-9_]+)?/, optional(/[uUfF]/)),
+              seq(/[0-9][0-9_]*(\.[0-9_]+)?([eE][+-]?[0-9_]+)?/, optional(/[uUfF]/)),
               seq((choice('0x', '0b')), hexDigits)
             ), 
           )),
+
           prec.left(1, seq(
             optional(/[~]/), 
             optional(/[+-]/), 
             prec(4 ,optional(choice('0x', '0b'))), 
             choice(
-              seq( /[0-9]+#[0-9a-fA-F._-]+#([eE][+-]?[0-9_]+)?/, optional(/[uUfF]/)),
+              seq(/[0-9]+#[0-9a-fA-F._-]+#([eE][+-]?[0-9_]+)?/, optional(/[uUfF]/)),
               decimalDigits 
             ))),
-        ))
+        )))
     },
 
     name: (_$) => token(/[a-zA-Z_][a-zA-Z0-9_-]*/), // -- This order matters
@@ -198,7 +199,6 @@ module.exports = grammar({
         $.var_identifier,
         $.type_identifier, 
         $.import_export,
-        // $.builtin_type,
         $.exception_identifiers,
         $.repeat_identifiers,
         prec(KPREC.ident, /[a-z_][a-zA-Z0-9_-]*/)
@@ -223,7 +223,7 @@ module.exports = grammar({
 
     exception_identifiers: ($) => choice($.try_identifier, $.catch_identifier, "recover"),
     repeat_identifiers: (_$) => choice("do", "while", "for", "yield", "break", "continue", "pass"),
-    builtin_function: (_$) => token(choice("len", "map", "print", "typeid", "indexChar", "insert", "string")),
+    builtin_function: (_$) => token(choice("len", "map", "print", "typeid", "indexChar", "insert", "string", "exit")),
 
     escape_sequence: (_$) => token(seq('\\', token.immediate(
       choice(
@@ -233,7 +233,11 @@ module.exports = grammar({
         /[0-7]{1,3}/,
     )))),
 
-    encoded_string: ($) => prec(PREC.eStr, seq($.numeric_literal, $.string)),
+    encoded_string: ($) => prec(PREC.eStr, 
+      seq(
+        $.numeric_literal, 
+        $.string
+    )),
 
     multiline_string: ($) => choice(
       // --| Triple Quoted ------------
@@ -294,6 +298,7 @@ module.exports = grammar({
       $.coyield_statement,
       $.print_statement,
       $.return_statement,
+      $.exit_statement
     ),
 
     _complex_statement: ($) =>
@@ -320,7 +325,7 @@ module.exports = grammar({
 
     // --| Declarations ---------------
     // --|-----------------------------
-    shebang: (_$) => token.immediate(/#!.*\n+/),
+    shebang: ($) => seq("#!", /.*/, $._newline),
     import_statement: ($) => prec(13, seq("import", $.identifier, $.string)),
 
     local_declaration: ($) => prec.left(PREC.loDef, 
@@ -368,7 +373,7 @@ module.exports = grammar({
     function_declaration: ($) => prec.left(PREC.fnDef, seq(
       field("name", $.identifier),
       choice(
-        prec.left(field("parameters", parenthesized($, (list_of($, $.typed_parameter))))),
+        prec.left(field("parameters", parenthesized($, optional(list_of($, $.typed_parameter))))),
         field("parameters", parenthesized($, list_of($, seq(
           $.parameter, 
           optional(
@@ -602,6 +607,7 @@ module.exports = grammar({
     coyield_statement: ($) => prec(PREC.coyield, seq(field("coyield", $.coyield), $._newline)),
     
     print_statement: ($) => prec.left(2, seq("print", $._expression)),
+    exit_statement: ($) => prec.left(2, seq("exit", $.numeric_literal)),
 
     return_statement: ($) => prec.left(
       seq(

@@ -1,3 +1,4 @@
+local vim = vim
 
 local is_ok, telescope = pcall(require, "telescope.defaults")
 if is_ok then
@@ -20,7 +21,15 @@ if is_ok then
   print("Table of ignored files: ", telescope.file_ignore_patterns)
 end
 
+vim.cmd('ProjectRoot')
 
+-- Run shell command 'just build' in project root when :ProjectBuild is called
+_G.project_build = function()
+  print("Building project...")
+  vim.cmd('ProjectRoot')
+
+  vim.cmd('!just build nvim')
+end
 
 vim.g.local_history_enabled = 1
 vim.opt.tabstop=2

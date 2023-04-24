@@ -1,5 +1,3 @@
-
-
 $Script:defaultColors = @{
   Black  = "#0c0c0c";
   DarkBlue	= "#0037da";

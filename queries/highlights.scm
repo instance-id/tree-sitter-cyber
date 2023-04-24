@@ -235,7 +235,10 @@ close_brace: (_) @punctuation.bracket
 ; Tag expression
 (tag_expression 
   "#" @tag
-  tag: (identifier) @type)
+  tag: (_) @type)
+
+; (exit_statement
+;   "exit" @keyword)
  
 ; --| Keywords --------------
 ; --|------------------------
@@ -247,7 +250,7 @@ close_brace: (_) @punctuation.bracket
 
 [ "type" "var" "as" "each" ] @keyword
 
-[ "print" ] @function.builtin
+[ "print" "exit" ] @function.builtin
 
 [ "tagtype" "atype" "none" "any" "number" "pointer" ] @type.builtin
 
