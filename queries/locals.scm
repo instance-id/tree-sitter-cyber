@@ -27,8 +27,7 @@
 
 ((object_definition 
   (object_block
-    (object_member
-      (identifier) @definition.var) @scope) @scope)
+    ((identifier) @definition.var) @scope) @scope)
  (#set! "definition.var.scope" "parent"))
 
 (object_initializer
@@ -39,9 +38,9 @@
   (type_identifier) @reference.type)
  (#set! "reference.type.scope" "parent"))
 
-((object_member
-  (identifier) @definition.var) @scope
-  (#set! "definition.var.scope" "parent"))
+; ((object_member
+;   (identifier) @definition.var) @scope
+;   (#set! "definition.var.scope" "parent"))
 
 (field_expression
   (identifier) @reference.var)

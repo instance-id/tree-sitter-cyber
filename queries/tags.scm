@@ -1,12 +1,12 @@
 (function_definition
   (function_declaration
-   name: (identifier) @name)) @definition.function
+   name: (_) @name)) @definition.function
 
 
 (var_identifier) @definition.var
 
 (import_statement
-  (identifier) @definition.var)
+  (_) @definition.var)
 
 (augmented_assignment
   left: (pattern) @definition.var)
@@ -14,7 +14,7 @@
 
 (function_definition
   (function_declaration
-    (identifier) @definition.function))
+    (_) @definition.function))
 
 ; (function_definition
 ;   (function_declaration

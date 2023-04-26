@@ -28,7 +28,7 @@ _G.project_build = function()
   print("Building project...")
   vim.cmd('ProjectRoot')
 
-  vim.cmd('!just build nvim')
+  vim.cmd('!just build')
 end
 
 vim.g.local_history_enabled = 1

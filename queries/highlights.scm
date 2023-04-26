@@ -9,12 +9,12 @@
 (var_identifier) @variable
 (type_identifier) @type
 (import_export) @include
-(builtin_type) @type.builtin
+; (_builtin_type) @type.builtin
 (exception_identifiers) @exception
 (repeat_identifiers) @repeat
 (builtin_function) @function.builtin
 (self) @parameter
-
+"func" @keyword.function
 ; Shebang
 (shebang) @comment
 
@@ -59,33 +59,29 @@ close_brace: (_) @punctuation.bracket
   (identifier) @variable
   (#set! parent_highlight_name "local"))
 
-; Var declaration
+; --| Var declaration -------
 (var_declaration
   "var" @keyword 
   (identifier) @variable)
 
+; --| Func definition -------
 (anonymous_definition
   (anonymous_function
-    (func) @function))
+   (_) @function))
 
 (anonymous_function
-  (func) @function
+  (_) @function
   "(" @punctuation.bracket
   ")" @punctuation.bracket)
 
-(function_definition 
-  (func) @keyword.function
-  (function_declaration
-    name: (identifier) @function) @function)
-
-(function_definition 
-  (func) @keyword.function
-  (method_declaration
-    (method_parameter_list) @parameters)) @function.method
-
 (function_declaration
-  (identifier) @function)
+  name: (identifier) @function)
 
+;--| Method definition ------
+(method_declaration
+  name: (identifier) @function)
+
+; --| Object definition -----
 (typed_statement
   (type_identifier) @type
   (identifier) @type) 
@@ -95,14 +91,9 @@ close_brace: (_) @punctuation.bracket
    (#is? @reference.type "type"))
   (object_definition 
     (object_block
-      (object_member
-        ((identifier) @reference.var
+      (((identifier) @reference.var
          (#is? @reference.var "variable"))))
     @scope))
-
-(object_member
-  ((identifier) @reference.var
-   (#is? @reference.var "variable")))
 
 ; --| Conditional -----------
 (if_statement 
@@ -190,8 +181,7 @@ close_brace: (_) @punctuation.bracket
 
 (cstruct_call
   (object_parameter
-    (identifier
-      (var_identifier) @type)))
+    ((var_identifier) @type)))
 
 ; --| Map/KV ---------------
 (key_value_pair) @property

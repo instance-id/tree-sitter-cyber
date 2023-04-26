@@ -1,11 +1,11 @@
 [
   {
-    "type": "accessor",
+    "type": "_identifier",
     "named": true,
     "fields": {
-      "value": {
-        "multiple": true,
-        "required": true,
+      "object": {
+        "multiple": false,
+        "required": false,
         "types": [
           {
             "type": "anonymous_definition",
@@ -25,6 +25,10 @@
           },
           {
             "type": "boolean_operator",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -76,6 +80,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -85,6 +93,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -116,6 +128,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -141,6 +157,370 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
+            "named": true
+          }
+        ]
+      },
+      "property": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "accessor",
+            "named": true
+          },
+          {
+            "type": "anonymous_definition",
+            "named": true
+          },
+          {
+            "type": "augmented_assignment",
+            "named": true
+          },
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "boolean_operator",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "capture_expression",
+            "named": true
+          },
+          {
+            "type": "catch_expression",
+            "named": true
+          },
+          {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
+            "type": "closure_expression",
+            "named": true
+          },
+          {
+            "type": "coinit_expression",
+            "named": true
+          },
+          {
+            "type": "comparison_operator",
+            "named": true
+          },
+          {
+            "type": "coresume_expression",
+            "named": true
+          },
+          {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
+            "type": "enclosed_expression",
+            "named": true
+          },
+          {
+            "type": "encoded_string",
+            "named": true
+          },
+          {
+            "type": "error_expression",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "index_expression",
+            "named": true
+          },
+          {
+            "type": "multiline_string",
+            "named": true
+          },
+          {
+            "type": "negation_operator",
+            "named": true
+          },
+          {
+            "type": "numeric_literal",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "panic_expression",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "static_expression",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "tag_expression",
+            "named": true
+          },
+          {
+            "type": "throw_expression",
+            "named": true
+          },
+          {
+            "type": "try_else_expression",
+            "named": true
+          },
+          {
+            "type": "try_expression",
+            "named": true
+          },
+          {
+            "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "cfunc",
+          "named": true
+        },
+        {
+          "type": "error",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "accessor",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "anonymous_definition",
+            "named": true
+          },
+          {
+            "type": "augmented_assignment",
+            "named": true
+          },
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "boolean_operator",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "capture_expression",
+            "named": true
+          },
+          {
+            "type": "catch_expression",
+            "named": true
+          },
+          {
+            "type": "cfunc_call",
+            "named": true
+          },
+          {
+            "type": "closure_expression",
+            "named": true
+          },
+          {
+            "type": "coinit_expression",
+            "named": true
+          },
+          {
+            "type": "comparison_operator",
+            "named": true
+          },
+          {
+            "type": "coresume_expression",
+            "named": true
+          },
+          {
+            "type": "cstruct_call",
+            "named": true
+          },
+          {
+            "type": "enclosed_expression",
+            "named": true
+          },
+          {
+            "type": "encoded_string",
+            "named": true
+          },
+          {
+            "type": "error_expression",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "index_expression",
+            "named": true
+          },
+          {
+            "type": "multiline_string",
+            "named": true
+          },
+          {
+            "type": "negation_operator",
+            "named": true
+          },
+          {
+            "type": "numeric_literal",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "panic_expression",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "static_expression",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "tag_expression",
+            "named": true
+          },
+          {
+            "type": "throw_expression",
+            "named": true
+          },
+          {
+            "type": "try_else_expression",
+            "named": true
+          },
+          {
+            "type": "try_expression",
+            "named": true
+          },
+          {
+            "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -176,12 +556,8 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
-        {
-          "type": "func",
-          "named": true
-        },
         {
           "type": "parameter",
           "named": true
@@ -234,6 +610,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -282,6 +662,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -291,6 +675,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -322,6 +710,10 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "static_expression",
           "named": true
         },
@@ -347,6 +739,14 @@
         },
         {
           "type": "type_cast",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -422,6 +822,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -470,6 +874,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -479,6 +887,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -510,6 +922,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -535,6 +951,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -658,6 +1082,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -706,6 +1134,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -715,6 +1147,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -746,6 +1182,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -771,6 +1211,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -889,6 +1337,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -937,6 +1389,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -946,6 +1402,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -977,6 +1437,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -1002,6 +1466,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -1053,6 +1525,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -1101,6 +1577,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -1110,6 +1590,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -1141,6 +1625,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -1167,28 +1655,17 @@
           {
             "type": "type_cast",
             "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
+            "named": true
           }
         ]
       }
-    }
-  },
-  {
-    "type": "builtin_type",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "cfunc",
-          "named": true
-        },
-        {
-          "type": "error",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -1200,7 +1677,31 @@
         "required": true,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -1243,6 +1744,10 @@
         },
         {
           "type": "boolean_operator",
+          "named": true
+        },
+        {
+          "type": "builtin_function",
           "named": true
         },
         {
@@ -1298,6 +1803,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -1307,6 +1816,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -1338,6 +1851,10 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "static_expression",
           "named": true
         },
@@ -1363,6 +1880,14 @@
         },
         {
           "type": "type_cast",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -1394,6 +1919,10 @@
           },
           {
             "type": "boolean_operator",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -1445,6 +1974,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -1454,6 +1987,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -1485,6 +2022,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -1510,6 +2051,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -1627,6 +2176,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -1679,6 +2232,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -1688,6 +2245,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -1719,6 +2280,10 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "static_expression",
           "named": true
         },
@@ -1744,6 +2309,14 @@
         },
         {
           "type": "type_cast",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -1773,7 +2346,31 @@
         "required": false,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -1867,6 +2464,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -1915,6 +2516,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -1924,6 +2529,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -1963,6 +2572,10 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "static_expression",
           "named": true
         },
@@ -1989,6 +2602,14 @@
         {
           "type": "type_cast",
           "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
+          "named": true
         }
       ]
     }
@@ -2007,7 +2628,31 @@
         "required": true,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -2032,7 +2677,31 @@
       "required": false,
       "types": [
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import_export",
+          "named": true
+        },
+        {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -2093,6 +2762,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -2141,6 +2814,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -2150,6 +2827,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -2181,6 +2862,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -2206,6 +2891,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -2281,6 +2974,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -2329,6 +3026,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -2338,6 +3039,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -2369,6 +3074,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -2394,6 +3103,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -2444,6 +3161,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -2492,6 +3213,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -2501,6 +3226,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -2532,6 +3261,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -2557,6 +3290,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -2653,6 +3394,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -2705,6 +3450,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -2714,6 +3463,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -2745,6 +3498,10 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "static_expression",
           "named": true
         },
@@ -2770,6 +3527,14 @@
         },
         {
           "type": "type_cast",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -2873,6 +3638,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -2921,6 +3690,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -2930,6 +3703,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -2965,6 +3742,10 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "static_expression",
           "named": true
         },
@@ -2990,6 +3771,14 @@
         },
         {
           "type": "type_cast",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -3054,6 +3843,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -3106,6 +3899,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -3115,6 +3912,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -3146,6 +3947,10 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "static_expression",
           "named": true
         },
@@ -3171,6 +3976,14 @@
         },
         {
           "type": "type_cast",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -3239,6 +4052,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -3287,6 +4104,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -3296,6 +4117,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -3327,6 +4152,10 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "static_expression",
           "named": true
         },
@@ -3352,6 +4181,14 @@
         },
         {
           "type": "type_cast",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -3386,6 +4223,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -3434,6 +4275,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -3443,6 +4288,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -3474,6 +4323,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -3499,6 +4352,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -3532,6 +4393,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -3580,6 +4445,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -3589,6 +4458,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -3620,6 +4493,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -3645,6 +4522,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -3710,6 +4595,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -3758,6 +4647,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -3767,6 +4660,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -3798,6 +4695,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -3824,6 +4725,14 @@
           {
             "type": "type_cast",
             "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
+            "named": true
           }
         ]
       },
@@ -3832,7 +4741,31 @@
         "required": false,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -3842,7 +4775,31 @@
         "required": true,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -3892,6 +4849,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -3940,6 +4901,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -3949,6 +4914,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -3980,6 +4949,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -4005,6 +4978,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -4034,6 +5015,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -4082,6 +5067,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -4091,6 +5080,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -4122,6 +5115,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -4147,6 +5144,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -4176,6 +5181,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -4224,6 +5233,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -4233,6 +5246,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -4264,6 +5281,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -4290,6 +5311,14 @@
           {
             "type": "type_cast",
             "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
+            "named": true
           }
         ]
       },
@@ -4298,17 +5327,36 @@
         "required": true,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
       }
     }
-  },
-  {
-    "type": "func",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "function_declaration",
@@ -4319,7 +5367,31 @@
         "required": true,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -4403,6 +5475,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -4451,6 +5527,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -4460,6 +5540,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -4491,6 +5575,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -4517,6 +5605,14 @@
           {
             "type": "type_cast",
             "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
+            "named": true
           }
         ]
       },
@@ -4525,7 +5621,31 @@
         "required": false,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -4556,6 +5676,10 @@
           },
           {
             "type": "boolean_operator",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -4611,6 +5735,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "exit_statement",
             "named": true
           },
@@ -4628,6 +5756,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -4671,6 +5803,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "return_statement",
             "named": true
           },
@@ -4707,11 +5843,19 @@
             "named": true
           },
           {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
             "type": "typed_statement",
             "named": true
           },
           {
             "type": "var_declaration",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -4727,10 +5871,6 @@
         },
         {
           "type": "exit_statement",
-          "named": true
-        },
-        {
-          "type": "func",
           "named": true
         },
         {
@@ -4779,37 +5919,7 @@
   {
     "type": "identifier",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "builtin_function",
-          "named": true
-        },
-        {
-          "type": "exception_identifiers",
-          "named": true
-        },
-        {
-          "type": "import_export",
-          "named": true
-        },
-        {
-          "type": "repeat_identifiers",
-          "named": true
-        },
-        {
-          "type": "type_identifier",
-          "named": true
-        },
-        {
-          "type": "var_identifier",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "if_expression",
@@ -4840,6 +5950,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -4888,6 +6002,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -4897,6 +6015,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -4928,6 +6050,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -4953,6 +6079,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -4982,6 +6116,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -5030,6 +6168,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -5039,6 +6181,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -5070,6 +6216,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -5095,6 +6245,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -5124,6 +6282,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -5172,6 +6334,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -5181,6 +6347,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -5212,6 +6382,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -5237,6 +6411,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -5296,6 +6478,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -5344,6 +6530,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -5353,6 +6543,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -5384,6 +6578,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -5409,6 +6607,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -5439,6 +6645,10 @@
           },
           {
             "type": "boolean_operator",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -5494,6 +6704,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -5503,6 +6717,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -5538,6 +6756,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -5564,6 +6786,14 @@
           {
             "type": "type_cast",
             "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
+            "named": true
           }
         ]
       }
@@ -5583,11 +6813,35 @@
       "required": true,
       "types": [
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
         {
+          "type": "import_export",
+          "named": true
+        },
+        {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -5647,6 +6901,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -5695,6 +6953,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -5704,6 +6966,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -5732,6 +6998,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "repeat_identifiers",
           "named": true
         },
         {
@@ -5765,6 +7035,14 @@
         {
           "type": "type_cast",
           "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
+          "named": true
         }
       ]
     }
@@ -5795,6 +7073,10 @@
           },
           {
             "type": "boolean_operator",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -5846,6 +7128,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -5855,6 +7141,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -5886,6 +7176,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -5911,6 +7205,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -6024,6 +7326,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -6072,6 +7378,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -6081,6 +7391,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -6112,6 +7426,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -6137,6 +7455,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -6166,6 +7492,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -6214,6 +7544,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -6223,6 +7557,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -6254,6 +7592,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -6279,6 +7621,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -6314,6 +7664,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -6362,6 +7716,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -6371,6 +7729,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -6402,6 +7764,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -6427,6 +7793,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -6456,6 +7830,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -6504,6 +7882,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -6513,6 +7895,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -6544,6 +7930,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -6570,6 +7960,14 @@
           {
             "type": "type_cast",
             "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
+            "named": true
           }
         ]
       },
@@ -6578,7 +7976,31 @@
         "required": false,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -6606,6 +8028,10 @@
         },
         {
           "type": "boolean_operator",
+          "named": true
+        },
+        {
+          "type": "builtin_function",
           "named": true
         },
         {
@@ -6661,6 +8087,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "exit_statement",
           "named": true
         },
@@ -6690,6 +8120,10 @@
         },
         {
           "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -6745,6 +8179,10 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "return_statement",
           "named": true
         },
@@ -6785,11 +8223,19 @@
           "named": true
         },
         {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
           "type": "typed_statement",
           "named": true
         },
         {
           "type": "var_declaration",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         },
         {
@@ -6878,6 +8324,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -6926,6 +8376,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -6935,6 +8389,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -6966,6 +8424,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -6991,6 +8453,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -7020,6 +8490,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -7068,6 +8542,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -7077,6 +8555,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -7108,6 +8590,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -7134,6 +8620,14 @@
           {
             "type": "type_cast",
             "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
+            "named": true
           }
         ]
       },
@@ -7159,6 +8653,10 @@
           },
           {
             "type": "boolean_operator",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -7214,6 +8712,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "exit_statement",
             "named": true
           },
@@ -7231,6 +8733,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -7274,6 +8780,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "return_statement",
             "named": true
           },
@@ -7310,11 +8820,19 @@
             "named": true
           },
           {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
             "type": "typed_statement",
             "named": true
           },
           {
             "type": "var_declaration",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -7370,6 +8888,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -7418,6 +8940,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -7427,6 +8953,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -7458,6 +8988,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -7484,6 +9018,14 @@
           {
             "type": "type_cast",
             "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
+            "named": true
           }
         ]
       }
@@ -7498,7 +9040,31 @@
         "required": true,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -7528,6 +9094,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -7576,6 +9146,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -7585,6 +9159,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -7616,6 +9194,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -7642,6 +9224,14 @@
           {
             "type": "type_cast",
             "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
+            "named": true
           }
         ]
       }
@@ -7656,7 +9246,31 @@
         "required": true,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -7772,6 +9386,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -7820,6 +9438,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -7829,6 +9451,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -7860,6 +9486,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -7886,13 +9516,69 @@
           {
             "type": "type_cast",
             "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
+            "named": true
+          }
+        ]
+      },
+      "member": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
           }
         ]
       }
     },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "coyield_statement",
@@ -7932,10 +9618,6 @@
         },
         {
           "type": "match_statement",
-          "named": true
-        },
-        {
-          "type": "object_member",
           "named": true
         },
         {
@@ -8036,36 +9718,6 @@
     }
   },
   {
-    "type": "object_member",
-    "named": true,
-    "fields": {
-      "member": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "type": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "type_identifier",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "object_parameter",
     "named": true,
     "fields": {
@@ -8074,7 +9726,31 @@
         "required": true,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -8110,6 +9786,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -8158,6 +9838,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -8167,6 +9851,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -8202,6 +9890,10 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "static_expression",
           "named": true
         },
@@ -8228,6 +9920,14 @@
         {
           "type": "type_cast",
           "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
+          "named": true
         }
       ]
     }
@@ -8246,7 +9946,31 @@
         "required": false,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -8274,6 +9998,10 @@
         },
         {
           "type": "boolean_operator",
+          "named": true
+        },
+        {
+          "type": "builtin_function",
           "named": true
         },
         {
@@ -8325,6 +10053,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -8334,6 +10066,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -8362,6 +10098,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "repeat_identifiers",
           "named": true
         },
         {
@@ -8394,6 +10134,10 @@
         },
         {
           "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -8428,6 +10172,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -8476,6 +10224,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -8485,6 +10237,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -8516,6 +10272,10 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "static_expression",
           "named": true
         },
@@ -8542,6 +10302,14 @@
         {
           "type": "type_cast",
           "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
+          "named": true
         }
       ]
     }
@@ -8555,7 +10323,15 @@
       "required": true,
       "types": [
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
+          "named": true
+        },
+        {
+          "type": "exception_identifiers",
           "named": true
         },
         {
@@ -8567,6 +10343,10 @@
           "named": true
         },
         {
+          "type": "import_export",
+          "named": true
+        },
+        {
           "type": "index_expression",
           "named": true
         },
@@ -8575,7 +10355,19 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "tag_expression",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -8610,6 +10402,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -8658,6 +10454,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -8667,6 +10467,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -8698,6 +10502,10 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "static_expression",
           "named": true
         },
@@ -8724,6 +10532,14 @@
         {
           "type": "type_cast",
           "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
+          "named": true
         }
       ]
     }
@@ -8737,7 +10553,31 @@
         "required": true,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -8757,7 +10597,31 @@
         "required": true,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -8797,11 +10661,35 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
         {
+          "type": "import_export",
+          "named": true
+        },
+        {
           "type": "inline_block",
+          "named": true
+        },
+        {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -8821,11 +10709,35 @@
         "required": true,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
           {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "tag_expression",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -8858,6 +10770,10 @@
         },
         {
           "type": "boolean_operator",
+          "named": true
+        },
+        {
+          "type": "builtin_function",
           "named": true
         },
         {
@@ -8909,6 +10825,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -8918,6 +10838,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -8949,6 +10873,10 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "static_expression",
           "named": true
         },
@@ -8974,6 +10902,14 @@
         },
         {
           "type": "type_cast",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -9013,6 +10949,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -9061,6 +11001,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -9070,6 +11014,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -9101,6 +11049,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -9126,6 +11078,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -9155,6 +11115,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -9203,6 +11167,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -9212,6 +11180,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -9243,6 +11215,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -9268,6 +11244,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -9313,6 +11297,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -9361,6 +11349,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -9370,6 +11362,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -9401,6 +11397,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -9426,6 +11426,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -9543,6 +11551,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -9591,6 +11603,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -9600,6 +11616,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -9628,6 +11648,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "repeat_identifiers",
           "named": true
         },
         {
@@ -9660,6 +11684,14 @@
         },
         {
           "type": "type_cast",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -9730,6 +11762,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -9778,6 +11814,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -9787,6 +11827,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -9818,6 +11862,10 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "static_expression",
           "named": true
         },
@@ -9843,6 +11891,14 @@
         },
         {
           "type": "type_cast",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -9873,7 +11929,31 @@
         "required": true,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -9889,7 +11969,31 @@
         "required": false,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -9900,7 +12004,31 @@
       "required": true,
       "types": [
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import_export",
+          "named": true
+        },
+        {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -9935,6 +12063,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -9983,6 +12115,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -9992,6 +12128,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -10020,6 +12160,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "repeat_identifiers",
           "named": true
         },
         {
@@ -10052,6 +12196,14 @@
         },
         {
           "type": "type_cast",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -10105,6 +12257,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -10157,6 +12313,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -10166,6 +12326,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -10194,6 +12358,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "repeat_identifiers",
           "named": true
         },
         {
@@ -10226,6 +12394,14 @@
         },
         {
           "type": "type_cast",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -10271,11 +12447,6 @@
     }
   },
   {
-    "type": "type",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "type_alias",
     "named": true,
     "fields": {
@@ -10301,6 +12472,10 @@
           },
           {
             "type": "boolean_operator",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -10352,6 +12527,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -10361,6 +12540,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -10392,6 +12575,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -10417,6 +12604,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -10450,6 +12645,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -10498,6 +12697,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -10507,6 +12710,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -10538,6 +12745,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -10563,6 +12774,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -10599,6 +12818,10 @@
         },
         {
           "type": "boolean_operator",
+          "named": true
+        },
+        {
+          "type": "builtin_function",
           "named": true
         },
         {
@@ -10650,6 +12873,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "field_expression",
           "named": true
         },
@@ -10659,6 +12886,10 @@
         },
         {
           "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -10687,6 +12918,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "repeat_identifiers",
           "named": true
         },
         {
@@ -10720,6 +12955,10 @@
         {
           "type": "type_identifier",
           "named": true
+        },
+        {
+          "type": "var_identifier",
+          "named": true
         }
       ]
     }
@@ -10733,7 +12972,11 @@
       "required": false,
       "types": [
         {
-          "type": "builtin_type",
+          "type": "cfunc",
+          "named": true
+        },
+        {
+          "type": "error",
           "named": true
         }
       ]
@@ -10748,7 +12991,31 @@
         "required": true,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -10758,11 +13025,7 @@
         "required": true,
         "types": [
           {
-            "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "type_identifier",
+            "type": "_identifier",
             "named": true
           }
         ]
@@ -10789,7 +13052,19 @@
       "required": true,
       "types": [
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -10797,11 +13072,19 @@
           "named": true
         },
         {
-          "type": "type",
+          "type": "repeat_identifiers",
           "named": true
         },
         {
           "type": "type_alias",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         }
       ]
@@ -10833,6 +13116,10 @@
           },
           {
             "type": "boolean_operator",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -10884,6 +13171,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -10893,6 +13184,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -10924,6 +13219,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -10949,6 +13248,14 @@
           },
           {
             "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
@@ -10976,6 +13283,10 @@
         },
         {
           "type": "boolean_operator",
+          "named": true
+        },
+        {
+          "type": "builtin_function",
           "named": true
         },
         {
@@ -11031,6 +13342,10 @@
           "named": true
         },
         {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
           "type": "exit_statement",
           "named": true
         },
@@ -11060,6 +13375,10 @@
         },
         {
           "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "import_export",
           "named": true
         },
         {
@@ -11115,6 +13434,10 @@
           "named": true
         },
         {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
           "type": "return_statement",
           "named": true
         },
@@ -11164,6 +13487,10 @@
         },
         {
           "type": "var_declaration",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
           "named": true
         },
         {
@@ -11221,6 +13548,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -11269,6 +13600,10 @@
             "named": true
           },
           {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "field_expression",
             "named": true
           },
@@ -11278,6 +13613,10 @@
           },
           {
             "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "import_export",
             "named": true
           },
           {
@@ -11309,6 +13648,10 @@
             "named": true
           },
           {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
             "type": "static_expression",
             "named": true
           },
@@ -11335,6 +13678,14 @@
           {
             "type": "type_cast",
             "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
+            "named": true
           }
         ]
       },
@@ -11343,7 +13694,31 @@
         "required": false,
         "types": [
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "exception_identifiers",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "import_export",
+            "named": true
+          },
+          {
+            "type": "repeat_identifiers",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "var_identifier",
             "named": true
           }
         ]
