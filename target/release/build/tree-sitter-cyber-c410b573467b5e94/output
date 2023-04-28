@@ -166,11 +166,11 @@ CRATE_CC_NO_DEFAULTS = None
 CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2")
 running: "/home/mosthated/.cargo/bin/sccache" "c++" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "-m64" "-I" "src" "-Wall" "-Wextra" "-Wno-unused-parameter" "-Wno-unused-but-set-variable" "-o" "/mnt/x/GitHub/instance-id/nvim/tree-sitter-cyber/target/release/build/tree-sitter-cyber-c410b573467b5e94/out/src/scanner.o" "-c" "src/scanner.cc"
 cargo:warning=src/scanner.cc: In member function ‘bool {anonymous}::Scanner::scan(TSLexer*, const bool*)’:
-cargo:warning=src/scanner.cc:183:16: warning: unused variable ‘lookahead’ [-Wunused-variable]
-cargo:warning=  183 |       int32_t &lookahead = lexer->lookahead;
+cargo:warning=src/scanner.cc:182:16: warning: unused variable ‘lookahead’ [-Wunused-variable]
+cargo:warning=  182 |       int32_t &lookahead = lexer->lookahead;
 cargo:warning=      |                ^~~~~~~~~
-cargo:warning=src/scanner.cc:190:12: warning: unused variable ‘sentinel_active’ [-Wunused-variable]
-cargo:warning=  190 |       bool sentinel_active = valid_symbols[ERROR_SENTINEL];
+cargo:warning=src/scanner.cc:196:12: warning: unused variable ‘sentinel_active’ [-Wunused-variable]
+cargo:warning=  196 |       bool sentinel_active = valid_symbols[ERROR_SENTINEL];
 cargo:warning=      |            ^~~~~~~~~~~~~~~
 cargo:warning=src/scanner.cc: At global scope:
 cargo:warning=src/scanner.cc:17:8: warning: ‘void {anonymous}::_debug()’ defined but not used [-Wunused-function]

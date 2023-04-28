@@ -15,7 +15,7 @@ func fib(n int) int:
 
 fib(1)
 count = 0    -- Counts number of recursive calls to fib.
-fiber = coinit fib(28)
+fiber = coinit fib()
 
 while fiber.status() != #done:
   res = coresume fiber
@@ -62,3 +62,4 @@ n.dump()
 while list != none:
   print list.data
   list = list.next
+

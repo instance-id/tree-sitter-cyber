@@ -6,10 +6,10 @@
 ; ((identifier) @type
 ;    (#lua-match? @type "^[A-Z][a-zA-Z_0-9]*$"))  
 
+(ERROR) @error
 (var_identifier) @variable
 (type_identifier) @type
 (import_export) @include
-; (_builtin_type) @type.builtin
 (exception_identifiers) @exception
 (repeat_identifiers) @repeat
 (builtin_function) @function.builtin
@@ -65,15 +65,6 @@ close_brace: (_) @punctuation.bracket
   (identifier) @variable)
 
 ; --| Func definition -------
-(anonymous_definition
-  (anonymous_function
-   (_) @function))
-
-(anonymous_function
-  (_) @function
-  "(" @punctuation.bracket
-  ")" @punctuation.bracket)
-
 (function_declaration
   name: (identifier) @function)
 
@@ -160,6 +151,23 @@ close_brace: (_) @punctuation.bracket
 (call_expression
   (identifier)  @function.call)
 
+; --| Lambda ---------------
+(anon_identifier) @function.lambda
+
+(lambda_expression
+  (lambda_operator) @punctuation.bracket)
+
+(lambda_multiline
+  (lambda_function
+   (_) @function))
+
+(lambda_function
+  (_) @function
+  "(" @punctuation.bracket
+  ")" @punctuation.bracket) @function.lambda
+
+(lambda_call) @function.lambda
+
 ; --| Exception -------------
 (error_expression
   (error) @exception)
@@ -170,7 +178,6 @@ close_brace: (_) @punctuation.bracket
   (symbol_parameter) @parameter
   (args_parameter) @parameter
   (ret_parameter) @parameter) @function.call
-
 
 (symbol_parameter) @parameter
 

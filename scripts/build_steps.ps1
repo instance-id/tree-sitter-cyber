@@ -16,6 +16,8 @@ $greenCode = '#92B55F'
 $textCode  = '#969696'
 $yellowCode= '#E8DA5E'
 
+# $tsBinary = "/home/mosthated/.cargo/bin/tree-sitter"
+# $env:PATH = "/home/mosthated/.cargo/bin:$env:PATH"
 # --| Tests ----------------------
 # --|-----------------------------
 function RunTest(){
@@ -100,9 +102,16 @@ function RunTestAll(){
   $testFiles = Get-ChildItem $testFolder -Filter "*.cy" | Select-Object -ExpandProperty FullName
   $testFiles | ForEach-Object {
     if ($addEndNewline -match 'true') { Add-Content $_ "`n" }
+    wl-copy $_
 
     try { $output = $(tree-sitter parse $_;); $canContinue = $? }
     catch { write-hostcolor "Failed to parse ${_}" -foregroundcolor red; echo $_; $canContinue = $false }
+    
+    $errrorLines = $output | Select-String -Pattern "ERROR" -AllMatches -CaseSensitive | Select-Object
+    if($errrorLines.Count -gt 0){
+      $errrorlines | foreach-object { write-hostcolor $_ -foregroundcolor red }
+      $canContinue = $false
+    }
 
     if (!$canContinue ){
       $lastLine = $output.Split("\n")[-1]
@@ -119,7 +128,7 @@ function RunTestAll(){
     else { 
       write-hostcolor "Failed: ✗ `n$($lastLine)" -ForegroundColor red 
       write-hostcolor "`nFailed to Parse Sample Script" -foregroundcolor red; 
-      wl-copy $lastLine.split("	")[0]
+      # wl-copy $lastLine.split("	")[0]
       just update; 
       exit 1
     }
@@ -203,6 +212,8 @@ function RunBuildAll(){
 
     $testFiles = Get-ChildItem $testFolder -Filter "*.cy" -Recurse | Select-Object -ExpandProperty FullName
     $testFiles | ForEach-Object {
+      wl-copy $_
+      write-hostcolor "Parsing ${_}" -foregroundcolor $yellowCode
       try { tree-sitter parse $_; $canContinue = $? }
       catch { write-hostcolor "Failed to parse ${_}" -ForegroundColor red; $canContinue = $false }
 
@@ -213,5 +224,5 @@ function RunBuildAll(){
   }
   else { write-hostcolor "Failed to build wasm" -foregroundcolor red ; exit 1 }
 
-  if($canContinue){ just update }
+  if($canContinue){ cargo build; cargo build --release; just update }
 }

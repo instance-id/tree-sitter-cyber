@@ -148,7 +148,7 @@ namespace
         if (delimiter_count > 0) {
           memcpy(delimiter_stack.data(), &buffer[i], delimiter_count);
         }
-        
+
         i += delimiter_count;
 
         for (; i < length; i++) {
@@ -179,12 +179,18 @@ namespace
 
     bool scan(TSLexer *lexer, const bool *valid_symbols)
     {
-
       int32_t &lookahead = lexer->lookahead;
-      
+
       debug("scan()");
       debug("col: ", lexer->get_column(lexer));
       debug("next: '", (char)lexer->lookahead, "'");
+
+      consume_whitespace(lexer);
+      if (lexer->eof(lexer)) {
+        debug("EOF in scan");
+        lexer->result_symbol = END_OF_STATEMENT;
+        return true;
+      }
 
       bool error_recovery_mode = ((valid_symbols[STRING_CONTENT] && valid_symbols[INDENT]));
       bool sentinel_active = valid_symbols[ERROR_SENTINEL];
@@ -218,7 +224,7 @@ namespace
 
               if (lexer->lookahead == end_character) {
                 lexer->advance(lexer, false);
-              
+
                 if (lexer->lookahead == end_character) {
                   if (has_content) {
                     lexer->result_symbol = STRING_CONTENT;
@@ -297,9 +303,6 @@ namespace
         }
       }
 
-
-
-
       lexer->mark_end(lexer);
       bool found_end_of_line = false;
       uint32_t indent_length = 0;
@@ -323,8 +326,8 @@ namespace
           skip(lexer); 
         }
         else if (lexer->lookahead == '\t') {
-        indent_length += 8;
-        skip(lexer);
+          indent_length += 8;
+          skip(lexer);
         }
         else if (lexer->lookahead == '\v') { 
           indent_length = 0; 
@@ -346,7 +349,7 @@ namespace
       // --|--------------------------------
       if (lexer->lookahead == ':' && (valid_symbols[SCOPE_START] || valid_symbols[INLINE_STATEMENT])
           /* && !error_recovery_mode */
-          ) {
+         ) {
         advance(lexer);
         consume_whitespace(lexer);
         if (lexer->lookahead == '\n') {

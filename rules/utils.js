@@ -23,9 +23,11 @@ function sep1($, rule, separator, newline = false) {
 
 // --| Parenthesis --------------------
 function parenthesized($, rule, isOptional = false) {
-  if (isOptional) return seq(
-    optional("("), optional($._newline), rule, optional($._newline), optional(")")
-  );
+  if (isOptional) {
+    return choice(
+      seq(optional("("), optional($._newline), rule, optional($._newline), optional(")")),
+    );
+  }
 
   return seq("(", optional($._newline), rule, optional($._newline), ")");
 }
@@ -33,24 +35,29 @@ function parenthesized($, rule, isOptional = false) {
 
 // --| List Of ------------------------
 function list_of($, rule, separator = ',', separatorIsOptional = false) {
-  if (separatorIsOptional) return seq(
-    rule, optional($._newline),
-    repeat(seq(
-      optional(separator),
-      rule,
-      optional($._newline),
-    )),
-    optional(separator)
-  );
-  else return seq(
+  if (separatorIsOptional) {
+    return seq(
       rule, optional($._newline),
       repeat(seq(
-        separator,
+        optional(separator),
         rule,
         optional($._newline),
       )),
-    optional(separator)
-   );
+      optional(separator)
+    );
+  } else {
+    return seq(
+      rule, 
+      optional($._newline),
+      repeat(
+        seq(
+          separator,
+          rule,
+          optional($._newline))
+      ),
+      optional(separator)
+    );
+  }
 }
 
 function selector(word, aliasAsWord = true) {

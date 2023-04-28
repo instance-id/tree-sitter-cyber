@@ -8,10 +8,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -45,10 +41,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -104,6 +96,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -125,6 +129,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -178,10 +186,6 @@
             "named": true
           },
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -215,10 +219,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -274,6 +274,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -295,6 +307,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -364,10 +380,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -401,10 +413,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -460,6 +468,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -481,6 +501,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -528,42 +552,9 @@
     }
   },
   {
-    "type": "anonymous_definition",
+    "type": "anon_identifier",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "anonymous_function",
-          "named": true
-        },
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "inline_block",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "anonymous_function",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "parameter",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "args_parameter",
@@ -589,10 +580,6 @@
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "anonymous_definition",
-          "named": true
-        },
         {
           "type": "augmented_assignment",
           "named": true
@@ -627,10 +614,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -686,6 +669,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -707,6 +702,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -802,10 +801,6 @@
             "named": false
           },
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -839,10 +834,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -898,6 +889,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -919,6 +922,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -1062,10 +1069,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -1099,10 +1102,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -1158,6 +1157,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -1179,6 +1190,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -1317,10 +1332,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -1354,10 +1365,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -1413,6 +1420,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -1434,6 +1453,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -1505,10 +1528,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -1542,10 +1561,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -1601,6 +1616,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -1622,6 +1649,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -1727,10 +1758,6 @@
       "required": true,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -1768,10 +1795,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -1827,6 +1850,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -1848,6 +1883,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -1902,10 +1941,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -1939,10 +1974,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -1998,6 +2029,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -2019,6 +2062,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -2152,10 +2199,6 @@
       "required": true,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "as_identifier",
           "named": true
         },
@@ -2197,10 +2240,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -2256,6 +2295,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -2277,6 +2328,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -2436,185 +2491,6 @@
     }
   },
   {
-    "type": "closure_expression",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
-          "type": "augmented_assignment",
-          "named": true
-        },
-        {
-          "type": "binary_operator",
-          "named": true
-        },
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "boolean_operator",
-          "named": true
-        },
-        {
-          "type": "builtin_function",
-          "named": true
-        },
-        {
-          "type": "call_expression",
-          "named": true
-        },
-        {
-          "type": "capture_expression",
-          "named": true
-        },
-        {
-          "type": "catch_expression",
-          "named": true
-        },
-        {
-          "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
-          "named": true
-        },
-        {
-          "type": "coinit_expression",
-          "named": true
-        },
-        {
-          "type": "comparison_operator",
-          "named": true
-        },
-        {
-          "type": "coresume_expression",
-          "named": true
-        },
-        {
-          "type": "cstruct_call",
-          "named": true
-        },
-        {
-          "type": "enclosed_expression",
-          "named": true
-        },
-        {
-          "type": "encoded_string",
-          "named": true
-        },
-        {
-          "type": "error_expression",
-          "named": true
-        },
-        {
-          "type": "exception_identifiers",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_expression",
-          "named": true
-        },
-        {
-          "type": "import_export",
-          "named": true
-        },
-        {
-          "type": "index_expression",
-          "named": true
-        },
-        {
-          "type": "lambda_operator",
-          "named": true
-        },
-        {
-          "type": "multiline_string",
-          "named": true
-        },
-        {
-          "type": "negation_operator",
-          "named": true
-        },
-        {
-          "type": "numeric_literal",
-          "named": true
-        },
-        {
-          "type": "object_initializer",
-          "named": true
-        },
-        {
-          "type": "panic_expression",
-          "named": true
-        },
-        {
-          "type": "parameter",
-          "named": true
-        },
-        {
-          "type": "parenthesized_expression",
-          "named": true
-        },
-        {
-          "type": "repeat_identifiers",
-          "named": true
-        },
-        {
-          "type": "static_expression",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "tag_expression",
-          "named": true
-        },
-        {
-          "type": "throw_expression",
-          "named": true
-        },
-        {
-          "type": "try_else_expression",
-          "named": true
-        },
-        {
-          "type": "try_expression",
-          "named": true
-        },
-        {
-          "type": "type_cast",
-          "named": true
-        },
-        {
-          "type": "type_identifier",
-          "named": true
-        },
-        {
-          "type": "var_identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "coinit",
     "named": true,
     "fields": {}
@@ -2661,6 +2537,14 @@
         "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
           {
             "type": ",",
             "named": false
@@ -2742,10 +2626,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -2779,10 +2659,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -2838,6 +2714,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -2859,6 +2747,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -2954,10 +2846,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -2991,10 +2879,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -3050,6 +2934,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -3071,6 +2967,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -3141,10 +3041,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -3178,10 +3074,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -3237,6 +3129,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -3258,6 +3162,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -3374,10 +3282,6 @@
       "required": true,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -3411,10 +3315,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -3474,6 +3374,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -3495,6 +3407,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -3618,10 +3534,6 @@
       "required": false,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -3655,10 +3567,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -3714,6 +3622,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "map_literal",
           "named": true
         },
@@ -3739,6 +3659,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -3823,10 +3747,6 @@
       "required": true,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -3860,10 +3780,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -3923,6 +3839,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -3944,6 +3872,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -4032,10 +3964,6 @@
       "required": true,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -4069,10 +3997,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -4128,6 +4052,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -4149,6 +4085,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -4203,10 +4143,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -4240,10 +4176,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -4299,6 +4231,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -4320,6 +4264,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -4373,10 +4321,6 @@
             "named": true
           },
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -4410,10 +4354,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -4469,6 +4409,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -4490,6 +4442,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -4575,10 +4531,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -4612,10 +4564,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -4671,6 +4619,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -4692,6 +4652,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -4826,12 +4790,8 @@
       },
       "end": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
-          {
-            "type": "anonymous_definition",
-            "named": true
-          },
           {
             "type": "augmented_assignment",
             "named": true
@@ -4866,10 +4826,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -4925,6 +4881,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -4946,6 +4914,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -4992,12 +4964,8 @@
       },
       "start": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
-          {
-            "type": "anonymous_definition",
-            "named": true
-          },
           {
             "type": "augmented_assignment",
             "named": true
@@ -5032,10 +5000,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -5091,6 +5055,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -5112,6 +5088,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -5161,10 +5141,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -5198,10 +5174,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -5257,6 +5229,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -5278,6 +5262,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -5324,7 +5312,7 @@
       },
       "variable": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "builtin_function",
@@ -5356,6 +5344,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "range_expression",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -5455,10 +5453,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -5492,10 +5486,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -5551,6 +5541,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -5572,6 +5574,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -5659,10 +5665,6 @@
             "named": false
           },
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -5696,10 +5698,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -5771,6 +5769,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "local_declaration",
             "named": true
           },
@@ -5800,6 +5810,10 @@
           },
           {
             "type": "print_statement",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -5930,10 +5944,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -5967,10 +5977,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -6026,6 +6032,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -6047,6 +6065,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -6096,10 +6118,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -6133,10 +6151,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -6192,6 +6206,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -6213,6 +6239,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -6262,10 +6292,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -6299,10 +6325,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -6358,6 +6380,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -6379,6 +6413,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -6458,10 +6496,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -6495,10 +6529,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -6554,6 +6584,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -6575,6 +6617,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -6624,10 +6670,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -6665,10 +6707,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -6732,6 +6770,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -6753,6 +6803,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -6877,10 +6931,6 @@
       "required": true,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "array_contents",
           "named": true
         },
@@ -6918,10 +6968,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -6977,6 +7023,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -6998,6 +7056,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -7056,10 +7118,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -7093,10 +7151,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -7152,6 +7206,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -7173,6 +7239,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -7306,10 +7376,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -7343,10 +7409,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -7402,6 +7464,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -7423,6 +7497,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -7472,10 +7550,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -7509,10 +7583,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -7568,6 +7638,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -7589,6 +7671,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -7636,6 +7722,258 @@
     }
   },
   {
+    "type": "lambda_call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "parameter",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lambda_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "anon_identifier",
+          "named": true
+        },
+        {
+          "type": "augmented_assignment",
+          "named": true
+        },
+        {
+          "type": "binary_operator",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "boolean_operator",
+          "named": true
+        },
+        {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
+          "type": "call_expression",
+          "named": true
+        },
+        {
+          "type": "capture_expression",
+          "named": true
+        },
+        {
+          "type": "catch_expression",
+          "named": true
+        },
+        {
+          "type": "cfunc_call",
+          "named": true
+        },
+        {
+          "type": "coinit_expression",
+          "named": true
+        },
+        {
+          "type": "comparison_operator",
+          "named": true
+        },
+        {
+          "type": "coresume_expression",
+          "named": true
+        },
+        {
+          "type": "cstruct_call",
+          "named": true
+        },
+        {
+          "type": "enclosed_expression",
+          "named": true
+        },
+        {
+          "type": "encoded_string",
+          "named": true
+        },
+        {
+          "type": "error_expression",
+          "named": true
+        },
+        {
+          "type": "exception_identifiers",
+          "named": true
+        },
+        {
+          "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "import_export",
+          "named": true
+        },
+        {
+          "type": "index_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
+          "type": "lambda_operator",
+          "named": true
+        },
+        {
+          "type": "multiline_string",
+          "named": true
+        },
+        {
+          "type": "negation_operator",
+          "named": true
+        },
+        {
+          "type": "numeric_literal",
+          "named": true
+        },
+        {
+          "type": "object_initializer",
+          "named": true
+        },
+        {
+          "type": "panic_expression",
+          "named": true
+        },
+        {
+          "type": "parameter",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
+          "named": true
+        },
+        {
+          "type": "repeat_identifiers",
+          "named": true
+        },
+        {
+          "type": "static_expression",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "tag_expression",
+          "named": true
+        },
+        {
+          "type": "throw_expression",
+          "named": true
+        },
+        {
+          "type": "try_else_expression",
+          "named": true
+        },
+        {
+          "type": "try_expression",
+          "named": true
+        },
+        {
+          "type": "type_cast",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "var_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lambda_function",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "anon_identifier",
+          "named": true
+        },
+        {
+          "type": "parameter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lambda_multiline",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "inline_block",
+          "named": true
+        },
+        {
+          "type": "lambda_function",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "local_declaration",
     "named": true,
     "fields": {
@@ -7643,10 +7981,6 @@
         "multiple": false,
         "required": false,
         "types": [
-          {
-            "type": "anonymous_definition",
-            "named": true
-          },
           {
             "type": "augmented_assignment",
             "named": true
@@ -7681,10 +8015,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -7740,6 +8070,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -7761,6 +8103,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -7810,10 +8156,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -7847,10 +8189,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -7906,6 +8244,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -7927,6 +8277,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -8011,10 +8365,6 @@
       "required": false,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -8048,10 +8398,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -8135,6 +8481,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "local_declaration",
           "named": true
         },
@@ -8172,6 +8530,10 @@
         },
         {
           "type": "print_statement",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -8304,10 +8666,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -8341,10 +8699,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -8400,6 +8754,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -8421,6 +8787,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -8470,10 +8840,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -8507,10 +8873,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -8566,6 +8928,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -8587,6 +8961,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -8636,10 +9014,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -8673,10 +9047,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -8748,6 +9118,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "local_declaration",
             "named": true
           },
@@ -8777,6 +9159,10 @@
           },
           {
             "type": "print_statement",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -8868,10 +9254,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -8905,10 +9287,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -8964,6 +9342,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -8985,6 +9375,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -9074,10 +9468,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -9111,10 +9501,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -9170,6 +9556,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -9191,6 +9589,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -9366,10 +9768,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -9403,10 +9801,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -9462,6 +9856,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -9483,6 +9889,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -9766,10 +10176,6 @@
       "required": true,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -9803,10 +10209,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -9862,6 +10264,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -9887,6 +10301,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -9981,10 +10399,6 @@
       "required": false,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -10018,10 +10432,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -10077,6 +10487,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -10098,6 +10520,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -10152,10 +10578,6 @@
       "required": true,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -10189,10 +10611,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -10248,6 +10666,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -10269,6 +10699,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -10382,10 +10816,6 @@
       "required": true,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -10419,10 +10849,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -10478,6 +10904,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -10499,6 +10937,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -10753,10 +11195,6 @@
       "required": false,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -10790,10 +11228,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -10849,6 +11283,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -10870,6 +11316,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -10929,10 +11379,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -10966,10 +11412,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -11025,6 +11467,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -11046,6 +11500,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -11095,10 +11553,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -11132,10 +11586,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -11191,6 +11641,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -11212,6 +11674,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -11277,10 +11743,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -11314,10 +11776,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -11373,6 +11831,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -11394,6 +11864,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -11531,10 +12005,6 @@
       "required": true,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -11568,10 +12038,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -11627,6 +12093,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -11648,6 +12126,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -11742,10 +12224,6 @@
       "required": true,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -11779,10 +12257,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -11838,6 +12312,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -11859,6 +12345,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -12043,10 +12533,6 @@
       "required": true,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -12080,10 +12566,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -12139,6 +12621,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -12160,6 +12654,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -12237,10 +12735,6 @@
       "required": true,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -12274,10 +12768,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -12337,6 +12827,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -12358,6 +12860,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -12455,10 +12961,6 @@
         "required": true,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -12492,10 +12994,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -12551,6 +13049,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -12572,6 +13082,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -12625,10 +13139,6 @@
             "named": true
           },
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -12662,10 +13172,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -12721,6 +13227,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -12742,6 +13260,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -12797,10 +13319,6 @@
       "required": true,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "as_identifier",
           "named": true
         },
@@ -12838,10 +13356,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -12897,6 +13411,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -12918,6 +13444,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -13099,10 +13629,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -13136,10 +13662,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -13195,6 +13717,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -13216,6 +13750,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
@@ -13266,10 +13804,6 @@
       "required": true,
       "types": [
         {
-          "type": "anonymous_definition",
-          "named": true
-        },
-        {
           "type": "augmented_assignment",
           "named": true
         },
@@ -13303,10 +13837,6 @@
         },
         {
           "type": "cfunc_call",
-          "named": true
-        },
-        {
-          "type": "closure_expression",
           "named": true
         },
         {
@@ -13390,6 +13920,18 @@
           "named": true
         },
         {
+          "type": "lambda_call",
+          "named": true
+        },
+        {
+          "type": "lambda_expression",
+          "named": true
+        },
+        {
+          "type": "lambda_multiline",
+          "named": true
+        },
+        {
           "type": "local_declaration",
           "named": true
         },
@@ -13427,6 +13969,10 @@
         },
         {
           "type": "print_statement",
+          "named": true
+        },
+        {
+          "type": "range_expression",
           "named": true
         },
         {
@@ -13528,10 +14074,6 @@
         "required": false,
         "types": [
           {
-            "type": "anonymous_definition",
-            "named": true
-          },
-          {
             "type": "augmented_assignment",
             "named": true
           },
@@ -13565,10 +14107,6 @@
           },
           {
             "type": "cfunc_call",
-            "named": true
-          },
-          {
-            "type": "closure_expression",
             "named": true
           },
           {
@@ -13624,6 +14162,18 @@
             "named": true
           },
           {
+            "type": "lambda_call",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_multiline",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -13645,6 +14195,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "range_expression",
             "named": true
           },
           {
